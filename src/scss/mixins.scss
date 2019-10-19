@@ -1,0 +1,94 @@
+@mixin block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin indent($margin:0, $padding: 0) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin OpenSans {
+  font-family: "Open Sans", "Arial", sans-serif;
+}
+
+@mixin Montserrat {
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+
+@mixin h1 {
+  color: $shade-100;
+  @include OpenSans();
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.25;
+  // margin-bottom: 20px;
+}
+
+@mixin h2 {
+  color: $shade-100;
+  @include OpenSans();
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 1.26;
+}
+
+@mixin h3 {
+  color: $shade-100;
+  @include Montserrat();
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+@mixin font-body {
+  color: $shade-75;
+  @include Montserrat();
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+
+// @mixin dropdown-bottom {
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 25%;
+//     right: 10%;
+//     width: 10%;
+//     height: 10%;
+//     border-bottom: 2px solid $shade-75;
+//     border-right: 2px solid $shade-75;
+//     transform: rotateX(-45deg);
+//   }
+// }
+// 
+// @mixin dropdown-top {
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 25%;
+//     right: 10%;
+//     width: 10%;
+//     height: 10%;
+//     border-bottom: 2px solid $shade-75;
+//     border-right: 2px solid $shade-75;
+//     transform: rotateX(45deg);
+//   }
+// }

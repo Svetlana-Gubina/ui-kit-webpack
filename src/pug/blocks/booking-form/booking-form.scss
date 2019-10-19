@@ -1,0 +1,7 @@
+.booking {
+    @include block();
+    width: 380px;
+    height: 511px;
+    padding: 30px;
+    padding-top: 40px;
+}

@@ -1,0 +1,53 @@
+.btn {
+    /* padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;*/
+
+    border-radius: 22px;
+}
+
+.btn__bg {
+    color: $white-color;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: center;
+    text-transform: uppercase;
+    &-hover,
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &-focus,
+    &:focus {
+        opacity: 0.5;
+    }
+
+    &-active,
+    &:active {
+        opacity: 0.5;
+    }
+
+}
+
+.btn__light {
+    color: $purple-color;
+    background-color: transparent;
+    border: 2px solid $grad-color-1;
+
+    &-hover,
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &-focus,
+    &:focus {
+        opacity: 0.5;
+    }
+
+    &-active,
+    &:active {
+        opacity: 0.5;
+        color: rgba(31, 32, 65, 0.5);
+    }
+}

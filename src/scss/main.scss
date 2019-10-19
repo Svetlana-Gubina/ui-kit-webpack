@@ -1,0 +1,25 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "global.scss";
+@import "../pug/blocks/booking-form/booking-form.scss";
+@import "../pug/blocks/room-search/room-search.scss";
+@import "../pug/blocks/search-form/search-form.scss";
+@import "../pug/blocks/register/register.scss";
+@import "../pug/blocks/login-form/login-form.scss";
+@import "../pug/blocks/login-form/login-form.scss";
+@import "../pug/blocks/header/header.scss";
+
+
+
+body {
+    font-family: "Montserrat Regular";
+
+    background: #E5E5E5; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    // display: flex;
+    // justify-content: space-between;
+    // background-color: $purple-color;
+}
+
+

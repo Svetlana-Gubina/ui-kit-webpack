@@ -1,0 +1,24 @@
+header.page-header
+        div.logo
+        a(href='/' + url) Токсин  
+        nav.page-header__nav
+          ul.page-header__nav-list
+            li.page-header__nav-item 
+                a.page-header__nav-link.active(href='/' + url) Home
+            li.page-header__nav-item
+                a.page-header__nav-link(href='/' + url) About-us
+            li.page-header__nav-item
+                a.page-header__nav-link(href='/' + url) Services
+            li.page-header__nav-item
+                a.page-header__nav-link(href='/' + url) Careers
+            li.page-header__nav-item
+                a.page-header__nav-link(href='/' + url) News
+            li.page-header__nav-item
+                a.page-header__nav-link(href='/' + url) Documentaion
+        div.user-nav
+          - var authorised = true
+          if authorised
+            p.user-nav__name Cosmin Negoita 
+          else 
+            a.user-nav-link(href='/' + url) Login
+            a.user-nav-link(href='/' + url) Register

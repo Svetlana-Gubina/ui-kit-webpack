@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+        link(rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>")
+        link(rel="preload" href="../fonts/Open_Sans/opensans.woff" as="font" crossorigin="anonymous")
+        link(rel="preload" href="../fonts/Montserrat/Montserrat-Regular.woff" as="font" crossorigin="anonymous")
+        link(rel="preload" href="../fonts/Open_Sans/opensansbold.woff" as="font" crossorigin="anonymous")
+        link(rel="preload" href="../fonts/Montserrat/Montserrat-Bold.woff" as="font" crossorigin="anonymous")
+    body
+      //- Searching rooms
+      include blocks/room-search/room-search.pug
+      //- Register
+      include blocks/register/register.pug
+      //- Login form
+      include blocks/login-form/login-form.pug
+      //- Calendar
+      //
+      //- Booking form
+      include blocks/booking-form/booking-form.pug
+  
+      //
+      //- Room-1
+      div(style="outline: 2px solid red;")
+        include blocks/room-card-1/room-card-1.pug
+      //
+      //- Room-2
+      div(style="outline: 2px solid red;")
+        include blocks/room-card-2/room-card-2.pug
+      //- FOOTER-sm
+      div(style="outline: 2px solid red;")
+        include blocks/footer-sm/footer-sm.pug  
+      //-FOOTER-lg
+      div(style="outline: 2px solid red;")
+        include blocks/footer-lg/footer-lg.pug
+      //-HEADER
+      include blocks/header/header.pug 
+      //-HEADER-loged-in
+      include blocks/header-logged-in/header-logged-in.pug
+  
+      //-h1 Hello Parcel!
+      //-script(src='./main.js')
+  
+      //-<picture>
+           <source type="image/webp" srcset="img/@1x.webp 1x, img/@2x.webp 2x">
+           <img class="" src="img/..@1x.jpg" srcset="img/@2x.jpg 2x" alt="">
+         </picture>  

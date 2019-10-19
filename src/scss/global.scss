@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Montserrat Regular";
+  src: local("Montserrat Regular"), url("../fonts/Montserrat/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Regular.ttf") format("ttf"), url("../fonts/Montserrat/Montserrat-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
+
+@font-face {
+  font-family: "Montserrat Bold";
+  src: local("Montserrat Bold"), url("../fonts/Montserrat/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Bold.ttf") format("ttf"), url("../fonts/Montserrat/Montserrat-Bold.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans"), url("../fonts/Open_Sans/opensans.woff") format("woff"),url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("ttf"),url("../fonts/Open_Sans/OpenSans-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+ 
+@font-face {
+  font-family: "Open Sans Bold";
+  src: local("Open Sans Bold"), url("../fonts/Open_Sans/opensansbold.woff") format("woff"), url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("ttf"),url("../fonts/Open_Sans/OpenSans-Bold.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+ 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+  
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: $min-width;
+  @include indent();
+  color: $shade-75;
+  @include Montserrat();
+  font-size: 14px;
+  line-height: 1.7;
+}
+  
+img {
+  max-width: 100%;
+  height: auto;
+}
+  

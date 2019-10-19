@@ -1,0 +1,21 @@
+.log-in {
+    @include block();
+    width: 380px;
+    height: 358px;
+    padding: 30px;
+    padding-top: 40px;
+}
+
+.log-in-title {
+    @include h1();
+}
+
+.login-form__group label {
+    display: none;
+}
+
+.login-form__text {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+}
