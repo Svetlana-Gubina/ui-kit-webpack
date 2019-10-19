@@ -2,15 +2,10 @@
   width: 380px; 
   height: 374px; 
   margin: auto;
-  padding: 30px;
-  padding-top: 40px;
   
   @include block();
 }
 
-.search-title {
+.room-search-title {
   @include h1();
-  @include indent();
-  @include Montserrat();
-  // margin-bottom: 20px;
 }

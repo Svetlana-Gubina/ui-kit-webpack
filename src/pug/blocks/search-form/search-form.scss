@@ -1,7 +1,7 @@
-.search-form__group label {
-    @include h3();
+.search-form {
+  outline: 2px solid crimson;
 }
 
-.btn--search {
-    width: 100%;
+.search-form__group label {
+  @include h3();
 }

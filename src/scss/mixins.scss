@@ -2,9 +2,52 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-wrap: wrap;
   background-color: #ffffff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   margin: 20px;
+  padding: 30px;
+  padding-top: 40px;
+
+  z-index: -2; // for buttons with gradients, :hover not working
+}
+
+@mixin brightButton {
+  color: $white-color;
+  background-color: $purple-color;
+  background: $grad-color-1;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@mixin lightButton {
+  position: relative;
+  color: $purple-color;
+  background-color: #ffffff;
+  background-clip: padding-box; 
+  border: 3px solid transparent; 
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -3px;
+    border-radius: inherit; 
+    background-color: $purple-color;
+    background: $grad-color-1;
+  }
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+  &:active {
+    opacity: 0.5;
+    color: rgba(31, 32, 65, 0.5);
+  }
 }
 
 @mixin list {
@@ -28,12 +71,12 @@
 
 @mixin h1 {
   color: $shade-100;
-  @include OpenSans();
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 24px;
   line-height: 1.25;
-  // margin-bottom: 20px;
+  @include indent();
+  margin-bottom: 20px;
 }
 
 @mixin h2 {

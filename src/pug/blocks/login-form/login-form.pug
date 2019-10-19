@@ -7,12 +7,15 @@ div.log-in
             div.login-form__group
               label(for='pw1') Password:
               input#pw1.login-form__control(type='password' placeholder='Пароль' name='password' required)
-            button.btn.btn--login(type='submit') Войти
+            //-button.btn.btn--login(type='submit') Войти
+            +btn-bright('Войти')
             div.login-form__footer
               - var authorised = false
               if authorised
                  p.login-form__text  Уже есть аккаунт на Toxin?
-                 button.btn-tr.btn-tr--login(type='submit') Войти
+                 +btn-light('Войти')
+                 //-button.btn-tr.btn-tr--login(type='submit') Войти
               else   
                  p.login-form__text Нет аккаунта на Toxin?
-                 button.btn-tr.btn-tr--create(type='submit') Создать
+                 +btn-light('Создать')
+                 //-button.btn-tr.btn-tr--create(type='submit') Создать

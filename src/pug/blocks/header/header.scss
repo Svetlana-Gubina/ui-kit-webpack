@@ -10,6 +10,7 @@
 
     background-color: #ffffff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    z-index: -2; // for buttons with gradients, :hover not working
 }
 
 .page-header__nav-list {
@@ -24,4 +25,23 @@
     display: block;
     padding: 14px;
     text-decoration: none;
+}
+
+.user-nav-link {
+    display: inline-block;
+    text-decoration: none;
+
+    margin: 10px;
+}
+
+.user-nav-link--reg {
+    padding: 10px 20px;
+
+    @include brightButton();
+}
+
+.user-nav-link--login {
+    padding: 7px 17px;
+
+    @include lightButton();
 }

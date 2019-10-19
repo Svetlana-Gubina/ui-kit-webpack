@@ -1,3 +1,6 @@
+include ../btn/btn-bright.pug
+include ../btn/btn-light.pug
+
 div.register-container
   h2  Регистрация аккаунта
       form.register-form(method='POST' action='#')
@@ -27,12 +30,14 @@ div.register-container
               label(for='switch') Получать спецпредложения
                   span.switch-slider.switch-slider-on
                   span.switch-slider.switch-slider-off
-          button.btn.btn--register(type='submit') Перейти к оплате    
+          +btn-bright('Перейти к оплате')    
           div.login-form__footer
               - var authorised = true
               if authorised
                  p.login-form__text  Уже есть аккаунт на Toxin?
-                 button.btn-tr.btn-tr--login(type='submit') Войти
+                 +btn-light('Войти')
+                 //-button.btn-tr.btn-tr--login(type='submit') Войти
               else   
                  p.login-form__text Нет аккаунта на Toxin?
-                 button.btn-tr.btn-tr--create(type='submit') Создать 
+                 +btn-light('Создать')
+                 //-button.btn-tr.btn-tr--create(type='submit') Создать 

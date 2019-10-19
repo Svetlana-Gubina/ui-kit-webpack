@@ -1,3 +1,5 @@
+include ../btn/btn-bright.pug
+
 form.search-form(method='GET' action='#')
       div.search-form__group
         label(for='start1') Прибытие
@@ -11,4 +13,4 @@ form.search-form(method='GET' action='#')
            option 1
            option 2
            option 3
-      button.btn.btn--search(type='submit') Подобрать номер
+        +btn-bright('Подобрать номер')
