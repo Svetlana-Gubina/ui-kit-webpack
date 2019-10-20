@@ -1,7 +1,32 @@
 .search-form {
-  outline: 2px solid crimson;
+  // outline: 2px solid crimson;
 }
 
 .search-form__group label {
   @include h3();
 }
+
+.search-form__fields {
+  outline: 1px solid crimson;
+
+  @include flex();
+  margin-bottom: 20px;
+}
+
+.search-form__group {
+  outline: 2px solid green;
+  margin: 10px;
+
+  max-width: 40%;
+}
+
+.search-form__group:last-child {
+  width: 100%;
+}
+
+.search-form__group input {
+  max-width: 100%;
+}
+
+//-fields
+

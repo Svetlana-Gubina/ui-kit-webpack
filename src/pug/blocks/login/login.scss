@@ -1,0 +1,37 @@
+.login {
+    @include block();
+    width: 380px;
+    height: 358px;
+}
+
+.login__title {
+    @include h1();
+}
+
+.login-form {
+    // outline: 2px solid darkcyan;
+}
+
+.login__fields {
+    @include flex();
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+//-fields
+.login__form-control {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 12px 15px 8px;
+}
+
+.login__form-footer {
+    @include flex();
+}
+
+.login__form-text {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+}

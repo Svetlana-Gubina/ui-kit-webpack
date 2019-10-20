@@ -1,16 +1,6 @@
 include ../btn/btn-bright.pug
+include ./search-form__fields-mixin.pug
 
 form.search-form(method='GET' action='#')
-      div.search-form__group
-        label(for='start1') Прибытие
-        input#start1.search-form__control(type='date' name='arrive')
-      div.search-form__group
-        label(for='end') Выезд
-        input#end.search-form__control(type='date' name='depart')
-      div.search-form__group
-        label(for='guests') Гости
-        select#guests.search-form__control(name="guests" placeholder="Сколько гостей")
-           option 1
-           option 2
-           option 3
-        +btn-bright('Подобрать номер')
+      +search-form__fields('start1', 'end1', 'guests1')
+      +btn-bright('Подобрать номер')

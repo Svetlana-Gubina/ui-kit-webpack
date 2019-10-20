@@ -1,43 +1,32 @@
 include ../btn/btn-bright.pug
 include ../btn/btn-light.pug
+include ../login/login__footer-mixin.pug
+include ../login/login__fields-mixin.pug
 
 div.register-container
   h2  Регистрация аккаунта
-      form.register-form(method='POST' action='#')
-          div.register-form__group
-             label(for='name1') Имя
-             input#name1.register-form__control(type='text', placeholder='Имя' name='name')
-          div.register-form__group
-             label(for='surname') Фамилия
-             input#surname.register-form__control(type='text', placeholder='Фамилия' name='surname')
-          div.register-form__group
-             input#male.register-form__checkbox(type='radio' name='sex' value='male' checked)
-             label(for='male') Мужчина
-             input#female.register-form__checkbox(type='radio' name='sex' value='female')
-             label(for='female') Женщина
-          div.register-form__group
-             label(for='birthday') Дата рождения
-             input#birthday.register-form__control(type='date' name='birthday')
-          p  Данные для входа в сервис 
-          div.login-form__group
-              label(for='email') Email:
-              input#email.login-form__control(type='email' placeholder='Email' name='email' required)
-          div.login-form__group
-              label(for='pw') Password:
-              input#pw.login-form__control(type='password' placeholder='Пароль' name='password' required)
-          div.register-form__group    
-              input#switch.register-form__checkbox.register-form__checkbox--switch(type='checkbox' name='switch' checked)
-              label(for='switch') Получать спецпредложения
-                  span.switch-slider.switch-slider-on
-                  span.switch-slider.switch-slider-off
-          +btn-bright('Перейти к оплате')    
-          div.login-form__footer
-              - var authorised = true
-              if authorised
-                 p.login-form__text  Уже есть аккаунт на Toxin?
-                 +btn-light('Войти')
-                 //-button.btn-tr.btn-tr--login(type='submit') Войти
-              else   
-                 p.login-form__text Нет аккаунта на Toxin?
-                 +btn-light('Создать')
-                 //-button.btn-tr.btn-tr--create(type='submit') Создать 
+  form.register-form(method='POST' action='#')
+      div.register-form__group
+         label(for='name1') Имя
+         input#name1.register-form__control(type='text', placeholder='Имя' name='name')
+      div.register-form__group
+         label(for='surname') Фамилия
+         input#surname.register-form__control(type='text', placeholder='Фамилия' name='surname')
+      div.register-form__group
+         input#male.register-form__checkbox(type='radio' name='sex' value='male' checked)
+         label(for='male') Мужчина
+         input#female.register-form__checkbox(type='radio' name='sex' value='female')
+         label(for='female') Женщина
+      div.register-form__group
+         label(for='birthday') Дата рождения
+         input#birthday.register-form__control(type='date' name='birthday')
+      p  Данные для входа в сервис
+      +login__fields('email2', 'pass2')
+      div.register-form__group    
+          input#switch.register-form__checkbox.register-form__checkbox--switch(type='checkbox' name='switch' checked)
+          label(for='switch') Получать спецпредложения
+              span.switch-slider.switch-slider-on
+              span.switch-slider.switch-slider-off
+      +btn-bright('Перейти к оплате') 
+  +login__form-footer(true)   
+          
