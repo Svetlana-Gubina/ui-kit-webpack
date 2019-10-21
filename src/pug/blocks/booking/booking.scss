@@ -1,0 +1,101 @@
+.booking-container {
+    @include block();
+    width: 380px;
+
+    min-height: 511px;
+    padding: 30px;
+    padding-top: 40px;
+}
+
+.booking__room-cost {
+    // outline: 2px solid fuchsia;
+    @include flex();
+
+    @include indent();
+    margin-bottom: 10px;
+
+    align-items: baseline;
+}
+
+.booking__room-number,
+.booking__room-price {
+    margin: 0;
+    padding: 0.3em;
+}
+
+.booking__room-number {
+    color: black;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.booking__room-number-span {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+    color: black;
+}
+
+.booking__room-class {
+    @include h3();
+    color: $purple-color;
+
+    // padding: 0.3em;
+}
+
+.booking__room-price {
+    @include font-body();
+    color: $shade-50;
+}
+
+.booking__room-price-span {
+  font-size: 12px;
+  line-height: 1.25;
+  color: $shade-25;
+}
+
+
+.booking__form-count {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.booking__form-count {
+    position: relative;
+    width: 100%;
+}
+
+.booking__form-count td {
+  padding: 0.5em;
+
+  vertical-align: bottom;
+}
+
+.booking__form-count-1 {
+    max-width: 220px;
+}
+
+.booking__form-count-2 {
+    text-align: right;
+}
+
+.booking__form-count-icon {
+    outline: 1px solid crimson;
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+// .booking__form-count-footer::after {
+//     content: "";
+//     position: absolute;
+//     bottom: 5%;
+//     left: 22%;
+//     width: 50%;
+//     height: 2px;
+//     background-color: red;
+// }
+
+.booking-form__count-total {
+    @include h2();
+}

@@ -1,0 +1,32 @@
+include ../search-form/search-form__fields-mixin.pug
+
+div.booking-container
+      div.booking__room-cost
+       p.booking__room-number № 
+         span.booking__room-number-span 888 
+         span.booking__room-class люкс 
+       p.booking__room-price 9 990₽  
+         span.booking__room-price-span в сутки
+      form.booking__form(method='POST' action='#')
+        +search-form__fields('start2', 'end3', 'guests3')
+        //-div.booking__form-table
+        table.booking__form-count
+          tr
+              td.booking__form-count-1 9 990₽ х 4 суток 
+              td.booking__form-count-2 39 960₽ 
+          tr
+              td.booking__form-count-1 9 990₽ х 4 суток 
+              td.booking__form-count-2 39 960₽ 
+          tr
+              td.booking__form-count-1  Сбор за услуги: скидка 2 179₽
+               span.booking__form-count-icon i 
+              td.booking__form-count-2  0₽
+          tr
+              td.booking__form-count-1 Сбор за дополнительные услуги
+               span.booking__form-count-icon i
+              td.booking__form-count-2 300₽ 
+          tr.booking__form-count-footer
+              td.booking-form__count-total.booking__form-count-1  Итого  
+              td.booking-form__count-total.booking__form-count-2  38 081₽
+            
+        +btn-bright('Забронировать')

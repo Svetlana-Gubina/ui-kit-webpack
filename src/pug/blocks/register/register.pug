@@ -3,30 +3,33 @@ include ../btn/btn-light.pug
 include ../login/login__footer-mixin.pug
 include ../login/login__fields-mixin.pug
 
-div.register-container
+div.register__container
   h2  Регистрация аккаунта
-  form.register-form(method='POST' action='#')
-      div.register-form__group
-         label(for='name1') Имя
-         input#name1.register-form__control(type='text', placeholder='Имя' name='name')
-      div.register-form__group
-         label(for='surname') Фамилия
-         input#surname.register-form__control(type='text', placeholder='Фамилия' name='surname')
-      div.register-form__group
-         input#male.register-form__checkbox(type='radio' name='sex' value='male' checked)
+  form.register__form(method='POST' action='#')
+   div.register__form-top
+      div.register__form-group
+         label.visually-hidden(for='name1') Имя
+         input#name1.register-form__control.form-field(type='text', placeholder='Имя' name='name')
+      div.register__form-group
+         label.visually-hidden(for='surname') Фамилия
+         input#surname.register-form__control.form-field(type='text', placeholder='Фамилия' name='surname')
+      div.register__form-group
+       div.register__form-group-checkbox
+         input#male.register__form-checkbox(type='radio' name='sex' value='male' checked)
          label(for='male') Мужчина
-         input#female.register-form__checkbox(type='radio' name='sex' value='female')
+       div.register__form-group-checkbox 
+         input#female.register__form-checkbox(type='radio' name='sex' value='female')
          label(for='female') Женщина
-      div.register-form__group
-         label(for='birthday') Дата рождения
-         input#birthday.register-form__control(type='date' name='birthday')
-      p  Данные для входа в сервис
-      +login__fields('email2', 'pass2')
-      div.register-form__group    
-          input#switch.register-form__checkbox.register-form__checkbox--switch(type='checkbox' name='switch' checked)
-          label(for='switch') Получать спецпредложения
-              span.switch-slider.switch-slider-on
-              span.switch-slider.switch-slider-off
-      +btn-bright('Перейти к оплате') 
+   div.register__form-group.register__form-group-middle
+      label.register__form-label(for='birthday') Дата рождения
+      input#birthday.register-form__control.form-field(type='date' name='birthday')
+   p.register__form-label  Данные для входа в сервис
+   +login__fields('email2', 'pass2')
+   div.register__form-group.register__form-group-special 
+       input#switch.register-form__checkbox.register-form__checkbox--switch(type='checkbox' name='switch' checked)
+       label(for='switch') Получать спецпредложения
+           span.switch-slider.switch-slider-on
+           span.switch-slider.switch-slider-off
+   +btn-bright('Перейти к оплате') 
   +login__form-footer(true)   
           

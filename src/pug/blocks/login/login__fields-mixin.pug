@@ -2,7 +2,7 @@ mixin login__fields(emailID, passID)
  div.login__fields
   div.login__form-group
    label.visually-hidden(for= emailID) Email:
-   input(#${emailID}).login__form-control(type='email' placeholder='Email' name='email' required)
+   input(#${emailID}).login__form-control.form-field(type='email' placeholder='Email' name='email' required)
   div.login__form-group
    label.visually-hidden(for= passID) Password:
-   input(#${passID}).login__form-control(type='password' placeholder='Пароль' name='password' required)
+   input(#${passID}).login__form-control.form-field(type='password' placeholder='Пароль' name='password' required)

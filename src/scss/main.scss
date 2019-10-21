@@ -1,7 +1,7 @@
 @import "variables.scss";
 @import "mixins.scss";
 @import "global.scss";
-@import "../pug/blocks/booking-form/booking-form.scss";
+@import "../pug/blocks/booking/booking.scss";
 @import "../pug/blocks/room-search/room-search.scss";
 @import "../pug/blocks/search-form/search-form.scss";
 @import "../pug/blocks/register/register.scss";
@@ -12,6 +12,7 @@
 @import "../pug/blocks/room-card-template/room-card-template.scss";
 @import "../pug/blocks/visually-hidden/visually-hidden.scss";
 @import "../pug/blocks/btn/btn.scss";
+@import "../pug/blocks/form-field/form-field.scss";
 
 
 

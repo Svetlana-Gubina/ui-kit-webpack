@@ -1,6 +1,7 @@
 .room-search-container {
   width: 380px; 
-  height: 374px; 
+
+  min-height: 374px; 
   margin: auto;
   
   @include block();

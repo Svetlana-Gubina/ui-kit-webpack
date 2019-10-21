@@ -1,5 +1,5 @@
-.text-field {
-    /* padding: 1em;*/
+.form-field {
+    padding: 12px 15px; // 8px;
 
     font-style: normal;
     font-weight: normal;
@@ -23,7 +23,7 @@
     }
 }
 
-.text-field__dropdown {
-    position: relative;
-    @include dropdown-bottom();
-}
+// .form-field__dropdown {
+//     position: relative;
+//     @include dropdown-bottom();
+// }
