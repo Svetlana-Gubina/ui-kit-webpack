@@ -1,0 +1,7 @@
+mixin page-header__user-nav(isAuthorised)
+ div.page-header__user-nav
+          if isAuthorised
+            p.user-nav__name Cosmin Negoita 
+          else 
+            a.user-nav-link.user-nav-link--login.btn(href='/' + url) Login
+            a.user-nav-link.user-nav-link--reg.btn(href='/' + url) Register

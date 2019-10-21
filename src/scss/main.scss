@@ -6,7 +6,7 @@
 @import "../pug/blocks/search-form/search-form.scss";
 @import "../pug/blocks/register/register.scss";
 @import "../pug/blocks/login/login.scss";
-@import "../pug/blocks/header/header.scss";
+@import "../pug/blocks/page-header/page-header.scss";
 @import "../pug/blocks/footer-sm/footer-sm.scss";
 @import "../pug/blocks/footer-lg/footer-lg.scss";
 @import "../pug/blocks/room-card-template/room-card-template.scss";
@@ -22,9 +22,6 @@ body {
     background: #E5E5E5; 
     padding-top: 50px;
     padding-bottom: 50px;
-    // display: flex;
-    // justify-content: space-between;
-    // background-color: $purple-color;
 }
 
 

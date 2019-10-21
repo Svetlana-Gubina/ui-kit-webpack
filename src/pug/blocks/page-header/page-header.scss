@@ -1,0 +1,88 @@
+.page-header {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-left: 140px;
+    padding-right: 140px;
+
+    @include flex();
+
+    background-color: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    z-index: -2; // for buttons with gradients, :hover not working
+}
+
+.page-header__logo,
+.page-header__nav,
+.page-header__user-nav {
+    // outline: 2px solid darkolivegreen;
+}
+
+.page-header__logo {
+    padding: 0.3em;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+.page-header__nav-list {
+    @include list();
+    @include flex();
+    padding-top: 5px;
+    // align-items: baseline;
+}
+
+.page-header__nav-link {
+    color: $shade-50;
+    font-size: 14px;
+    line-height: 17px;
+    display: block;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.page-header__nav-link--active {
+    color: black;
+    font-weight: 700;
+}
+
+.page-header__nav-link--select {
+    position: relative;
+    padding-right: 30px;
+}
+
+.page-header__nav-link--select::after {
+    content: "";
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid $shade-50;
+    border-bottom: 2px solid $shade-50;
+    transform: rotate(-45deg);
+    background-color: transparent;
+
+}
+
+.user-nav-link {
+    display: inline-block;
+    text-decoration: none;
+
+    margin: 10px;
+}
+
+.user-nav-link--reg {
+    padding: 10px 20px;
+
+    @include brightButton();
+}
+
+.user-nav-link--login {
+    padding: 7px 17px;
+
+    @include lightButton();
+}
+
+.user-nav__name {
+    padding: 0.3em;
+}

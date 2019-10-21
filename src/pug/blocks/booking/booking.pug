@@ -1,12 +1,8 @@
 include ../search-form/search-form__fields-mixin.pug
+include ./booking__room-cost-mixin.pug
 
 div.booking-container
-      div.booking__room-cost
-       p.booking__room-number № 
-         span.booking__room-number-span 888 
-         span.booking__room-class люкс 
-       p.booking__room-price 9 990₽  
-         span.booking__room-price-span в сутки
+      +booking__room-cost('888', '9 990', true)
       form.booking__form(method='POST' action='#')
         +search-form__fields('start2', 'end3', 'guests3')
         //-div.booking__form-table

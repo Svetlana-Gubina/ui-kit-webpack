@@ -1,24 +1,20 @@
+include ./page-header__user-nav-mixin.pug
+
 header.page-header
-        div.logo
+        div.logo.page-header__logo
           a(href='/' + url) Токсин  
         nav.page-header__nav
           ul.page-header__nav-list
               li.page-header__nav-item 
-                a.page-header__nav-link.active(href='/' + url) Home
+                a.page-header__nav-link.page-header__nav-link--active(href='/' + url) Home
               li.page-header__nav-item
                 a.page-header__nav-link(href='/' + url) About-us
               li.page-header__nav-item
-                a.page-header__nav-link(href='/' + url) Services
+                a.page-header__nav-link.page-header__nav-link--select(href='/' + url) Services
               li.page-header__nav-item
                 a.page-header__nav-link(href='/' + url) Careers
               li.page-header__nav-item
                 a.page-header__nav-link(href='/' + url) News
               li.page-header__nav-item
                 a.page-header__nav-link(href='/' + url) Documentaion
-        div.user-nav
-          - var authorised = false
-          if authorised
-            p.user-nav__name Cosmin Negoita 
-          else 
-            a.user-nav-link.user-nav-link--login.btn(href='/' + url) Login
-            a.user-nav-link.user-nav-link--reg.btn(href='/' + url) Register 
+        +page-header__user-nav(false)
