@@ -22,6 +22,10 @@ body {
     background: #E5E5E5; 
     padding-top: 50px;
     padding-bottom: 50px;
+
+    max-width: 1440px;
+    @include min-width();
+    margin: auto;
 }
 
 

@@ -2,6 +2,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -38,8 +39,8 @@ module.exports = {
             options: {
               name: 'img//[name].[ext]',
               limit: 8192,
-              fallback: require.resolve('responsive-loader'),
-              quality: 85,
+              /*fallback: require.resolve('responsive-loader'),
+              quality: 85,*/
             },
           },
         ],
@@ -68,9 +69,12 @@ module.exports = {
         template: './src/pug/index.pug',
         filename: './index.html'
     }),
+    new CopyWebpackPlugin([
+      {from:'src/images',to:'img'} 
+  ]), 
   ],
   mode: `development`,
-  devtool: `source-map`,
+  devtool: `inline-source-map`,
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,

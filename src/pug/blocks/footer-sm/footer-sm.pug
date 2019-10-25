@@ -1,5 +1,7 @@
+include ../logo/logo-mixin.pug
+
 div.footer-sm
         div.logo.footer-sm__logo
-          a(href='/' + url) Токсин  
+          +logo
         p.footer-sm__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
         include ./footer-sm__social-icons-list.pug
