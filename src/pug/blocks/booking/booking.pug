@@ -1,11 +1,11 @@
+include ../btn/btn--bright.pug
 include ../search-form/search-form__fields-mixin.pug
 include ./booking__room-cost-mixin.pug
 
-div.booking-container
+div.booking
       +booking__room-cost('888', '9 990', true)
       form.booking__form(method='POST' action='#')
         +search-form__fields('start2', 'end3', 'guests3')
-        //-div.booking__form-table
         table.booking__form-count
           tr
               td.booking__form-count-1 9 990₽ х 4 суток 
@@ -22,7 +22,7 @@ div.booking-container
                span.booking__form-count-icon i
               td.booking__form-count-2 300₽ 
           tr.booking__form-count-footer
-              td.booking-form__count-total.booking__form-count-1  Итого  
-              td.booking-form__count-total.booking__form-count-2  38 081₽
+              td.booking__form-total.booking__form-count-1  Итого  
+              td.booking__form-total.booking__form-count-2  38 081₽
             
         +btn-bright('Забронировать')

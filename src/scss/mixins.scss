@@ -1,3 +1,31 @@
+// max-width: 1920px;
+// min-width: 320px;
+
+@mixin form-field {
+  padding: 12px 15px; // 8px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+
+    background-color: $white-color;
+    border: 1px solid $shade-25;
+    border-radius: 4px;
+
+    &-hover,
+    &:hover {
+        color: $shade-75;
+        border-color: $shade-50;
+    }
+
+    &-focus,
+    &:focus {
+        color: $shade-75;
+        border-color: $shade-50;
+    }
+}
+
 @mixin flex {
   display: flex;
   justify-content: space-between;
@@ -6,16 +34,22 @@
 
 @mixin block {
   @include flex();
-
   flex-direction: column;
   background-color: #ffffff;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  margin: 20px;
   padding: 30px;
   padding-top: 40px;
+  // padding: 2%;
+  // padding-top: 3%;
 
-  z-index: -2; // for buttons with gradients, :hover not working
+  // z-index: -2; // for buttons with gradients, :hover not working
 }
+
+@mixin index-block {
+  margin: 20px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
+/*---------------BUTTONS---------------*/
 
 @mixin brightButton {
   color: $white-color;
@@ -30,21 +64,10 @@
 }
 
 @mixin lightButton {
-  position: relative;
   color: $purple-color;
-  background-color: #ffffff;
-  background-clip: padding-box; 
-  border: 3px solid transparent; 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: -1;
-    margin: -3px;
-    border-radius: inherit; 
-    background-color: $purple-color;
-    background: $grad-color-1;
-  }
+  background-color: $purple-color;
+  background: $grad-color-1;
+
   &:hover,
   &:focus {
     opacity: 0.5;
@@ -54,6 +77,32 @@
     color: rgba(31, 32, 65, 0.5);
   }
 }
+
+//@mixin lightButton {
+//  position: relative;
+//  color: $purple-color;
+//  background-color: #ffffff;
+//  background-clip: padding-box; 
+//  border: 3px solid transparent; 
+//  &:before {
+//    content: '';
+//    position: absolute;
+//    top: 0; right: 0; bottom: 0; left: 0;
+//    z-index: -1;
+//    margin: -3px;
+//    border-radius: inherit; 
+//    background-color: $purple-color;
+//    background: $grad-color-1;
+//  }
+//  &:hover,
+//  &:focus {
+//    opacity: 0.5;
+//  }
+//  &:active {
+//    opacity: 0.5;
+//    color: rgba(31, 32, 65, 0.5);
+//  }
+//}
 
 @mixin list {
   margin: 0;

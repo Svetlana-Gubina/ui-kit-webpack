@@ -1,9 +1,10 @@
+include ../btn/btn--bright.pug
 include ./login__footer-mixin.pug
 include ./login__fields-mixin.pug
 
 div.login
   h2.login__title Войти
-  form.login-form(method='POST' action='#')
+  form.login__form(method='POST' action='#')
         +login__fields('email1', 'pass1')
         +btn-bright('Войти')
   +login__form-footer(false)

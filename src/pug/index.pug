@@ -5,12 +5,12 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
-        link(rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>")
         link(rel="preload" href="../fonts/Open_Sans/opensans.woff" as="font" crossorigin="anonymous")
         link(rel="preload" href="../fonts/Montserrat/Montserrat-Regular.woff" as="font" crossorigin="anonymous")
         link(rel="preload" href="../fonts/Open_Sans/opensansbold.woff" as="font" crossorigin="anonymous")
         link(rel="preload" href="../fonts/Montserrat/Montserrat-Bold.woff" as="font" crossorigin="anonymous")
     body
+      h1.visually-hidden UI-kit 
       //- Searching rooms
       include blocks/room-search/room-search.pug
       //- Register
@@ -28,16 +28,8 @@ html(lang="en")
       //- FOOTER-sm
       include blocks/footer-sm/footer-sm.pug  
       //-FOOTER-lg
-      include blocks/footer-lg/footer-lg.pug
+      include blocks/page-footer/page-footer.pug
       //-HEADER
       include blocks/page-header/page-header.pug 
       //-HEADER-loged-in
-      include blocks/page-header-logged-in/page-header-logged-in.pug
-  
-      //-h1 Hello Parcel!
-      //-script(src='./main.js')
-  
-      //-<picture>
-           <source type="image/webp" srcset="img/@1x.webp 1x, img/@2x.webp 2x">
-           <img class="" src="img/..@1x.jpg" srcset="img/@2x.jpg 2x" alt="">
-         </picture>  
+      include blocks/page-header/page-header--logged-in.pug

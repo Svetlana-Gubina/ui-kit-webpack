@@ -13,18 +13,25 @@
 }
 
 
-.footer__text {
-    outline: 2px solid fuchsia;
+.footer-sm__text {
+    // outline: 2px solid fuchsia;
     max-width: 560px;
     padding: 1em;
 }
 
-.social-icons__list {
-    @include list();
-    display: flex;
+.footer-sm__logo {
+    // outline: 2px solid fuchsia;
+    padding: 10px;
 }
 
-.social-icons__list a {
+.footer-sm__social-icons-list {
+    // outline: 2px solid fuchsia;
+    @include list();
+    @include flex();
+    // max-width: 112px;
+}
+
+.footer-sm__social-icons-item a {
     display: block;
     padding: 10px;
     text-decoration: none;

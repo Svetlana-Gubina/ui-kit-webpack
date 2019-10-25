@@ -1,20 +1,23 @@
-.booking-container {
+.booking {
     @include block();
-    width: 380px;
+    @include index-block();
 
+    width: 380px;
+    max-width: 26%;
     min-height: 511px;
-    padding: 30px;
-    padding-top: 40px;
+    // padding: 30px;
+    // padding-top: 40px;
+    padding: 2%;
+    padding-top: 3%;
 }
 
 .booking__room-cost {
-    // outline: 2px solid fuchsia;
     @include flex();
+    align-items: baseline;
 
     @include indent();
-    margin-bottom: 10px;
-
-    align-items: baseline;
+    // margin-bottom: 10px;
+    margin-bottom: 2%;
 }
 
 .booking__room-number,
@@ -42,7 +45,6 @@
     color: $purple-color;
 
     margin-left: 5px;
-
     // padding: 0.3em;
 }
 
@@ -62,7 +64,8 @@
 
 .booking__form-count {
     width: 100%;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
+    margin-bottom: 5%;
 }
 
 .booking__form-count {
@@ -78,6 +81,7 @@
 
 .booking__form-count-1 {
     max-width: 220px;
+    // max-width: 70%;
 }
 
 .booking__form-count-2 {
@@ -100,6 +104,6 @@
 //     background-color: red;
 // }
 
-.booking-form__count-total {
+.booking__form-total {
     @include h2();
 }

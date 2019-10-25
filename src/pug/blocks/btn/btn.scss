@@ -10,15 +10,17 @@
   border-radius: 22px;
 }
 
-.btn__bright {
+.btn--bright {
     position: relative;
     width: 100%;
-    padding: 14px 20px 15px;
+    padding: 1.1em 1.6em 1.2em;
+    // padding: 14px 20px 15px;
 
     @include brightButton();
 }
 
-.btn__bright::after {
+/*---------ARROW-----------*/
+.btn--bright::after {
     content: "";
     width: 15px;
     height: 15px;
@@ -31,18 +33,17 @@
     transform: rotate(-45deg);
 }
 
-// .btn__light-inner {
-//     width: 95%;
-//     height: 95%;
-//     margin: auto;
-//     padding: 12px 18px 13px;
-//     background-color: #ffffff;
-//     border-radius: 22px;
-// }
 
- 
-.btn__light {
-    padding: 11px 17px 12px;
+.btn--light {
+    // display: flex;
   
     @include lightButton();
+}
+
+.btn--light__inner {
+    margin: auto;
+    padding: 1.1em 2em 1.2em;
+    // padding: 12px 18px 13px;
+    background-color: #ffffff;
+    border-radius: 22px;
 }

@@ -1,12 +1,13 @@
-.room-search-container {
+.room-search {
   width: 380px; 
 
   min-height: 374px; 
   margin: auto;
   
   @include block();
+  @include index-block();
 }
 
-.room-search-title {
+.room-search__title  {
   @include h1();
 }

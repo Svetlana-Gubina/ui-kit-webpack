@@ -1,12 +1,20 @@
-.register__container {
+.register {
   width: 380px; 
 
   min-height: 646px; 
   margin: auto;
-  padding: 30px;
-  padding-top: 40px;
+  padding: 2%;
+  padding-top: 3%;
+  // padding: 30px;
+  // padding-top: 40px;
   
   @include block();
+  @include index-block();
+  // z-index: -2;
+}
+
+.register__title {
+  /*outline: 2px solid salmon;*/
 }
 
 .register__form {
@@ -54,7 +62,7 @@
   padding: 0.5em;
 }
 
-.register-form__control {
+.register__form-control {
   width: 100%;
   margin: 0;
   margin-bottom: 10px;

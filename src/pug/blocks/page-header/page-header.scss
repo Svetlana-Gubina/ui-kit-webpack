@@ -6,17 +6,14 @@
     padding-right: 140px;
 
     @include flex();
+    @include index-block();
+    margin-left: 0;
+    margin-right: 0;
 
     background-color: #ffffff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    z-index: -2; // for buttons with gradients, :hover not working
+    // z-index: -2; // for buttons with gradients, :hover not working
 }
 
-.page-header__logo,
-.page-header__nav,
-.page-header__user-nav {
-    // outline: 2px solid darkolivegreen;
-}
 
 .page-header__logo {
     padding: 0.3em;
@@ -78,9 +75,12 @@
 }
 
 .user-nav-link--login {
-    padding: 7px 17px;
+    display: inline-block;
+    padding: 1em 0.3em;
+}
 
-    @include lightButton();
+.user-nav-link--login .btn--light-inner {
+    padding: 0.7em 1em 0.8em;
 }
 
 .user-nav__name {

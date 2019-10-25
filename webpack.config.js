@@ -1,4 +1,4 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -9,7 +9,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -33,21 +33,33 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader',
+          {
+            loader: 'url-loader',
+            options: {
+              name: 'img//[name].[ext]',
+              limit: 8192,
+              fallback: require.resolve('responsive-loader'),
+              quality: 85,
+            },
+          },
         ],
       },
+      // FONT LOADER
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader',
-        ],
-      },
+        test: /\.svg/,
+        exclude: [/images/],
+        loader : 'file-loader?prefix=font/&name=fonts/[name].[ext]'
+     },
+     {
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
+     },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'style.[contenthash].css',
       chunkFilename: '[id].css',
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
@@ -55,10 +67,10 @@ module.exports = {
         hash: true,
         template: './src/pug/index.pug',
         filename: './index.html'
-    })
+    }),
   ],
   mode: `development`,
-  devtool: `inline-source-map`,
+  devtool: `source-map`,
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,

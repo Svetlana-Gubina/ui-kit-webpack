@@ -1,18 +1,17 @@
-include ../btn/btn-bright.pug
-include ../btn/btn-light.pug
+include ../btn/btn--bright.pug
 include ../login/login__footer-mixin.pug
 include ../login/login__fields-mixin.pug
 
-div.register__container
-  h2  Регистрация аккаунта
+div.register
+  h2.register__title  Регистрация аккаунта
   form.register__form(method='POST' action='#')
    div.register__form-top
       div.register__form-group
          label.visually-hidden(for='name1') Имя
-         input#name1.register-form__control.form-field(type='text', placeholder='Имя' name='name')
+         input#name1.register__form-control.form-field(type='text', placeholder='Имя' name='name')
       div.register__form-group
          label.visually-hidden(for='surname') Фамилия
-         input#surname.register-form__control.form-field(type='text', placeholder='Фамилия' name='surname')
+         input#surname.register__form-control.form-field(type='text', placeholder='Фамилия' name='surname')
       div.register__form-group
        div.register__form-group-checkbox
          input#male.register__form-checkbox(type='radio' name='sex' value='male' checked)
@@ -22,11 +21,11 @@ div.register__container
          label(for='female') Женщина
    div.register__form-group.register__form-group-middle
       label.register__form-label(for='birthday') Дата рождения
-      input#birthday.register-form__control.form-field(type='date' name='birthday')
+      input#birthday.register__form-control.form-field(type='date' name='birthday')
    p.register__form-label  Данные для входа в сервис
    +login__fields('email2', 'pass2')
    div.register__form-group.register__form-group-special 
-       input#switch.register-form__checkbox.register-form__checkbox--switch(type='checkbox' name='switch' checked)
+       input#switch.register__form-checkbox.register__form-checkbox--switch(type='checkbox' name='switch' checked)
        label(for='switch') Получать спецпредложения
            span.switch-slider.switch-slider-on
            span.switch-slider.switch-slider-off
