@@ -1,6 +1,6 @@
 .register {
-  // width: 380px; 
   width: 21%;
+  min-width: 300px; 
   margin: auto;
 
   @include block();
@@ -157,10 +157,10 @@
 #switch + label::after {
   content: '';
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: -25px;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 10px;
   background:  rgba(31, 32, 65, 0.25);
   transition: .2s;

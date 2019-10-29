@@ -1,22 +1,26 @@
 include ../booking/booking__room-cost-mixin.pug
 
 mixin room-card-template(imgSrc, number, price, isLux, rewievsCount)
-  div.room-card      
-   div.room-card__slider
-        //-picture.room-card-picture
-        //-source(type="image/webp" srcset="img/@1x.webp 1x, img/@2x.webp 2x")
-        img.room-card__foto(src= 'img/' + imgSrc + '.jpg', srcset= 'img/' + imgSrc + '@2x.jpg' alt='Фото номера')
-        div.room-card__slider-toogler
-             //-input.room__slider-toogle(type="radio" name="toggle" value="1" checked)
-             //-input.room__slider-toogle(type="radio" name="toggle" value="2" checked)
-             //-input.room__slider-toogle(type="radio" name="toggle" value="3" checked)
-             //-input.room__slider-toogle(type="radio" name="toggle" value="4" checked)
-             div.room-card__slider-toogle
-             div.room-card__slider-toogle
-             div.room-card__slider-toogle
-             div.room-card__slider-toogle
-   div.room-card__cost
-        +booking__room-cost(number, price, isLux)    
-   div.room-card__rating
-        div.room-card__stars 
-        div.room-card__reviews=rewievsCount +  ' Отзывов'
+ div.room-card__slider
+      //-picture.room-card-picture
+      //-source(type="image/webp" srcset="img/@1x.webp 1x, img/@2x.webp 2x")
+      img.room-card__foto(src= 'img/' + imgSrc + '.jpg', srcset= 'img/' + imgSrc + '@2x.jpg' alt='Фото номера')
+      div.room-card__slider-toogler
+           //-input.room__slider-toogle(type="radio" name="toggle" value="1" checked)
+           //-input.room__slider-toogle(type="radio" name="toggle" value="2" checked)
+           //-input.room__slider-toogle(type="radio" name="toggle" value="3" checked)
+           //-input.room__slider-toogle(type="radio" name="toggle" value="4" checked)
+           div.room-card__slider-toogle
+           div.room-card__slider-toogle
+           div.room-card__slider-toogle
+           div.room-card__slider-toogle
+ div.room-card__cost
+      +booking__room-cost(number, price, isLux)    
+ div.room-card__rating
+      div.room-card__stars
+       span.room-card__star
+       span.room-card__star
+       span.room-card__star
+       span.room-card__star
+       span.room-card__star
+      div.room-card__reviews=rewievsCount +  ' Отзывов'

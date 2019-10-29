@@ -2,10 +2,8 @@
     @include block();
     @include index-block();
 
-    // width: 380px;
     width: 21%;
-    max-width: 26%;
-    // min-height: 511px;
+    min-width: 300px; 
     padding-top: 2%;
 }
 

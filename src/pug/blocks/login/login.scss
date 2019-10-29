@@ -1,10 +1,10 @@
 .login {
     @include block();
-    width: 380px;
+    @include index-block();
+    width: 21%;
+    min-width: 300px; 
 
-    min-height: 358px;
-
-    z-index: -2;
+    // z-index: -2;
 }
 
 .login__title {
@@ -36,4 +36,8 @@
     line-height: 1.5;
     font-weight: normal;
     margin-right: 10px;
+}
+
+.login .btn--bright {
+    margin-bottom: 10px;
 }
