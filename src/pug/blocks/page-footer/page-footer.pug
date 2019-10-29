@@ -1,10 +1,8 @@
-include ../logo/logo-mixin.pug
-
 div.page-footer        
  div.page-footer__top
-  div.page-footer__div
+  div.page-footer__div.page-footer__div--presentation
    div.logo.page-footer__logo
-     +logo
+     include ../logo/logo.pug
    p.page-footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
   div.page-footer__div.page-footer__lists
    div.page-footer__links
@@ -32,6 +30,5 @@ div.page-footer
       label(for="subscribe").visually-hidden Your email address
       input#subscribe.page-footer__subscribe-input.form-field(type="email" name="email" placeholder="Your email address")
  div.page-footer__bottom
-  p.copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
-  div.social-icons
-    include ../footer-sm/footer-sm__social-icons-list.pug
+  p.page-footer__bottom-textCopyright © 2018 Toxin UI Kit. All rights reserved.
+  include ../footer-sm/footer-sm__social-icons-list.pug

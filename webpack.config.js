@@ -70,7 +70,12 @@ module.exports = {
         filename: './index.html'
     }),
     new CopyWebpackPlugin([
-      {from:'src/images',to:'img'} 
+      {from:'src/images',to:'img'},
+      {
+        from:'src/pug/blocks/*/*.+(png|svg|jpg|gif)',
+        to:'img',
+        flatten: true
+      }
   ]), 
   ],
   mode: `development`,

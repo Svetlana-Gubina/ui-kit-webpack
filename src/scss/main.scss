@@ -13,19 +13,8 @@
 @import "../pug/blocks/visually-hidden/visually-hidden.scss";
 @import "../pug/blocks/btn/btn.scss";
 @import "../pug/blocks/form-field/form-field.scss";
+@import "../pug/blocks/logo/logo.scss";
 
 
-
-body {
-    font-family: "Montserrat Regular";
-
-    background: #E5E5E5; 
-    padding-top: 50px;
-    padding-bottom: 50px;
-
-    max-width: 1440px;
-    @include min-width();
-    margin: auto;
-}
 
 

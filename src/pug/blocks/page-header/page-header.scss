@@ -1,40 +1,68 @@
 .page-header {
     width: 100%;
     margin: 0;
-    margin-bottom: 20px;
-    padding-left: 140px;
-    padding-right: 140px;
+    padding: 0;
+    padding-left: 10%;
+    padding-right: 10%;
 
     @include flex();
-    @include index-block();
-    margin-left: 0;
-    margin-right: 0;
-
+    // @include index-block();
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 10%;
     background-color: #ffffff;
     // z-index: -2; // for buttons with gradients, :hover not working
 }
 
 
 .page-header__logo {
-    padding: 0.3em;
-    padding-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 22%;
 }
 
 .page-header__nav-list {
     @include list();
     @include flex();
-    padding-top: 5px;
-    // align-items: baseline;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
-.page-header__nav-link {
+.page-header__user-nav {
+    // outline: 2px solid green;
+}
+
+.page-header__nav-link,
+.page-header__user-name a {
     color: $shade-50;
     font-size: 14px;
     line-height: 17px;
     display: block;
-    padding: 14px;
+    padding: 1em;
     text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+    opacity: 0.5;
+  }
+}
+
+.page-header__user-name a {
+    position: relative;
+    padding: 0.7em;
+}
+
+.page-header__user-name a::before {
+    content: "";
+    width: 1px;
+    height: 35px;
+    position: absolute;
+    left: -30px;
+    top: 0;
+    background: rgba(31, 32, 65, 0.1);
 }
 
 .page-header__nav-link--active {
@@ -44,7 +72,7 @@
 
 .page-header__nav-link--select {
     position: relative;
-    padding-right: 30px;
+    padding-right: 3em;
 }
 
 .page-header__nav-link--select::after {
@@ -61,28 +89,24 @@
 
 }
 
-.user-nav-link {
+.page-header__user-link {
     display: inline-block;
     text-decoration: none;
-
     margin: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
-.user-nav-link--reg {
+.page-header__user-link--reg {
     padding: 10px 20px;
 
     @include brightButton();
 }
 
-.user-nav-link--login {
-    display: inline-block;
-    padding: 1em 0.3em;
+.page-header__user-link--login {
+   padding: 0.8em 0.3em;
 }
 
-.user-nav-link--login .btn--light-inner {
-    padding: 0.7em 1em 0.8em;
-}
-
-.user-nav__name {
-    padding: 0.3em;
+.page-header__user-link--login .btn__inner {
+    padding: 0.8em 1.5em;
 }

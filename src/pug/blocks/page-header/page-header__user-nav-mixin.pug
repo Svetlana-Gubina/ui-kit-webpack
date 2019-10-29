@@ -1,8 +1,9 @@
 mixin page-header__user-nav(isAuthorised)
  div.page-header__user-nav
           if isAuthorised
-            p.page-header__user-name Cosmin Negoita 
+            p.page-header__user-name
+             a(href='/' + url) Cosmin Negoita 
           else 
-            a.user-nav-link.user-nav-link--login.btn.btn--light(href='/' + url) 
+            a.page-header__user-link.page-header__user-link--login.btn.btn--light(href='/' + url) 
              span.btn__inner Login
-            a.user-nav-link.user-nav-link--reg.btn(href='/' + url) Register
+            a.page-header__user-link.page-header__user-link--reg.btn(href='/' + url) Register

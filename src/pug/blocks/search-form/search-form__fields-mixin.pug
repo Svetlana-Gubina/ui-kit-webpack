@@ -2,10 +2,10 @@ mixin search-form__fields(startID, endID, guestsID)
  div.search-form__fields
   div.search-form__group.search-form__group-top
          label(for= startID) Прибытие
-         input(#${startID} type='date' name='arrive').search-form__control
+         input(#${startID} type='date' name='arrive' placeholder='ДД.ММ.ГГГГ').search-form__control
   div.search-form__group.search-form__group-top
          label(for= endID) Выезд
-         input(#${endID} type='date' name='depart').search-form__control
+         input(#${endID} type='date' name='depart' placeholder='ДД.ММ.ГГГГ').search-form__control
   div.search-form__group.search-form__group-bottom
          label(for= guestsID) Гости
          select(#${guestsID} name="guests" placeholder="Сколько гостей").search-form__control

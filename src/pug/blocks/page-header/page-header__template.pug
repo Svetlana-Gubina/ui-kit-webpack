@@ -1,14 +1,12 @@
-include ../logo/logo-mixin.pug
-
 header.page-header
         div.logo.page-header__logo
-          +logo
+          include ../logo/logo.pug
         nav.page-header__nav
           ul.page-header__nav-list
               li.page-header__nav-item 
                 a.page-header__nav-link.page-header__nav-link--active(href='/' + url) Home
               li.page-header__nav-item
-                a.page-header__nav-link(href='/' + url) About-us
+                a.page-header__nav-link(href='/' + url) About Us
               li.page-header__nav-item
                 a.page-header__nav-link.page-header__nav-link--select(href='/' + url) Services
               li.page-header__nav-item
