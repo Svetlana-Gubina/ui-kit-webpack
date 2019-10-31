@@ -1,0 +1,149 @@
+.calendar {
+    font-size: 12px;
+    width: 300px;
+    @include index-block();
+    // @include block();
+    background-color: #ffffff;
+    padding: 1em;
+}
+
+
+.calendar__month,
+.calendar__weekdays,
+.calendar__days {
+    @include list();
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px;
+}
+
+.calendar__month-title span {
+    margin-left: 10px;
+}
+
+.calendar__weekdays li,
+.calendar__days li {
+    width: 13.6%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.calendar__days li {
+    border-radius: 50%;
+}
+
+.calendar__weekdays {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+    color: $purple-color;
+
+    // padding-left: 20px;
+}
+
+.calendar__days li {
+    color: $shade-25;
+}
+
+.calendar__days li:nth-child(n+4) {
+    color: $shade-50;
+}
+
+.calendar__days li:nth-child(11) {
+    padding: 5px;
+    background-color: $green-color;
+    background-color: $grad-color-2;
+    color: #ffffff;
+}
+
+.calendar__days li:nth-child(22),
+.calendar__days li:nth-child(26) {
+    padding: 5px;
+    background-color: $grad-color-1;
+    background-color: $purple-color;
+    color: #ffffff;
+}
+
+.calendar__days li:nth-child(n+23):nth-child(-n+25) {
+    padding: 5px;
+    border-radius: 0;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    opacity: 0.25;
+    color: $shade-75;
+}
+
+.calendar__days li:nth-child(23),
+.calendar__days li:nth-child(25) {
+    position: relative;
+}
+
+.calendar__days li:nth-child(23)::before,
+.calendar__days li:nth-child(25)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 20%;
+    z-index: -1;
+}
+
+.calendar__days li:nth-child(23)::before {
+    left: -20px;
+}
+
+.calendar__days li:nth-child(25)::after {
+   right: -20px;
+}
+
+
+.calendar__days {
+    // padding-left: 20px;
+}
+
+.calendar__month {
+    padding: 10px 5px;
+    // margin-bottom: 5px;
+}
+
+.calendar__buttons {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar__btn {
+    border: 0 none;
+    background-color: transparent;
+    font-size: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $shade-50;
+}
+
+.calendar__month,
+.calendar__buttons {
+    justify-content: space-between;
+}
+
+.calendar__buttons {
+    padding: 5px;
+}
+
+.calendar__month-title {
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 700;
+    text-align: center;
+    color:  #1F2041;
+    @include OpenSans();
+}
+
+.calendar__btn--submit {
+    color: $purple-color;
+}
