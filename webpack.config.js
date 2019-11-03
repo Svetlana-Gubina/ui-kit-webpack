@@ -75,6 +75,11 @@ module.exports = {
         from:'src/pug/blocks/*/*.+(png|svg|jpg|gif)',
         to:'img',
         flatten: true
+      },
+      {
+        from:'src/pug/pages/*/*.+(png|svg|jpg|gif)',
+        to:'img',
+        flatten: true
       }
   ]), 
   ],

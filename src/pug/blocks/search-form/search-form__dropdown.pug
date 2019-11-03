@@ -1,0 +1,24 @@
+div.search-form__dropdown
+ div.search-form__dropdown-top
+  table.search-form__dropdown-table
+   tr.search-form__dropdown-row
+    th Взрослые
+    td
+     button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
+     input(type='text' size='2' id='adults' name='adults-count' value='2').search-form__dropdown-input
+     button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
+   tr.search-form__dropdown-row
+    th Дети
+    td
+     button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
+     input(type='text' size='2' id='kids' name='kids-count' value='1').search-form__dropdown-input
+     button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
+   tr.search-form__dropdown-row
+    th Младенцы
+    td
+     button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
+     input(type='text' size='2' id='babies' name='babies-count' value='0').search-form__dropdown-input
+     button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
+ div.search-form__dropdown-bottom
+  button.calendar__btn(type='button') Очистить
+  button.calendar__btn.calendar__btn--submit(type='submit') Применить

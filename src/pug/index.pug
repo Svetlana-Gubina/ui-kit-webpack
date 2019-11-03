@@ -10,28 +10,59 @@ html(lang="en")
         link(rel="preload" href="../fonts/Open_Sans/opensansbold.woff" as="font" crossorigin="anonymous")
         link(rel="preload" href="../fonts/Montserrat/Montserrat-Bold.woff" as="font" crossorigin="anonymous")
     body
-     h1.visually-hidden UI-kit 
-     //- Searching rooms
-     include blocks/room-search/room-search.pug
-     //- Register
-     include blocks/register/register.pug
-     //- Login form
-     include blocks/login/login.pug
-     //-//- Calendar
-     include blocks/calendar/calendar.pug
-     //- Booking form
-     include blocks/booking/booking.pug
+     //-//-Search room/Filter
+     //-include blocks/page-header/page-header.pug
+     //-main.search__main
+     //- section.search__filter
+     //-  form.search__filter__form
+     //- section.search__catalog
+     //-  h2.search__catalog-title Номера, которые мы для вас подобрали
+     //-  ul.search__catalog-list
+     //-   li.search__catalog-item
+     //-    include blocks/room-card-1/room-card-1.pug
+     //-   li.search__catalog-item
+     //-    include blocks/room-card-2/room-card-2.pug
+     //-   li.search__catalog-item
+     //-    include blocks/room-card-3/room-card-3.pug
+     //-   li.search__catalog-item
+     //-   li.search__catalog-item
+     //-   li.search__catalog-item
+     //-   li.search__catalog-item
+     //-   li.search__catalog-item
+     //-   li.search__catalog-item
+     //-   li.search__catalog-item
+       //-each val, index in ['zero', 'one', 'two']
+       //-  li.search__catalog-item= val
+     //-include blocks/page-footer/page-footer.pug
+     //-Landing page-1
+     //-body.landing
+     //-include blocks/page-header/page-header.pug
+     //-div.landing__presentation
+     //- include blocks/room-search/room-search.pug
+     //- div.landing__presentation-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+     //-include blocks/page-footer/page-footer.pug
+     //-h1.visually-hidden UI-kit 
+     //-//- Searching rooms
+     //-include blocks/room-search/room-search.pug
+     //-//- Register
+     //-include blocks/register/register.pug
+     //-//- Login form
+     //-include blocks/login/login.pug
+     //-//-//- Calendar
+     //-include blocks/calendar/calendar.pug
+     //-//- Booking form
+     //-include blocks/booking/booking.pug
      //- Room-1
      include blocks/room-card-1/room-card-1.pug
      //- Room-2
      include blocks/room-card-2/room-card-2.pug
-     //- FOOTER-sm
-     include blocks/footer-sm/footer-sm.pug  
-     //-FOOTER-lg
-     include blocks/page-footer/page-footer.pug
-     //-HEADER
-     include blocks/page-header/page-header.pug 
-     //-HEADER-loged-in
-     include blocks/page-header/page-header--logged-in.pug
+     //-//- FOOTER-sm
+     //-include blocks/footer-sm/footer-sm.pug  
+     //-//-FOOTER-lg
+     //-include blocks/page-footer/page-footer.pug
+     //-//-HEADER
+     //-include blocks/page-header/page-header.pug 
+     //-//-HEADER-loged-in
+     //-include blocks/page-header/page-header--logged-in.pug
      
      

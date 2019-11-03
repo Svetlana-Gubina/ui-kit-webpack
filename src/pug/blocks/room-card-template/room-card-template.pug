@@ -6,14 +6,18 @@ mixin room-card-template(imgSrc, number, price, isLux, rewievsCount)
       //-source(type="image/webp" srcset="img/@1x.webp 1x, img/@2x.webp 2x")
       img.room-card__foto(src= 'img/' + imgSrc + '.jpg', srcset= 'img/' + imgSrc + '@2x.jpg' alt='Фото номера')
       div.room-card__slider-toogler
-           //-input.room__slider-toogle(type="radio" name="toggle" value="1" checked)
-           //-input.room__slider-toogle(type="radio" name="toggle" value="2" checked)
-           //-input.room__slider-toogle(type="radio" name="toggle" value="3" checked)
-           //-input.room__slider-toogle(type="radio" name="toggle" value="4" checked)
-           div.room-card__slider-toogle
-           div.room-card__slider-toogle
-           div.room-card__slider-toogle
-           div.room-card__slider-toogle
+       label(for='btn-1' + number) Фото номера 1
+        input.visually-hidden.room-card__slider-input(type='radio' id='btn-1' + number name='toggle' checked)
+        span.room-card__slider-toogle
+       label(for='btn-2' + number) Фото номера 2
+        input.visually-hidden.room-card__slider-input(type='radio' id='btn-2' + number name='toggle')
+        span.room-card__slider-toogle
+       label(for='btn-3' + number) Фото номера 3
+        input.visually-hidden.room-card__slider-input(type='radio' id='btn-3' + number name='toggle')
+        span.room-card__slider-toogle
+       label(for='btn-4' + number) Фото номера 4
+        input.visually-hidden.room-card__slider-input(type='radio' id='btn-4' + number name='toggle')
+        span.room-card__slider-toogle
  div.room-card__cost
       +booking__room-cost(number, price, isLux)    
  div.room-card__rating

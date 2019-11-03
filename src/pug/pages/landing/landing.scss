@@ -1,0 +1,49 @@
+.landing .page-header{
+  margin-bottom: 0;
+}
+
+.landing__presentation {
+    position: relative;
+    // @include flex();
+    // outline: 3x solid fuchsia;
+    width: 100%;
+    min-height: 800px;
+    @include indent();
+    background-image: url('/img/landing-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi){
+    /* CSS для ретины */
+    .landing__presentation {
+        background-image: url('/img/landing-img@2x.jpg');
+    }
+
+}
+
+.landing .room-search {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.landing__presentation-text {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 20%;
+    font-size: 14px;
+    line-height: 2;
+    color: $shade-75;
+    
+    text-align: right;
+}
+
+.landing .page-footer {
+   margin: 0;
+   padding-top: 20px;
+}
