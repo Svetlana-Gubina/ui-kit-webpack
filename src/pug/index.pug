@@ -10,29 +10,13 @@ html(lang="en")
         link(rel="preload" href="../fonts/Open_Sans/opensansbold.woff" as="font" crossorigin="anonymous")
         link(rel="preload" href="../fonts/Montserrat/Montserrat-Bold.woff" as="font" crossorigin="anonymous")
     body
-     //-//-Search room/Filter
+     //-Search room/Filter
      //-include blocks/page-header/page-header.pug
      //-main.search__main
      //- section.search__filter
      //-  form.search__filter__form
      //- section.search__catalog
-     //-  h2.search__catalog-title Номера, которые мы для вас подобрали
-     //-  ul.search__catalog-list
-     //-   li.search__catalog-item
-     //-    include blocks/room-card-1/room-card-1.pug
-     //-   li.search__catalog-item
-     //-    include blocks/room-card-2/room-card-2.pug
-     //-   li.search__catalog-item
-     //-    include blocks/room-card-3/room-card-3.pug
-     //-   li.search__catalog-item
-     //-   li.search__catalog-item
-     //-   li.search__catalog-item
-     //-   li.search__catalog-item
-     //-   li.search__catalog-item
-     //-   li.search__catalog-item
-     //-   li.search__catalog-item
-       //-each val, index in ['zero', 'one', 'two']
-       //-  li.search__catalog-item= val
+     //-  include blocks/catalog/catalog.pug
      //-include blocks/page-footer/page-footer.pug
      //-Landing page-1
      //-body.landing
@@ -53,9 +37,14 @@ html(lang="en")
      //-//- Booking form
      //-include blocks/booking/booking.pug
      //- Room-1
-     include blocks/room-card-1/room-card-1.pug
+     include blocks/room-card-template/room-card-template.pug
+     - var roomList = [{imgSrc: 'room-1', number: '888', price: '9 990', isLux: true, rewievsCount: '145', stars: 5}];
+     for room in roomList
+       +room-card-template(room)
      //- Room-2
-     include blocks/room-card-2/room-card-2.pug
+     - var roomList = [{imgSrc:'room-2', number:'840', price:'9 900', isLux: false, rewievsCount:'65', stars: 4}];
+     for room in roomList
+       +room-card-template(room)
      //-//- FOOTER-sm
      //-include blocks/footer-sm/footer-sm.pug  
      //-//-FOOTER-lg
