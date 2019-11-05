@@ -1,0 +1,96 @@
+.details__presentation {
+    min-height: 485px;
+
+    width: 100%;
+    @include indent();
+    @include flex();
+}
+
+.details__big-foto {
+    @include indent();
+    width: 68%;
+    height: 500px;
+    // background-color: coral;
+}
+
+.details__big-foto img {
+    width: 100%;
+    
+    height: 100%; // img-styles!!
+    padding: 0;
+}
+
+.details__small-foto {
+    max-width: 32%;
+    @include flex();
+    // @include indent();
+    flex-direction: column;
+}
+
+.details__small-foto img {
+    height: 50%;
+}
+
+
+.details__main {
+    @include flex();
+    // align-items: top;
+    min-height: 485px;
+}
+
+.details__info {
+    width: 60%;
+    min-height: 485px;
+    background-color: #ffffff;
+}
+
+.details__info-rules-list {
+  @include list();
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(31, 32, 65, 0.75);
+
+  list-style-type: circle;
+  list-style-image: url("data:image/svg+xml,%3Csvg width='11' height='10' viewBox='0 0 11 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='5.21429' cy='5' rx='5.21429' ry='5' fill='%231F2041' fill-opacity='0.25'/%3E%3C/svg%3E%0A");
+  list-style-position: inside;
+}
+
+.details__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1F2041;
+}
+
+.details__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(31, 32, 65, 0.75);
+  padding: 0.5em 0;
+}
+
+.details__info-about {
+    outline: 2px solid salmon;
+    width: 280px;
+}
+
+.details__aside {
+    max-width: 40%;
+    @include flex();
+    background-color: #ffffff;
+}
+
+.details__aside .booking {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.details__info-reviews {
+    max-width: 100%;
+}

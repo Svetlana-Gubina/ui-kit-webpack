@@ -1,0 +1,13 @@
+mixin review(item)
+ div.review
+  div.review__row.review__row--top
+   div.review__foto
+    img.review__img(src= 'img/' + item.imgSrc + '.jpg', srcset= 'img/' + item.imgSrc + '@2x.jpg' alt= item.name)
+   div.review__div
+    p.review__name= item.name
+    span.review__time= item.time
+  div.review__row.review__row--bottom
+    div.review__likes
+     div.review__likes-inner
+      span.review__likes-count= item.likes
+    p.review__text= item.text

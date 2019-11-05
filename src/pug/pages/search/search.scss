@@ -1,39 +1,38 @@
 .search .page-header {
-  margin-bottom: 0;
-  // box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.search {
+  max-width: 1440px;
+
 }
 
 .search__main {
-  outline: 2px solid darkolivegreen;
   margin: 0;
   @include flex();
   background-color: #ffffff;
 
-  min-height: 500px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .search__filter {
-    width: 30%;
-
-    height: 100%;
-    background-color: coral;
+    // outline: 1px solid purple;
+    max-width: 30%;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
 }
 
-.search__filter__form {
-    // 
+.search__filter-form {
+  @include indent();
+  width: 100%;
+  padding-top: 20px;
+  // background-color: chartreuse;
 }
 
 .search__catalog {
-    // flex-grow: 1;
-    max-width: 70%;
-    background-color: chartreuse;
-}
-
-.search__catalog-title {
-    @include h2();
-}
-
-.search__catalog-list {
-    @include list();
-    @include flex();
+  // flex-grow: 1;
+  max-width: 70%;
 }

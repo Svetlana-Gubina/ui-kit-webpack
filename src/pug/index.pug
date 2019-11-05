@@ -10,13 +10,69 @@ html(lang="en")
         link(rel="preload" href="../fonts/Open_Sans/opensansbold.woff" as="font" crossorigin="anonymous")
         link(rel="preload" href="../fonts/Montserrat/Montserrat-Bold.woff" as="font" crossorigin="anonymous")
     body
+     //-Room details
+     include blocks/page-header/page-header.pug
+     section.details__presentation
+      div.details__big-foto
+       img(src='img/room-1.jpg', srcset= 'img/room-1@2x.jpg' alt='Фото номера')
+      div.details__small-foto
+       img(src='img/image 2.jpg', srcset= 'img/image 2@2x.jpg' alt='Фото номера')
+       img(src='img/image 3.jpg', srcset= 'img/image 3@2x.jpg' alt='Фото номера')
+     main.details__main
+      div.details__info
+       div.details__info-about
+        h3.details__title Сведения о номере
+        //-- var movieList = [{title: "Ocean's Eleven", cast: ["Julia Roberts", "George Clooney", "Brad Pitt", "Andy Garcia"], genres: ["Comedy", "Thriller"], posterImage: "/img/oceans-eleven", imdbURL: "http://www.imdb.com/title/tt0240772/", rating: 9.2}, {title: "Pirates of the Caribbean", cast: ["Johnny Depp", "Keira Knightley", "Orlando Bloom"], genres: ["Adventure", "Comedy"], posterImage: "/img/pirates-caribbean", imdbURL: "http://www.imdb.com/title/tt0325980/", rating: 9.7}];
+//-
+        //-mixin movie-card(movie)
+        //-  div.movie-card
+        //-    h2.movie-title= movie.title
+        //-    img.movie-poster(src=movie.posterImage)
+        //-    h3 Cast
+        //-    ul.cast
+        //-    each actor in movie.cast
+        //-      li= actor
+        //-    div.rating
+        //-      if movie.rating > 5
+        //-        img(src="img/thumbs-up")
+        //-      else
+        //-        img(src="img/thumbs-down")
+        //-    ul.genre
+        //-      each genre in movie.genres
+        //-        li= genre
+        //-
+        //-for movie in movieList
+        //-  +movie-card(movie)
+       div.details__info-impressions
+        h3.details__title Впечатления от номера
+       div.details__info-reviews
+        h3.details__title Отзывы посетителей номера
+        include blocks/review/review.pug
+        div.details__info-reviews-list
+         - var reviewsList = [{imgSrc: 'user1', likes: 12, name: 'Мурад Сарафанов', time: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}, {imgSrc: 'user2', likes: 2, name: 'Патрисия Стёклышкова', time: 'Неделю назад', text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'}];
+
+         for review in reviewsList
+          +review(review)
+       div.details__info-rules
+        h3.details__title Правила
+         ul.details__info-rules-list
+          each val, index in ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+           li= val
+        h3.details__title Отмена
+         p.details__text Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
+      aside.details__aside
+       include blocks/booking/booking.pug
+     include blocks/page-footer/page-footer.pug 
      //-Search room/Filter
      //-include blocks/page-header/page-header.pug
      //-main.search__main
      //- section.search__filter
-     //-  form.search__filter__form
+     //-  form.search__filter-form
+     //-   include blocks/filter-form/filter-form.pug
      //- section.search__catalog
+     //-  h2.search__catalog-title Номера, которые мы для вас подобрали
      //-  include blocks/catalog/catalog.pug
+     //-  include blocks/pagination/pagination.pug
      //-include blocks/page-footer/page-footer.pug
      //-Landing page-1
      //-body.landing
@@ -37,14 +93,14 @@ html(lang="en")
      //-//- Booking form
      //-include blocks/booking/booking.pug
      //- Room-1
-     include blocks/room-card-template/room-card-template.pug
-     - var roomList = [{imgSrc: 'room-1', number: '888', price: '9 990', isLux: true, rewievsCount: '145', stars: 5}];
-     for room in roomList
-       +room-card-template(room)
+     //-include blocks/room-card-template/room-card-template.pug
+     //-- var roomList = [{imgSrc: 'room-1', number: '888', price: '9 990', isLux: true, rewievsCount: '145', stars: 5}];
+     //-for room in roomList
+     //-  +room-card-template(room)
      //- Room-2
-     - var roomList = [{imgSrc:'room-2', number:'840', price:'9 900', isLux: false, rewievsCount:'65', stars: 4}];
-     for room in roomList
-       +room-card-template(room)
+     //-- var roomList = [{imgSrc:'room-2', number:'840', price:'9 900', isLux: false, rewievsCount:'65', stars: 4}];
+     //-for room in roomList
+     //-  +room-card-template(room)
      //-//- FOOTER-sm
      //-include blocks/footer-sm/footer-sm.pug  
      //-//-FOOTER-lg
