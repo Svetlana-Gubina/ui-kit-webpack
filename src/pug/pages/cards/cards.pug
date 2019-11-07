@@ -1,0 +1,24 @@
+//-UI-kit
+extends ../../index.pug
+
+block content
+ h1.visually-hidden UI-kit
+ //- Searching rooms
+ include ../../blocks/room-search/room-search.pug
+ //- Register
+ include ../../blocks/register/register.pug
+ //- Login form
+ include ../../blocks/login/login.pug
+ //- Calendar
+ include ../../blocks/calendar/calendar.pug
+ //- Booking form
+ include ../../blocks/booking/booking.pug
+ //- Room-1
+ include ../../blocks/room-card-template/room-card-template.pug
+ - var roomList = [{imgSrc: 'room-1', number: '888', price: '9 990', isLux: true, rewievsCount: '145', stars: 5}];
+ for room in roomList
+   +room-card-template(room)
+ //- Room-2
+ - var roomList = [{imgSrc:'room-2', number:'840', price:'9 900', isLux: false, rewievsCount:'65', stars: 4}];
+ for room in roomList
+   +room-card-template(room)

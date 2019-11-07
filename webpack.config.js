@@ -69,6 +69,36 @@ module.exports = {
         template: './src/pug/index.pug',
         filename: './index.html'
     }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/pug/pages/search/search.pug',
+      filename: './search.html'
+    }),
+    /*new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/pug/pages/registration/registration.pug',
+      filename: './registration.html'
+    }),*/
+    /*new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/pug/pages/headers&footers/headers&footers.pug',
+      filename: './headers&footers.html'
+    }),*/
+    /*new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/pug/pages/details/details.pug',
+      filename: './details.html'
+    }),*/
+    /*new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/pug/pages/cards/cards.pug',
+      filename: './cards.html'
+    }),*
+    /*new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/pug/pages/landing/landing.pug',
+      filename: './landing.html'
+    }),*/
     new CopyWebpackPlugin([
       {from:'src/images',to:'img'},
       {

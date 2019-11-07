@@ -1,7 +1,10 @@
 //-Landing page-1
-body.landing
-include blocks/page-header/page-header.pug
-div.landing__presentation
- include blocks/room-search/room-search.pug
- div.landing__presentation-text Лучшие номера для вашей работы, отдыха и просто вдохновения
-include blocks/page-footer/page-footer.pug
+extends ../../index.pug
+
+block content
+ include ../../blocks/page-header/page-header.pug
+ div.landing__presentation
+  include ../../blocks/room-search/room-search.pug
+  div.landing__presentation-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+block foot
+ include ../../blocks/page-footer/page-footer.pug 
