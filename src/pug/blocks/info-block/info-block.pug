@@ -1,5 +1,6 @@
-mixin info-block(block)
- div.info-block
+mixin info-block(movie)
+ div(class='info-block ' + movie.iconClass)
   span.info-block__icon
-  p.info-block__title= block.title
-  p.info-block__text= block.text
+  div.info-block__div
+   h3.info-block__title= movie.title
+   p.info-block__text= movie.text
