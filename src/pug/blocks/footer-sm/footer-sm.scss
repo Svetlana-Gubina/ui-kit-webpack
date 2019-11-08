@@ -1,22 +1,22 @@
 .footer-sm {
     width: 100%;
-    // padding-top: 100px;
-    // padding-bottom: 100px;
     padding-top: 7%;
     padding-bottom: 7%;
 
-    @include flex();
-    @include index-block();
+    /*ui-kit*/
+    margin: 20px;
     margin-left: 0;
     margin-right: 0;
+
+    @include flex();
     flex-direction: column;
     align-items: center;
     background-color: #ffffff;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 }
 
 
 .footer-sm__text {
-    // max-width: 560px;
     max-width: 40%;
     padding: 1em;
     margin: 0;
@@ -26,6 +26,7 @@
 
 .footer-sm__logo {
     @include indent();
+    margin-left: 5px;
     margin-bottom: 0.4%;
 }
 

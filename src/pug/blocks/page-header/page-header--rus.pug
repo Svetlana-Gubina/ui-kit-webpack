@@ -1,0 +1,7 @@
+extends page-header__template.pug
+include ../page-header/page-header__user-nav.pug
+
+block navlist
+  +nav-list(['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'])
+block user-nav
+  +page-header__user-nav(false, 'Войти', 'Зарегистрироваться')

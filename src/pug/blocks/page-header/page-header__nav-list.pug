@@ -1,0 +1,6 @@
+mixin nav-list(list)
+ nav.page-header__nav
+  ul.page-header__nav-list
+           each val, index in list
+            li.page-header__nav-item
+             a(href='/' + url).page-header__nav-link= val

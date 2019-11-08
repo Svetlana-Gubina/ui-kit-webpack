@@ -1,46 +1,47 @@
 .page-header {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    padding-left: 10%;
-    padding-right: 10%;
-
-    @include flex();
-    // @include index-block();
-    margin-bottom: 40px;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    /* FONT */
     font-size: 16px;
     line-height: 1.2;
-    letter-spacing: 10%;
-    background-color: #ffffff;
-    // z-index: -2; // for buttons with gradients, :hover not working
+
+    width: 100%;
+    min-width: $min-width;
+    @include indent();
+    padding-left: 9.5%;
+    padding-right: 9.5%;
+    background-color: $white-color;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+    @include flex();
+    align-items: center;
+    /*--------ui-kit--------*/
+    margin-bottom: 40px;
+    // letter-spacing: 10%;
 }
 
 
 .page-header__logo {
-    margin-top: 12px;
+    margin-top: 13px;
     margin-bottom: 12px;
-    margin-right: 22%;
+    margin-right: 19%;
 }
 
 .page-header__nav-list {
     @include list();
     @include flex();
+    justify-content: space-between;
     margin-top: 12px;
     margin-bottom: 12px;
-}
-
-.page-header__user-nav {
-    // outline: 2px solid green;
 }
 
 .page-header__nav-link,
 .page-header__user-name a {
     color: $shade-50;
+    /* FONT */
     font-size: 14px;
-    line-height: 17px;
+    line-height: 1.2;
+
     display: block;
-    padding: 1em;
+    padding: 1em 1.3em;
     text-decoration: none;
 
     &:hover,
@@ -65,21 +66,24 @@
     background: rgba(31, 32, 65, 0.1);
 }
 
-.page-header__nav-link--active {
+.page-header__nav-link--active,
+.page-header__nav-item:nth-child(1) a {
     color: black;
     font-weight: 700;
 }
 
-.page-header__nav-link--select {
+.page-header__nav-link--select,
+.page-header__nav-item:nth-child(3) a {
     position: relative;
-    padding-right: 3em;
+    padding-right: 1.5em;
 }
 
-.page-header__nav-link--select::after {
+.page-header__nav-link--select::after,
+.page-header__nav-item:nth-child(3) a::after {
     content: "";
     position: absolute;
     top: 35%;
-    right: 10px;
+    right: 0;
     width: 10px;
     height: 10px;
     border-left: 2px solid $shade-50;
@@ -90,9 +94,18 @@
 }
 
 .page-header__user-link {
+    font-style: normal;
+    font-weight: bold;
+     /* FONT */
+    // font-size: 15px;
+    // line-height: 1.25;
+    // text-transform: uppercase;
+
+    // outline: 2px solid red;
     display: inline-block;
+    vertical-align: middle;
     text-decoration: none;
-    margin: 10px;
+    // margin: 10px;
     margin-top: 12px;
     margin-bottom: 12px;
 }
@@ -104,6 +117,7 @@
 }
 
 .page-header__user-link--login {
+   margin-right: 25px;
    padding: 0.8em 0.3em;
 }
 

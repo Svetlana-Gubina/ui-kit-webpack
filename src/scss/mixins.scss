@@ -1,8 +1,8 @@
-@mixin max-width {
-  max-width: 1920px;
+@mixin max-width { // DELETE!
+  max-width: 1920px; 
 }
 
-@mixin  min-width {
+@mixin  min-width { // DELETE!
   min-width: 320px;
 }
 
