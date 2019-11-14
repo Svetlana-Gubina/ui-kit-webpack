@@ -12,17 +12,26 @@
 }
 
 .cards .room-search,
-.cards .booking {
+.cards .booking,
+.cards.calendar {
     margin: 0;
-    margin-left: 20px;
-    margin-bottom: 10px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 }
 
 .cards .room-search {
     height: 21%;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .cards .booking {
     // height: 25%;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.cards.calendar {
+    margin-left: 20px;
+    margin-bottom: 20px;
 }

@@ -1,10 +1,15 @@
 .calendar {
-    font-size: 12px;
-    width: 300px;
-    @include index-block();
+    /*FONT*/
+    // font-size: 12px;
+    font-size: 10px;
+    line-height: 1.25;
+
+    width: 22%;
+
     // @include block();
-    background-color: #ffffff;
+    background-color: $white-color;
     padding: 1em;
+    padding-top: 0.5em;
 }
 
 
@@ -13,14 +18,45 @@
 .calendar__days {
     @include list();
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    @include flex();
     align-items: center;
-    padding: 5px;
+}
+
+.calendar__month {
+    padding: 1em 0.5em;
+}
+
+.calendar__month-title {
+    @include h2();
+    font-size: 14px;
+    letter-spacing: 0.05em;
+
+    text-align: center;
 }
 
 .calendar__month-title span {
-    margin-left: 10px;
+    margin-left: 5px;
+    letter-spacing: 0;
+}
+
+
+.calendar__weekdays {
+    outline: 2px solid red;
+    /*FONT*/
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+    color: $purple-color;
+    padding: 0.7em;
+    padding-bottom: 0;
+
+    // padding-left: 20px;
+}
+
+.calendar__days {
+    outline: 2px solid purple;
+    @include indent();
+    // padding-left: 20px;
 }
 
 .calendar__weekdays li,
@@ -30,22 +66,12 @@
     text-align: center;
 }
 
+
 .calendar__days li {
     border-radius: 50%;
-}
-
-.calendar__weekdays {
-    font-size: 12px;
-    line-height: 1.5;
-    font-weight: 700;
-    color: $purple-color;
-
-    // padding-left: 20px;
-}
-
-.calendar__days li {
     color: $shade-25;
 }
+
 
 .calendar__days li:nth-child(n+4) {
     color: $shade-50;
@@ -100,15 +126,6 @@
 }
 
 
-.calendar__days {
-    // padding-left: 20px;
-}
-
-.calendar__month {
-    padding: 10px 5px;
-    // margin-bottom: 5px;
-}
-
 .calendar__buttons {
     max-width: 100%;
     display: flex;
@@ -133,15 +150,6 @@
 
 .calendar__buttons {
     padding: 5px;
-}
-
-.calendar__month-title {
-    font-size: 19px;
-    line-height: 1.5;
-    font-weight: 700;
-    text-align: center;
-    color:  #1F2041;
-    @include OpenSans();
 }
 
 .calendar__btn--submit {
