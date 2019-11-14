@@ -1,11 +1,12 @@
 extends ../../template.pug
 
 block content
- //- FOOTER-sm
- include ../../blocks/footer-sm/footer-sm.pug  
- //-//-FOOTER-lg
- include ../../blocks/page-footer/page-footer--eng.pug
- //-HEADER
- include ../../blocks/page-header/page-header--eng.pug 
- //-HEADER-loged-in
- include ../../blocks/page-header/page-header--logged-in.pug
+ div.headers-footers
+  //-HEADER
+  include ../../blocks/page-header/page-header--eng.pug 
+  //-HEADER-loged-in
+  include ../../blocks/page-header/page-header--logged-in.pug
+  //- FOOTER-sm
+  include ../../blocks/footer-sm/footer-sm.pug  
+  //-//-FOOTER-lg
+  include ../../blocks/page-footer/page-footer--eng.pug

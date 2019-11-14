@@ -3,6 +3,44 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const fs = require('fs');
+
+// Our function that generates our html plugins
+function generateHtmlPlugins (templateDir) {
+  const list = fs.readdirSync(path.resolve(__dirname, templateDir));
+  const templateFiles = [];
+  list.forEach(function(file) {
+    file = path.resolve(__dirname, `${templateDir}/${file}`);
+    console.log(file);
+    try {
+      const stats = fs.statSync(file);
+      if (stats && stats.isDirectory()) {
+        const template = fs.readdirSync(file).filter(filePath => filePath.match(/.*\.pug$/));
+        templateFiles.push(template.toString());
+      }
+    } catch (err) {
+      console.error(err);
+    }
+    });
+  // console.log(templateFiles);
+  return templateFiles.map(item => {
+    // Split names and extension
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    // Create new HtmlWebpackPlugin with options
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}/${name}.${extension}`)
+    })
+  })
+};
+  
+  
+// Call our function on our views directory.
+// const htmlPlugins = generateHtmlPlugins('./src/pug/pages');
+
+
 
 module.exports = {
   entry: [
@@ -10,7 +48,8 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js',
+    // publicPath:''
   },
   module: {
     rules: [
@@ -69,12 +108,12 @@ module.exports = {
         template: './src/pug/index.pug',
         filename: './index.html'
     }),
-    new HtmlWebpackPlugin({
+    /* new HtmlWebpackPlugin({
       hash: true,
       template: './src/pug/pages/search/search.pug',
       filename: './search.html'
     }),
-    /*new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       hash: true,
       template: './src/pug/pages/registration/registration.pug',
       filename: './registration.html'
@@ -111,7 +150,7 @@ module.exports = {
         to:'img',
         flatten: true
       }
-  ]), 
+  ])
   ],
   mode: `development`,
   devtool: `inline-source-map`,

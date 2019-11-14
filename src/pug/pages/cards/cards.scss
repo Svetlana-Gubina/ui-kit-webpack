@@ -1,0 +1,20 @@
+.cards {
+    max-width: $max-width;
+    min-width: $min-width;
+    width: 1440px;
+
+    padding: 4.7%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 0;
+    outline: 2px solid red;
+    @include flex();
+}
+
+.cards .room-search{
+    margin: 0;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    height: 21%;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}

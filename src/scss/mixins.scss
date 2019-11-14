@@ -143,6 +143,7 @@
   font-weight: bold;
   font-size: 19px;
   line-height: 1.26;
+  letter-spacing: 0.05em;
 }
 
 @mixin h3 {
@@ -150,7 +151,7 @@
   @include Montserrat();
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.25;
   text-transform: uppercase;
 }

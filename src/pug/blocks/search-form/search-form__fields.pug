@@ -8,9 +8,12 @@ mixin search-form__fields(startID, endID, guestsID)
          input(#${endID} type='date' name='depart' placeholder='ДД.ММ.ГГГГ').search-form__control
   div.search-form__group.search-form__group-bottom
          label(for= guestsID) Гости
-         select(#${guestsID} name="guests" placeholder="Сколько гостей").search-form__control
-            option 1
-            option 2
-            option 3
+         input(#${guests-jsID} type="text" name="guests" placeholder="Сколько гостей").search-form__pseudo-select
+         //-div(tabindex="0").search-form__group__select
+         //- select(#${guests-nojsID} name="guests").search-form__control
+         //-    option(value="" disabled selected style='display:none;') Сколько гостей
+         //-    //-option 1
+         //-    //-option 2
+         //-    //-option 3
          include ./search-form__dropdown.pug
  

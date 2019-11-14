@@ -1,0 +1,13 @@
+.headers-footers {
+    @include indent();
+}
+
+.headers-footers .page-header {
+    margin-bottom: 40px;
+}
+
+.headers-footers .footer-sm {
+    margin: 20px;
+    margin-left: 0;
+    margin-right: 0;
+}
