@@ -11,7 +11,6 @@ function generateHtmlPlugins (templateDir) {
   const templateFiles = [];
   list.forEach(function(file) {
     file = path.resolve(__dirname, `${templateDir}/${file}`);
-    console.log(file);
     try {
       const stats = fs.statSync(file);
       if (stats && stats.isDirectory()) {
@@ -22,12 +21,15 @@ function generateHtmlPlugins (templateDir) {
       console.error(err);
     }
     });
-  // console.log(templateFiles);
+  console.log(templateFiles);
   return templateFiles.map(item => {
     // Split names and extension
     const parts = item.split('.');
     const name = parts[0];
     const extension = parts[1];
+    ololo = `${templateDir}/${name}/${name}.${extension}`
+    console.log(ololo);
+    console.log(typeof(ololo))
     // Create new HtmlWebpackPlugin with options
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
@@ -49,7 +51,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
-    // publicPath:''
+    //publicPath: ''
   },
   module: {
     rules: [
@@ -108,7 +110,7 @@ module.exports = {
         template: './src/pug/index.pug',
         filename: './index.html'
     }),
-    /* new HtmlWebpackPlugin({
+    /*new HtmlWebpackPlugin({
       hash: true,
       template: './src/pug/pages/search/search.pug',
       filename: './search.html'
@@ -150,7 +152,7 @@ module.exports = {
         to:'img',
         flatten: true
       }
-  ])
+  ]/*.concat(htmlPlugins)*/)
   ],
   mode: `development`,
   devtool: `inline-source-map`,
