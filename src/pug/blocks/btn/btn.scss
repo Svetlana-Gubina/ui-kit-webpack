@@ -1,14 +1,13 @@
 .btn {
+  /* FONT */
+  // font-size: 12px;
+  font-size: 10px;
+  line-height: 1.5;
   font-style: normal;
   font-weight: bold;
-  /* FONT */
-  font-size: 12px;
-  line-height: 1.5;
-  // font-size: 10px;
-  // line-height: 1.5;
+  text-transform: uppercase;
   
   text-align: center;
-  text-transform: uppercase;
   border: none;
   box-shadow: 0 none;
   border-radius: 22px;
@@ -38,12 +37,17 @@
 
 
 .btn--light {
+    width: 30%;
     @include lightButton();
+    @include flex();
+    justify-content: center;
+    align-items: center;
 }
 
 .btn__inner {
     margin: auto;
-    padding: 0.9em 1.6em;
-    background-color: #ffffff;
+    padding: 0.8em 1.1em;
+    background-color: $white-color;
     border-radius: 22px;
+    text-align: center;
 }

@@ -1,21 +1,20 @@
 .login {
     @include block();
-    @include index-block();
     width: 21%;
-    min-width: 300px; 
-
-    // z-index: -2;
+    min-width: calc(#{$min-width} - 25px);
 }
 
 .login__title {
-    @include h1();
+    @include h2();
+    margin: 1em 0;
+    margin-bottom: 0;
 }
 
 
 .login__fields {
     @include flex();
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
 }
 
 //-fields
@@ -23,21 +22,54 @@
     width: 100%;
     
     margin: 0;
-    margin-bottom: 10px;
-    // padding: 12px 15px 8px;
+    margin-bottom: 1em;
+
+    /*form-field*/
+    background: $white-color;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    width: 100%;
+    padding: 0.7em;
+
+    /*FONT*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.2;
+
+    &-hover,
+    &:hover {
+        color: $shade-75;
+        border-color: $shade-50;
+    }
+
+    &-focus,
+    &:focus {
+        color: $shade-75;
+        border-color: $shade-50;
+    }
 }
 
 .login__form-footer {
+    // outline: 1px solid salmon;
     @include flex();
+    justify-content: space-between;
+    align-items: center;
 }
 
 .login__form-text {
+     /*FONT*/
     font-size: 12px;
     line-height: 1.5;
     font-weight: normal;
-    margin-right: 10px;
+
+    margin-right: 0.5em;
 }
 
 .login .btn--bright {
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
+}
+
+.login .btn__inner {
+    padding: 0.8em 1.2em;
 }

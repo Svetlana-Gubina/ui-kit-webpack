@@ -67,9 +67,10 @@
 }
 
 @mixin lightButton {
+  padding: 2px;
   color: $purple-color;
   background-color: $purple-color;
-  background: $grad-color-1;
+  background-color: $grad-color-1;
 
   &:hover,
   &:focus {
