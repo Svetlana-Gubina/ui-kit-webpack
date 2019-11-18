@@ -1,5 +1,5 @@
 .room-card {
-    width: 15%;
+    width: 24%;
     min-width: 220px;
     @include flex();
     justify-content: space-between;
@@ -17,12 +17,13 @@
 
 .room-card__cost {
     position: relative;
-    padding: 0.7em;
-    padding-top: 1em;
+    padding: 1em;
 }
 
 .room-card__cost .booking__room-number-span {
-   font-size: 16px;
+   // outline: 2px solid fuchsia;
+   font-size: 19px;
+   line-height: 1.5;
 }
 
 .room-card__cost::after {
@@ -56,12 +57,12 @@
 
 .room-card__slider {
     position: relative;
-    height: 55%;
+    height: 60%;
 }
 
 .room-card__slider-toogler {
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
     right: 5%;
     min-height: 1em;
     background-color: transparent;
@@ -79,9 +80,9 @@
 
 .room-card__slider-toogle {
   display: inline-block;
-  margin: 0 1.5px;
-  width: 5.5px;
-  height: 5.5px;
+  margin: 0 2px;
+  width: 7px;
+  height: 7px;
   border: 1px solid $white-color;
   border-radius: 50%;
   background-color: transparent;
@@ -118,4 +119,10 @@
 .room-card-3 .room-card__star:nth-of-type(5) {
     background-image: url('/img/star_border.svg');
     background-repeat: no-repeat;
+}
+
+.room-card__reviews {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
 }

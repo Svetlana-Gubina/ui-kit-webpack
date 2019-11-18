@@ -1,15 +1,15 @@
 .register {
-  width: 26%;
-  min-width: calc(#{$min-width} - 25px);
+  width: 33%;
+  min-width: #{$min-width};
 
   @include block();
-  padding: 2%;
-  // padding-top: 2.5%;
+  padding-top: 3%;
 }
 
 .register__title {
+  @include h2();
   margin: 0;
-  margin-bottom: 0.4em;
+  margin-bottom: 7%;
 }
 
 .register__form {
@@ -17,14 +17,12 @@
 }
 
 .register__form-control {
-  /*form-field*/
-  background: $white-color;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
+  @extend .form-field;
+  padding: 0.8em;
+
   width: 100%;
-  padding: 0.7em;
   margin: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 5%;
     &-hover,
     &:hover {
         color: $shade-75;
@@ -39,8 +37,9 @@
 }
 
 .register__form-top {
+  outline: 2px solid fuchsia;
   @include indent();
-  margin-bottom: 1em;
+  margin-bottom: 8%;
   @include flex();
   flex-direction: column;
 }
@@ -53,13 +52,18 @@
 //   margin-bottom: 0.5em
 // }
 
-.register__form-group-middle input[type='date']{
-  font-size: 10px;
+.register__form-group-middle input[type='date'],
+.register__form-group-middle input[type='email']{
+  /*FONT*/
+  font-size: 14px;
   line-height: 1.5;
   margin-bottom: 15px;
 }
 
 .register__form-group-middle input[type='password']{
+  /*FONT*/
+  font-size: 14px;
+  line-height: 1.5;
   margin-bottom: 0;
 }
 
@@ -87,21 +91,22 @@
 
 .register__form-group-checkbox input + label {
   /*FONT*/
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.1em;
 
   position: relative;
   display: inline-block;
   cursor: pointer;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 1em;
 }
 
 .register__form-group-checkbox input + label::before {
   content: '';
   position: absolute;
   display: block;
-  top: 0;
+  top: 10%;
   left: -30px;
 
   width: 21px;
@@ -122,7 +127,7 @@
 .register__form-group-checkbox input:checked + label::after {
   content: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='0.442383' width='12' height='12' rx='6' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='6' y1='0.442383' x2='6' y2='12.4424' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
   position: absolute;
-  top: 13%;
+  top: 9%;
   left: -27px;
 }
 
@@ -147,9 +152,11 @@
 }
 
 .register__form-group-special input + label {
+  // outline: 2px solid salmon;
   /*FONT*/
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.1em;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -159,7 +166,7 @@
 .register__form-checkbox--switch + label::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 5%;
   left: -10%;
   width: 3em;
   height: 1.3em;
@@ -171,7 +178,7 @@
 .register__form-checkbox--switch + label::after {
   content: '';
   position: absolute;
-  top: 3px;
+  top: 5px;
   left: -8%;
   width: 0.8em;
   height: 0.8em;

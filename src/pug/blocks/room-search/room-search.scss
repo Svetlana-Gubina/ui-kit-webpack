@@ -1,18 +1,15 @@
 .room-search {
-  // max-width: 380px; 
-  max-width: 21%;
-  min-width: 300px; 
-
-  margin: auto;
-  
+  min-width: $min-width;
+  max-width: 33%;
   @include block();
+
+  padding-top: 3.3%;
 }
 
 .room-search__title  {
   @include h2();
   max-width: 90%;
+
   @include indent();
-  padding: 0.1em;
-  margin-bottom: 2.5%;
-  margin-top: 18px;
+  margin-bottom: 5%;
 }

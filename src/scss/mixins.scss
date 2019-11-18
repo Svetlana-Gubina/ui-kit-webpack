@@ -41,10 +41,10 @@
 @mixin block {
   @include flex();
   flex-direction: column;
-  background-color: #ffffff;
-  padding: 1.5em;
-  padding-top: 1em;
-  // z-index: -2; // for buttons with gradients, :hover not working
+  background-color: $white-color;
+
+  padding: 2.5%;
+  // padding-top: 3%;
 }
 
 @mixin index-block {
@@ -142,7 +142,7 @@
   @include OpenSans();
   font-style: normal;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 24px;
   line-height: 1.26;
   letter-spacing: 0.05em;
 }
@@ -152,9 +152,10 @@
   @include Montserrat();
   font-style: normal;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.25;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 @mixin font-body {

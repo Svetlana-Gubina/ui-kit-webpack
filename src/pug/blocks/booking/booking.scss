@@ -1,9 +1,8 @@
 .booking {
     @include block();
    
-    width: 21%;
-    min-width: 300px; 
-    padding-top: 2.2%;
+    width: 33%;
+    min-width: $min-width;
 }
 
 .booking__room-cost {
@@ -11,7 +10,7 @@
     align-items: baseline;
 
     @include indent();
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 
 .booking__room-number,
@@ -29,7 +28,7 @@
 }
 
 .booking__room-number-span {
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.5;
     font-weight: 700;
     color: black;
@@ -45,29 +44,34 @@
 .booking__room-price {
     margin-left: auto;
     /*FONT*/
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.25;
+    letter-spacing: 0.1em;
     color: $shade-50;
 }
 
 .booking__room-price-span {
-  color: $shade-25;
-  margin-left: 5px;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.1em;
+    color: $shade-25;
+    margin-left: 5px;
 }
 
 .booking__form .search-form__fields {
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .booking__form-count {
     position: relative;
     width: 100%;
-    margin-bottom: 10px;
+    padding: 0;
+    margin-bottom: 6%;
 }
 
 .booking__form-count td {
   /*FONT*/
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 
   padding: 0.3em 0;
@@ -84,8 +88,7 @@
 
 .booking__form-count-1 {
     position: relative;
-    min-width: 160px;
-    // max-width: 40%;
+    min-width: 40%;
 }
 
 .booking__form-count-2 {
@@ -109,22 +112,25 @@
 /*---footer---*/
 
 .booking__form-footer {
-    // @include h2();
-    font-weight: 700;
+   /*FONT*/
+   font-style: normal;
+   font-weight: bold;
+   font-size: 19px;
+   line-height: 1.2em;
     
     width: 100%;
     @include flex();
     align-items: baseline;
-    margin-bottom: 2.5%;
+    margin-bottom: 5%;
 }
 
 .booking__form-footer span:first-child {
-    padding: 0.3em;
+    padding: 0.3em 0;
     letter-spacing: 0.1em;
 }
 
 .booking__form-footer span:last-child {
-    padding: 0.3em;
+    padding: 0.3em 0;
     letter-spacing: 0.05em;
 }
 

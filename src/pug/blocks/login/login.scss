@@ -1,7 +1,8 @@
 .login {
     @include block();
-    width: 21%;
+    width: 33%;
     min-width: calc(#{$min-width} - 25px);
+    padding-top: 1.5%;
 }
 
 .login__title {
@@ -24,18 +25,8 @@
     margin: 0;
     margin-bottom: 1em;
 
-    /*form-field*/
-    background: $white-color;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 4px;
-    width: 100%;
-    padding: 0.7em;
-
-    /*FONT*/
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 1.2;
+    @extend .form-field;
+    padding: 0.8em;
 
     &-hover,
     &:hover {
@@ -51,7 +42,6 @@
 }
 
 .login__form-footer {
-    // outline: 1px solid salmon;
     @include flex();
     justify-content: space-between;
     align-items: center;
@@ -59,11 +49,12 @@
 
 .login__form-text {
      /*FONT*/
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     font-weight: normal;
+    letter-spacing: 0.07em;
 
-    margin-right: 0.5em;
+    // margin-right: 0.5em;
 }
 
 .login .btn--bright {

@@ -1,10 +1,12 @@
 .form-field {
-    padding: 0.6em;
+    /*FONT*/
+    color: $shade-75;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.2;
 
+    // padding: 0.6em;
     background-color: $white-color;
     border: 1px solid $shade-25;
     border-radius: 4px;

@@ -6,39 +6,32 @@
 .search-form__fields {
   @include flex();
   padding: 0;
-  margin-bottom: 25px;
+
+  margin-bottom: 5%;
 }
 
 .search-form__group-top {
   @include indent();
   max-width: 45%;
+  margin-bottom: 10px;
 }
 
 .search-form__group label {
   @include h3();
   @include indent();
   margin: 0;
-  padding: 0.1em;
+  padding: 0.2em;
 }
 
 /*--select-no-js*/
 
 .search-form__control,
 .search-form__group select {
-  /*FONT*/
-  font-size: 12px;
-  line-height: 1.28;
-  color: $shade-75;
-
-  margin: 0;
+  @extend .form-field;
   padding: 0.6em;
+
   max-width: 100%;
   margin-bottom: 10px;
-
-  /*form-field*/
-  background: $white-color;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
 }
 
 .search-form__group select {
@@ -48,14 +41,12 @@
 
 .search-form__pseudo-select {
   margin: 0;
-  padding: 0.6em;
 
-  /*form-field*/
-  background: $white-color;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  width: 100%;
+  @extend .form-field;
+  padding: 1em;
   
+  width: 100%;
+  margin-bottom: 5%;
 }
 
 .search-form__group select {
@@ -103,8 +94,8 @@
 }
 
 .search-form__group-bottom::after {
-  top: 60%;
-  right: 15px;
+  top: 50%;
+  right: 5%;
 }
 
 
