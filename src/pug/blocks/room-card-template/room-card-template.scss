@@ -1,6 +1,6 @@
 .room-card {
-    width: 24%;
-    min-width: 220px;
+    width: 23.5%;
+    min-width: 270px;
     @include flex();
     justify-content: space-between;
    
@@ -17,11 +17,12 @@
 
 .room-card__cost {
     position: relative;
-    padding: 1em;
+    padding: 0.5em 1em;
+    padding-left: 1.2em;
 }
 
 .room-card__cost .booking__room-number-span {
-   // outline: 2px solid fuchsia;
+   /*FONT*/
    font-size: 19px;
    line-height: 1.5;
 }
@@ -29,7 +30,7 @@
 .room-card__cost::after {
     content: "";
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     right: 5%;
     width: 90%;
     height: 1px;

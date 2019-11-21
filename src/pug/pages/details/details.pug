@@ -1,14 +1,16 @@
-extends ../../index.pug
+extends ../../template.pug
 
 //-Room details
 block content 
  include ../../blocks/page-header/page-header.pug
  section.details__presentation
   div.details__big-foto
-   img(src='img/room-1.jpg', srcset= 'img/room-1@2x.jpg' alt='Фото номера')
+   //-img(src='img/room-1.jpg', srcset= 'img/room-1@2x.jpg' alt='Фото номера')
   div.details__small-foto
-   img(src='img/small-room1-1.jpg', srcset= 'img/small-room1-1@2x.jpg' alt='Фото номера')
-   img(src='img/small-room1-2.jpg', srcset= 'img/small-room1-2@2x.jpg' alt='Фото номера')
+   div.details__small-foto1
+   div.details__small-foto2
+   //-img(src='img/small-room1-1.jpg', srcset= 'img/small-room1-1@2x.jpg' alt='Фото номера')
+   //-img(src='img/small-room1-2.jpg', srcset= 'img/small-room1-2@2x.jpg' alt='Фото номера')
  main.details__main
   div.details__info
    div.details__info-top
@@ -47,4 +49,4 @@ block content
   aside.details__aside
   include ../../blocks/booking/booking.pug
 block foot
- include ../../blocks/page-footer/page-footer.pug
+ include ../../blocks/page-footer/page-footer--rus.pug

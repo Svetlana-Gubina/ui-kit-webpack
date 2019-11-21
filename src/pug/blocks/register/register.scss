@@ -3,7 +3,7 @@
   min-width: #{$min-width};
 
   @include block();
-  padding-top: 3%;
+  padding-top: 3em;
 }
 
 .register__title {
@@ -13,7 +13,7 @@
 }
 
 .register__form {
-  margin-bottom: 1.1em;
+  margin-bottom: 15%;
 }
 
 .register__form-control {
@@ -37,34 +37,18 @@
 }
 
 .register__form-top {
-  outline: 2px solid fuchsia;
   @include indent();
-  margin-bottom: 8%;
   @include flex();
   flex-direction: column;
+  margin-bottom: 7%;
 }
 
 .register__form-group {
   @include indent();
 }
 
-// .register__form-group-middle {
-//   margin-bottom: 0.5em
-// }
-
-.register__form-group-middle input[type='date'],
-.register__form-group-middle input[type='email']{
-  /*FONT*/
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-
-.register__form-group-middle input[type='password']{
-  /*FONT*/
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 0;
+.register__form-group-checkbox {
+  margin-top: 2%;
 }
 
 .register__form-label {
@@ -81,7 +65,6 @@
 .register__form-group-checkbox  {
   display: inline-block;
   vertical-align: middle;
-  // width: 50%;
   padding: 0;
 }
 
@@ -134,10 +117,15 @@
 .register__form-group-checkbox input:focus + label::before {
   opacity: 0.5;
 }
+
+.register input[type='password'] {
+  margin-bottom: 0;
+}
  
 
 .register__form-group-special {
-  margin-bottom: 1em;
+  margin: 0;
+  margin-bottom: 8%;
 }
 
 
@@ -152,21 +140,21 @@
 }
 
 .register__form-group-special input + label {
-  // outline: 2px solid salmon;
   /*FONT*/
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.1em;
+
   position: relative;
   display: inline-block;
   cursor: pointer;
-  padding-left: 2em;;
+  padding-left: 2em;
 }
 
 .register__form-checkbox--switch + label::before {
   content: '';
   position: absolute;
-  top: 5%;
+  top: 10%;
   left: -10%;
   width: 3em;
   height: 1.3em;
@@ -178,7 +166,7 @@
 .register__form-checkbox--switch + label::after {
   content: '';
   position: absolute;
-  top: 5px;
+  top: 6px;
   left: -8%;
   width: 0.8em;
   height: 0.8em;

@@ -4,7 +4,7 @@
     line-height: 1.25;
 
     width: 28%;
-
+    min-width: $min-width;
     background-color: $white-color;
     padding: 1em;
     padding-top: 0.5em;
@@ -21,11 +21,13 @@
 }
 
 .calendar__month {
-    padding: 1em 0.5em;
+    padding: 1em;
+    padding-top: 1.5em;
 }
 
 .calendar__month-title {
     @include h2();
+
     font-size: 19px;
     letter-spacing: 0.05em;
 
@@ -50,21 +52,22 @@
     line-height: 1.5;
     font-weight: 700;
     color: $purple-color;
+
     padding: 0.7em;
-    padding-top: 1em;
+    padding-top: 1.3em;
     padding-bottom: 0;
 }
 
 .calendar__days {
     @include indent();
-    padding: 0.5em;
+    padding: 1em;
     padding-top: 0;
 }
 
 .calendar__weekdays li,
 .calendar__days li {
     width: 13.6%;
-    padding: 10px 0;
+    padding: 13px 0;
     text-align: center;
 }
 
@@ -79,7 +82,7 @@
 }
 
 .calendar__days li:nth-child(11) {
-    padding: 9px;
+    padding: 12px;
     background-color: $green-color;
     background-color: $grad-color-2;
     color: $white-color;
@@ -88,7 +91,7 @@
 
 .calendar__days li:nth-child(22),
 .calendar__days li:nth-child(26) {
-    padding: 9px;
+    padding: 12px;
     background-color: $grad-color-1;
     background-color: $purple-color;
     color: $white-color;
@@ -96,7 +99,7 @@
 }
 
 .calendar__days li:nth-child(n+23):nth-child(-n+25) {
-    padding: 9px;
+    padding: 12px;
     border-radius: 0;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     opacity: 0.25;
@@ -153,7 +156,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    padding: 0.7em 0;
+    padding: 0.5em 0;
 }
 
 .calendar__btn {

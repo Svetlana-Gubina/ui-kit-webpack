@@ -2,13 +2,13 @@
     @include block();
     width: 33%;
     min-width: calc(#{$min-width} - 25px);
-    padding-top: 1.5%;
+    padding-top: 1em;
 }
 
 .login__title {
     @include h2();
     margin: 1em 0;
-    margin-bottom: 0;
+    // margin-bottom: 0;
 }
 
 
@@ -53,12 +53,10 @@
     line-height: 1.5;
     font-weight: normal;
     letter-spacing: 0.07em;
-
-    // margin-right: 0.5em;
 }
 
 .login .btn--bright {
-    margin-bottom: 0.5em;
+    margin-bottom: 2.5em;
 }
 
 .login .btn__inner {

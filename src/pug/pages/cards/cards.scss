@@ -2,16 +2,16 @@
     position: relative;
     max-width: $max-width;
     min-width: $min-width;
-    width: 1440px;
     margin: 0;
     margin-left: auto;
     margin-right: auto;
 
-    padding: 10%;
-    padding-top: 10.5%;
+    padding: 10em;
+    padding-top: 10.5em;
     background-color: #E5E5E5;
 
     @include flex();
+    align-items: flex-start;
 }
 
 .cards::before {
@@ -36,40 +36,43 @@
 }
 
 .cards .room-search {
-    height: 25%;
     margin-right: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .cards .booking {
-    height: 30%;
     margin-right: 10px;
     margin-left: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .cards .calendar {
     margin-left: 10px;
     margin-bottom: 40px;
-
-    max-height: 370px;
 }
 
 .cards .register {
-  // height: 515px;
   margin-right: 20px;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 1440px) {
+    margin-top: -130px;
+  }
 }
 
 .cards .login {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
-    height: 355px;
 }
 
 .cards .room-card {
     @include indent();
     margin: 20px;
-    height: 260px;
+    // height: 260px;
 }
+
+// .cards .room-card:nth-of-type(1) {
+//     outline: 3px solid fuchsia;
+//     margin-top: -130px;
+// }

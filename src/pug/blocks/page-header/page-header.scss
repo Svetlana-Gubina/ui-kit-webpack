@@ -6,31 +6,32 @@
     width: 100%;
     min-width: $min-width;
     @include indent();
-    padding-left: 9.5%;
-    padding-right: 9.5%;
+    padding-left: 9em;
+    padding-right: 8em;
     background-color: $white-color;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
     @include flex();
     align-items: center;
-    /*--------ui-kit--------*/
-    // margin-bottom: 40px;
-    // letter-spacing: 10%;
 }
 
-
 .page-header__logo {
-    margin-top: 13px;
-    margin-bottom: 12px;
-    margin-right: 19%;
+    margin-top: 0.8em;
+    margin-bottom: 0.7em;
+    margin-right: 21%;
+}
+
+.page-header--rus .page-header__logo {
+    // margin-right: 18%;
 }
 
 .page-header__nav-list {
     @include list();
     @include flex();
     justify-content: space-between;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin: 0;
+    margin-top: 0.7em;;
+    margin-bottom: 0.7em;
 }
 
 .page-header__nav-link,
@@ -39,9 +40,10 @@
     /* FONT */
     font-size: 14px;
     line-height: 1.2;
+    letter-spacing: 0.1em;
 
     display: block;
-    padding: 1em 1.3em;
+    padding: 1em;
     text-decoration: none;
 
     &:hover,
@@ -51,10 +53,25 @@
   }
 }
 
+.page-header--rus .page-header__nav-link {
+    padding: 0.7em;
+}
+
 .page-header__user-name a {
     position: relative;
     padding: 0.7em;
 }
+
+/* --arrows-down--*/
+// .page-header--rus .page-header__user-nav {
+//     margin-left: 10px;
+// }
+
+.page-header--eng,
+.page-header--rus {
+    @include indent();
+}
+
 
 .page-header__user-name a::before {
     content: "";
@@ -67,59 +84,70 @@
 }
 
 .page-header__nav-link--active,
-.page-header__nav-item:nth-child(1) a {
+.page-header--eng.page-header__nav-item:nth-child(1) a {
     color: black;
     font-weight: 700;
 }
 
 .page-header__nav-link--select,
-.page-header__nav-item:nth-child(3) a {
+.page-header--eng .page-header__nav-item:nth-child(3) a {
     position: relative;
     padding-right: 1.5em;
 }
 
+.page-header--rus .page-header__nav-item:nth-child(2) a,
+.page-header--rus .page-header__nav-item:nth-child(5) a {
+    position: relative;
+    padding-right: 2em;
+}
+
 .page-header__nav-link--select::after,
-.page-header__nav-item:nth-child(3) a::after {
+.page-header--eng .page-header__nav-item:nth-child(3) a::after,
+.page-header--rus .page-header__nav-item:nth-child(2) a::after,
+.page-header--rus .page-header__nav-item:nth-child(5) a::after {
     content: "";
     position: absolute;
-    top: 35%;
-    right: 0;
     width: 10px;
     height: 10px;
     border-left: 2px solid $shade-50;
     border-bottom: 2px solid $shade-50;
     transform: rotate(-45deg);
     background-color: transparent;
+}
 
+.page-header__nav-link--select::after,
+.page-header--eng .page-header__nav-item:nth-child(3) a::after {
+    top: 35%;
+    right: 5%;
+}
+
+.page-header--rus .page-header__nav-item:nth-child(2) a::after,
+.page-header--rus .page-header__nav-item:nth-child(5) a::after {
+    top: 30%;
+    right: 11%;
 }
 
 .page-header__user-link {
     font-style: normal;
     font-weight: bold;
-     /* FONT */
-    // font-size: 15px;
-    // line-height: 1.25;
-    // text-transform: uppercase;
 
     display: inline-block;
     vertical-align: middle;
     text-decoration: none;
-    // margin: 10px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
 }
 
 .page-header__user-link--reg {
-    padding: 10px 20px;
+    padding: 0.8em 1.7em;
 
     @include brightButton();
 }
 
 .page-header__user-link--login {
-   margin-right: 25px;
+   min-width: 79px;
+   @include lightButton();
+   margin-right: 1.5em;
    padding: 0.8em 0.3em;
 }
 
-.page-header__user-link--login .btn__inner {
-    padding: 0.8em 1.5em;
-}

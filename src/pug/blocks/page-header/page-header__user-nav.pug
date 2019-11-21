@@ -4,6 +4,6 @@ mixin page-header__user-nav(isAuthorised, btnTxtx1, btnTxtx2)
             p.page-header__user-name
              a(href='/' + url) Cosmin Negoita 
           else 
-           a.page-header__user-link.page-header__user-link--login.btn.btn--light(href='/' + url) 
+           a.page-header__user-link.page-header__user-link--login.btn(href='/' + url) 
             span.btn__inner= btnTxtx1
            a.page-header__user-link.page-header__user-link--reg.btn(href='/' + url)= btnTxtx2

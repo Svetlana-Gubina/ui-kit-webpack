@@ -10,7 +10,7 @@ function generateHtmlPlugins (templateDir) {
   const list = fs.readdirSync(path.resolve(__dirname, templateDir));
   const templateFiles = [];
   list.forEach(function(file) {
-    file = path.resolve(__dirname, `${templateDir}/${file}`);
+    file = path.resolve(__dirname, templateDir.toString(), file.toString()/*`${templateDir}/${file}`*/);
     try {
       const stats = fs.statSync(file);
       if (stats && stats.isDirectory()) {
@@ -21,15 +21,16 @@ function generateHtmlPlugins (templateDir) {
       console.error(err);
     }
     });
+  // templateFiles.forEach((file) => console.log(typeof(file)));
   console.log(templateFiles);
   return templateFiles.map(item => {
     // Split names and extension
     const parts = item.split('.');
     const name = parts[0];
     const extension = parts[1];
-    ololo = `${templateDir}/${name}/${name}.${extension}`
-    console.log(ololo);
-    console.log(typeof(ololo))
+    // ololo = `${templateDir}/${name}/${name}.${extension}`
+    // console.log(ololo);
+    // console.log(typeof(ololo))
     // Create new HtmlWebpackPlugin with options
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,

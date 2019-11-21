@@ -3,6 +3,7 @@
    
     width: 33%;
     min-width: $min-width;
+    padding-top: 2.5em;
 }
 
 .booking__room-cost {
@@ -82,7 +83,7 @@
     @include indent();
 }
 
-.booking__form-longtxt {
+.booking__form-text--lg {
     max-width: 80%;
 }
 
