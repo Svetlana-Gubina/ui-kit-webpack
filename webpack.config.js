@@ -21,28 +21,22 @@ function generateHtmlPlugins (templateDir) {
       console.error(err);
     }
     });
-  // templateFiles.forEach((file) => console.log(typeof(file)));
-  console.log(templateFiles);
+
   return templateFiles.map(item => {
     // Split names and extension
     const parts = item.split('.');
     const name = parts[0];
     const extension = parts[1];
-    // ololo = `${templateDir}/${name}/${name}.${extension}`
-    // console.log(ololo);
-    // console.log(typeof(ololo))
-    // Create new HtmlWebpackPlugin with options
     return new HtmlWebpackPlugin({
-      filename: `${name}.html`,
+      hash: true,
+      filename: `pages/${name}.html`,
       template: path.resolve(__dirname, `${templateDir}/${name}/${name}.${extension}`)
     })
   })
 };
   
-  
 // Call our function on our views directory.
-// const htmlPlugins = generateHtmlPlugins('./src/pug/pages');
-
+const htmlPlugins = generateHtmlPlugins('./src/pug/pages');
 
 
 module.exports = {
@@ -111,36 +105,6 @@ module.exports = {
         template: './src/pug/index.pug',
         filename: './index.html'
     }),
-    /*new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/pug/pages/search/search.pug',
-      filename: './search.html'
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/pug/pages/registration/registration.pug',
-      filename: './registration.html'
-    }),*/
-    /*new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/pug/pages/headers&footers/headers&footers.pug',
-      filename: './headers&footers.html'
-    }),*/
-    /*new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/pug/pages/details/details.pug',
-      filename: './details.html'
-    }),*/
-    /*new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/pug/pages/cards/cards.pug',
-      filename: './cards.html'
-    }),*
-    /*new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/pug/pages/landing/landing.pug',
-      filename: './landing.html'
-    }),*/
     new CopyWebpackPlugin([
       {from:'src/images',to:'img'},
       {
@@ -153,8 +117,8 @@ module.exports = {
         to:'img',
         flatten: true
       }
-  ]/*.concat(htmlPlugins)*/)
-  ],
+  ])
+  ].concat(htmlPlugins),
   mode: `development`,
   devtool: `inline-source-map`,
   devServer: {

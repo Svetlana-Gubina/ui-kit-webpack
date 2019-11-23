@@ -2,6 +2,7 @@
     @include block();
     width: 33%;
     min-width: calc(#{$min-width} - 25px);
+    min-width: $min-width;
     padding-top: 1em;
 }
 

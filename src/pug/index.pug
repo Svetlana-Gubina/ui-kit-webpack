@@ -11,6 +11,24 @@ html(lang='en')
         link(rel='preload' href='../fonts/Montserrat/Montserrat-Bold.woff' as='font' crossorigin='anonymous')
     body
      block content
+      div.search
+       include ./blocks/page-header/page-header--rus.pug
+       main.search__main
+        section.search__filter
+         form.search__filter-form
+          include ./blocks/filter-form/filter-form.pug
+        section.search__catalog
+         h2.search__catalog-title Номера, которые мы для вас подобрали
+         include ./blocks/catalog/catalog.pug
+      //-include ./blocks/page-header/page-header--rus.pug
+      //-section.registration__presentation
+       //-include ./blocks/login/login.pug
+       //-include ./blocks/register/register.pug
+      //-div.landing
+      //- include ./blocks/page-header/page-header--rus.pug
+      //- div.landing__presentation
+      //-  include ./blocks/room-search/room-search.pug
+      //-  div.landing__presentation-text Лучшие номера для вашей работы, отдыха и просто вдохновения
       //-Room details
       //-div.page-header--rus
       //- include ./blocks/page-header/page-header--rus.pug
@@ -93,8 +111,8 @@ html(lang='en')
       //- include ./blocks/footer-sm/footer-sm.pug 
      block foot
       //-Room details
-      //-div.page-footer--rus
-      //- include ./blocks/page-footer/page-footer--rus.pug
+      div.page-footer--rus
+       include ./blocks/page-footer/page-footer--rus.pug
      
      
      

@@ -37,7 +37,9 @@
 
 
 .btn--light {
-    min-width: 30%;
+    width: 30%;
+    min-width: 99px;
+    max-width: 99px;
     @include lightButton();
     @include flex();
     justify-content: center;

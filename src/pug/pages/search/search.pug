@@ -1,12 +1,14 @@
 //-Search room/Filter
-//-extends ../../]template.pug
-//-
-//-block content
-//- //-include ../../blocks/page-header/page-header.pug
-//- main.search__main
-//-  section.search__filter
-//-   form.search__filter__form
-//-  section.search__catalog
-//-   include ../../blocks/catalog/catalog.pug
-//-block foot
-//- include ../../blocks/page-footer/page-footer.pug
+extends ../../template.pug
+
+block content
+ include ../../blocks/page-header/page-header--rus.pug
+ main.search__main
+  section.search__filter
+   form.search__filter__form
+  section.search__catalog
+   h2.search__catalog-title Номера, которые мы для вас подобрали
+   include ../../blocks/catalog/catalog.pug
+block foot
+ div.page-footer--rus
+  include ../../blocks/page-footer/page-footer--rus.pug

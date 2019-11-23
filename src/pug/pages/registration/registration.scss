@@ -1,7 +1,8 @@
 .registration__presentation {
     position: relative;
     width: 100%;
-    min-height: 680px;
+    min-height: 600px; /*login*/
+    min-height: 700px;
 
     @include indent();
     background-image: url('/img/reg-bg.jpg');
@@ -22,12 +23,16 @@
     position: absolute;
     top: 30px;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -180px;
+    margin-bottom: 20px;
+    width: 26%;
 }
 
 .registration__presentation .login {
     position: absolute;
     top: 163px;
+    top: 24%;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -180px;
+    width: 26%;
 }

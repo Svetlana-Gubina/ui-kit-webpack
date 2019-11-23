@@ -4,10 +4,8 @@
 
 .landing__presentation {
     position: relative;
-    // @include flex();
-    // outline: 3x solid fuchsia;
     width: 100%;
-    min-height: 800px;
+    min-height: 825px;
     @include indent();
     background-image: url('/img/landing-img.jpg');
     background-size: cover;
@@ -27,23 +25,25 @@
 .landing .room-search {
     margin: 0;
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 10%;
+    width: 26%;
 }
 
 .landing__presentation-text {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    bottom: 1%;
+    right: 8%;
     width: 20%;
+    /*FONT*/
     font-size: 14px;
     line-height: 2;
     color: $shade-75;
+    letter-spacing: 0.1em;
     
     text-align: right;
 }
 
-.landing .page-footer {
+.landing__footer {
    margin: 0;
-   padding-top: 20px;
 }
