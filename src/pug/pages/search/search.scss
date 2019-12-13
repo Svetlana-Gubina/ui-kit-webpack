@@ -1,13 +1,8 @@
-.search {
-  // outline: 5px solid springgreen;
-  max-width: $max-width;
-  min-width: $min-width;
-  width: 1440px;
-  @include indent();
-}
-
 .search__main {
   // outline: 5px solid crimson;
+  max-width: $max-width;
+  min-width: $min-width;
+  width: 100%;
   margin: 0;
   @include flex();
   background-color: $white-color;
@@ -19,20 +14,17 @@
 }
 
 .search__filter {
-    outline: 5px solid purple;
-    min-width: $min-width;
-    // max-width: 22%;
+    min-width: 266px;
+    width: 22%;
     @include indent();
 }
 
 .search__filter-form {
   @include indent();
   width: 100%;
-  // background-color: chartreuse;
 }
 
 .search__catalog {
-  outline: 5px solid springgreen;
   min-width: $min-width;
   width: 72%;
 }
@@ -41,4 +33,9 @@
   @include indent();
   padding: 0.2em 0;
   margin-bottom: 2%;
+}
+
+.search__main .room-card {
+  margin-bottom: 2.8%;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }

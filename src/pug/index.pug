@@ -11,15 +11,16 @@ html(lang='en')
         link(rel='preload' href='../fonts/Montserrat/Montserrat-Bold.woff' as='font' crossorigin='anonymous')
     body
      block content
-      div.search
-       include ./blocks/page-header/page-header--rus.pug
-       main.search__main
-        section.search__filter
-         form.search__filter-form
-          include ./blocks/filter-form/filter-form.pug
-        section.search__catalog
-         h2.search__catalog-title Номера, которые мы для вас подобрали
-         include ./blocks/catalog/catalog.pug
+      //-div.search
+      include ./blocks/page-header/page-header--rus.pug
+      main.search__main
+       section.search__filter
+        form.search__filter-form
+         include ./blocks/filter-form/filter-form.pug
+       section.search__catalog
+        h2.search__catalog-title Номера, которые мы для вас подобрали
+        include ./blocks/catalog/catalog.pug
+        include ./blocks/pagination/pagination.pug
       //-include ./blocks/page-header/page-header--rus.pug
       //-section.registration__presentation
        //-include ./blocks/login/login.pug
