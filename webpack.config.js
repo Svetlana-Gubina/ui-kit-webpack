@@ -3,41 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const fs = require('fs');
-
-// Our function that generates our html plugins
-function generateHtmlPlugins (templateDir) {
-  const list = fs.readdirSync(path.resolve(__dirname, templateDir));
-  const templateFiles = [];
-  list.forEach(function(file) {
-    file = path.resolve(__dirname, templateDir.toString(), file.toString()/*`${templateDir}/${file}`*/);
-    try {
-      const stats = fs.statSync(file);
-      if (stats && stats.isDirectory()) {
-        const template = fs.readdirSync(file).filter(filePath => filePath.match(/.*\.pug$/));
-        templateFiles.push(template.toString());
-      }
-    } catch (err) {
-      console.error(err);
-    }
-    });
-
-  return templateFiles.map(item => {
-    // Split names and extension
-    const parts = item.split('.');
-    const name = parts[0];
-    const extension = parts[1];
-    return new HtmlWebpackPlugin({
-      hash: true,
-      filename: `pages/${name}.html`,
-      template: path.resolve(__dirname, `${templateDir}/${name}/${name}.${extension}`)
-    })
-  })
-};
-  
-// Call our function on our views directory.
-const htmlPlugins = generateHtmlPlugins('./src/pug/pages');
-
 
 module.exports = {
   entry: [
@@ -45,11 +10,17 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
-    //publicPath: ''
+    filename: '[name].js',
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
       {
         test: /\.(sass|scss)$/,
         use: [
@@ -118,12 +89,6 @@ module.exports = {
         flatten: true
       }
   ])
-  ].concat(htmlPlugins),
-  mode: `development`,
+  ],
   devtool: `inline-source-map`,
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    watchContentBase: true
-    },
 };
