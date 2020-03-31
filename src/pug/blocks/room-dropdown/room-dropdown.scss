@@ -1,0 +1,52 @@
+.room-dropdown__table {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+.room-dropdown__row th,
+.room-dropdown__row td {
+  vertical-align: middle;
+  min-width: 50%;
+}
+
+.room-dropdown__row th {
+    text-align: left;
+    font-size: 10px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $shade-100;
+    padding: 0.5em;
+}
+
+.room-dropdown__row td {
+  text-align: right;
+}
+
+
+.room-dropdown__btn {
+  // width: 20px;
+  // height: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(31, 32, 65, 0.5);
+  border-radius: 50%;
+  background-color: transparent;
+  text-align: center;
+  padding: 0.5em 1em;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-shadow: none;
+}
+
+
+.room-dropdown__bottom {
+  @include flex();
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.room-dropdown__input {
+  border: none;
+  text-align: center;
+  padding: 0.5em 1em;
+}

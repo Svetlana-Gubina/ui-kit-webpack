@@ -44,29 +44,11 @@ div.filter-form
  fieldset.filter-form__fieldset.filter-form__fieldset--comfort
   legend.filter-form__legend Удобства номера
   input(class='filter-form__input filter-form__input' type='text' name='dates' placeholder='2 спальни, 2 кровати... ')
-  div.search-form__dropdown
-   div.search-form__dropdown-top
-    table.search-form__dropdown-table
-     tr.search-form__dropdown-row
-      th Спальни
-      td
-       button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
-       input(type='text' size='2' id='adults' name='adults-count' value='2').search-form__dropdown-input
-       button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
-     tr.search-form__dropdown-row
-      th Кровати
-      td
-       button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
-       input(type='text' size='2' id='kids' name='kids-count' value='2').search-form__dropdown-input
-       button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
-     tr.search-form__dropdown-row
-      th Ванные комнаты
-      td
-       button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
-       input(type='text' size='2' id='babies' name='babies-count' value='0').search-form__dropdown-input
-       button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
+  //-include filter-form__dropdown.pug
+  include ../room-dropdown/room-dropdown.pug
  fieldset.filter-form__fieldset.filter-form__bottom 
   legend.filter-form__legend.filter-form__legend--add Дополнительные удобства
   //-button
   include filter-form__div.pug
+  
     

@@ -36,6 +36,10 @@
   }
 
   /* RANGE*/
+
+  .filter-form__fieldset--range {
+    outline: 2px dashed magenta;
+  }
   
   .filter-form__range-span {
     /*FONT*/
@@ -186,15 +190,33 @@
   }
   
   .filter-form__div {
-    // outline: 2px solid darkolivegreen;
     display: none;
+    background-color: #ffffff;
+    z-index: 10;
   }
+
+  .filter-form__div .filter-form__label {
+    /*font-family: Montserrat;*/
+    color: rgba(31, 32, 65, 0.5);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    padding-left: 2.5em;
+  }
+
+  .filter-form__div .filter-form__checkbox {
+    left: 0.5em;
+  }
+
+  
 
   .filter-form__legend--add {
     // position: absolute;
     // top: 35%;
     // left: 0;
     padding: 0.5em;
+    padding-bottom: 2em;
   }
   
   // input::-webkit-input-placeholder
@@ -220,11 +242,17 @@
     position: relative;
   }
 
-  // .filter-form__input--comfort .search-form__dropdown {
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  // }
+  .filter-form__fieldset--comfort .room-dropdown {
+    display: none;
+    
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 83%;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    background-color: #ffffff;
+    z-index: 10;
+  }
 
   .filter-form__fieldset--ally {
     padding-right: 0;
