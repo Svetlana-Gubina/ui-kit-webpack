@@ -7,17 +7,29 @@
     width: 100%;
     min-height: 825px;
     @include indent();
-    background-image: url('/img/landing-img.jpg');
+    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/landing-img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 720px) {
+    .landing__presentation {
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img720@.jpg');
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .landing__presentation {
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img320@.jpg');
+    }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi){
     /* CSS для ретины */
     .landing__presentation {
-        background-image: url('/img/landing-img@2x.jpg');
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img@2x.jpg');
     }
 
 }

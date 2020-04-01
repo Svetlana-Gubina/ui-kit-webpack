@@ -35,21 +35,24 @@
 }
   
 body {
+
   // display: flex;
   // flex-direction: column;
-  // min-width: $min-width;
+
   @include indent();
   color: $shade-75;
+  background-color: #E5E5E5; 
   @include Montserrat();
   font-size: 14px;
   line-height: 1.7;
-
-  background: #E5E5E5; 
+  max-width: $max-width;
+  min-width: $min-width;
+  
   padding-top: 50px;
   padding-bottom: 50px;
-  max-width: 1440px;
-  @include min-width();
   margin: auto;
+  outline: 3px dashed maroon;
+
 }
   
 img {

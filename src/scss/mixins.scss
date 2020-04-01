@@ -1,10 +1,45 @@
-@mixin max-width { // DELETE!
-  max-width: 1920px; 
+/*-COMMON-*/
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-@mixin  min-width { // DELETE!
-  min-width: 320px;
+@mixin indent($margin:0, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
 }
+
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+@mixin OpenSans {
+font-family: "Open Sans", "Arial", sans-serif;
+}
+
+@mixin Montserrat {
+font-family: "Montserrat", "Arial", sans-serif;
+}
+
+@mixin font-body {
+  // color: $shade-75;
+  @include Montserrat();
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+// FONTS: 
+
+// font-size: 14px;
+// line-height: 1.2;
+
+
 
 @mixin form-field {
   // padding: 12px 15px; // 8px;
@@ -32,11 +67,7 @@
     }
 }
 
-@mixin flex {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+
 
 @mixin block {
   @include flex();
@@ -108,24 +139,7 @@
 //  }
 //}
 
-@mixin list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
-@mixin indent($margin:0, $padding: 0) {
-    margin: $margin;
-    padding: $padding;
-}
-
-@mixin OpenSans {
-  font-family: "Open Sans", "Arial", sans-serif;
-}
-
-@mixin Montserrat {
-  font-family: "Montserrat", "Arial", sans-serif;
-}
 
 @mixin h1 {
   color: $shade-100;
@@ -158,14 +172,7 @@
   letter-spacing: 0.1em;
 }
 
-@mixin font-body {
-  color: $shade-75;
-  @include Montserrat();
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.5;
-}
+
 
 
 // @mixin dropdown-bottom {
@@ -194,4 +201,11 @@
 //     border-right: 2px solid $shade-75;
 //     transform: rotateX(45deg);
 //   }
+// }
+// @media screen and (min-width: $tablet-width) {
+// 
+// }
+// 
+// @media screen and (min-width: $desktop-width) {
+// 
 // }

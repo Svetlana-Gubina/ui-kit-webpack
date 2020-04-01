@@ -3,6 +3,8 @@ include ../page-header/page-header__user-nav.pug
 
 
 block navlist
-  +nav-list(['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentaion'])
+  div.page-header--eng
+   +nav-list(['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentaion'])
 block user-nav
-  +page-header__user-nav(false, 'Login', 'Register')
+  div.page-header--eng
+   +page-header__user-nav(false, 'Login', 'Register')
