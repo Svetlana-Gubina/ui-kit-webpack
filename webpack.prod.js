@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 
 // function that generates our html plugins
 function generateHtmlPlugins (templateDir) {
@@ -85,5 +86,19 @@ module.exports = merge (common, {
             template: './src/pug/index.pug',
             filename: './index.html'
         }),
+        new ImageminWebpWebpackPlugin(
+          {
+            config: [{
+              test: /\.(jpe?g|png)/,
+              options: {
+                quality:  75
+              }
+            }],
+            overrideExtension: true,
+            detailedLogs: false,
+            silent: false,
+            strict: true
+          }
+        ),
     ].concat(htmlPlugins),
 });

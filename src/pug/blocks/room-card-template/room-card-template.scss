@@ -3,7 +3,6 @@
     min-width: 270px;
     @include flex();
     justify-content: space-between;
-   
     background-color: $white-color;
 }
 
@@ -39,6 +38,7 @@
 
 .room-card__rating {
     @include flex();
+     /*FONT*/
     font-size: 12px;
     line-height: 1.5;
     padding: 1em;
@@ -48,9 +48,6 @@
 .room-card__foto {
     width: 100%;
 }
-
-
-/* --SLIDER -----------------------------------*/
 
 .room-card__slider img {
    @include indent();
@@ -98,7 +95,6 @@
 /* STARS */
 
 .room-card__stars {
-    // width: 124px;
     width: 45%;
     max-height: 1.5em;
     margin-left: 5px;
@@ -110,7 +106,7 @@
     vertical-align: middle;
     width: 20%;
     height: 100%;
-    background-image: url('/img/star.svg');
+    background-image: url('/img/star.svg'); // path??
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -118,7 +114,7 @@
 .room-card-4 .room-card__star:last-of-type,
 .room-card-3 .room-card__star:nth-of-type(4),
 .room-card-3 .room-card__star:nth-of-type(5) {
-    background-image: url('/img/star_border.svg');
+    background-image: url('/img/star_border.svg'); // path??
     background-repeat: no-repeat;
 }
 

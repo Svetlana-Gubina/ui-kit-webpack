@@ -3,9 +3,9 @@ include ../booking/booking__room-cost.pug
 mixin room-card-template(room)
  div(class='room-card' + ' room-card-'+ room.stars)
   div.room-card__slider
-   //-picture.room-card-picture
-   //-source(type="image/webp" srcset="img/@1x.webp 1x, img/@2x.webp 2x")
-   img.room-card__foto(src= 'img/' + room.imgSrc + '.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg' alt='Фото номера')
+   //-picture
+   //-  source(type='image/webp', srcset='img/@1x.webp 1x, img/@2x.webp 2x')
+   img.room-card__foto(src= 'img/' + room.imgSrc + '.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg 2x' alt='Фото номера')
    div.room-card__slider-toogler
      label(for='btn-1' + room.number) Фото номера 1
       input.visually-hidden.room-card__slider-input(type='radio' id='btn-1' + room.number name='toggle' checked)
