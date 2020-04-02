@@ -1,16 +1,24 @@
-/*--presentation--*/
+/*-PRESENTATION-*/
+.test {
+    width: 1440px;
+    @include indent();
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .details__presentation {
     min-height: 485px;
-
-    @media screen and (max-width: 600px) {
-        min-height: 250px;
-    }
-
     width: 100%;
     @include indent();
     @include flex();
 }
+
+@media screen and (max-width: 600px) {
+    .details__presentation {
+        min-height: 250px;
+    }
+}
+
 
 .details__big-foto {
     @include indent();
@@ -18,19 +26,25 @@
     min-width: $min-width;
     height: 100%;
     min-height: 485px;
-    @media screen and (max-width: 900px) {
-        min-height: 300px;
-    }
     flex: 2.125;
-    background-image: url('/img/room-1@2x.jpg');
+    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
 
-  @media (-webkit-min-device-pixel-ratio: 1.5),
-    (min-resolution: 144dpi){
-        background-image: url('/img/room-1@2x.jpg');
+@media screen and (max-width: 900px) {
+    .details__big-foto {
+        min-height: 300px;
     }
 }
+
+@media (-webkit-min-device-pixel-ratio: 1.5),
+    (min-resolution: 144dpi) {
+        .details__big-foto {
+            background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-1@2x.jpg');
+        }
+}
+
 
 .details__small-foto {
     width: 32%;
@@ -39,31 +53,46 @@
     @include flex();
     flex-direction: column;
     flex: 1;
+    @include indent();
 }
 
 .details__small-foto1,
 .details__small-foto2 {
     height: 50%;
     min-height: 242px;
+    @include indent();
 }
 
 .details__small-foto1 {
-    background-image: url('/img/small-room1-1.jpg');
+    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/small-room1-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     @media (-webkit-min-device-pixel-ratio: 1.5),
     (min-resolution: 144dpi){
-        background-image: url('/img/small-room1-1@2x.jpg');
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/small-room1-1@2x.jpg');
     }
 }
 
 .details__small-foto2 {
-    background-image: url('/img/small-room1-2.jpg');
+    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/small-room1-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     @media (-webkit-min-device-pixel-ratio: 1.5),
     (min-resolution: 144dpi){
-        background-image: url('/img/room1-2@2x.jpg');
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/room1-2@2x.jpg');
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .details__presentation {
+        flex-direction: column;
+    }
+
+    .details__big-foto,
+    .details__small-foto,
+    .details__small-foto1,
+    .details__small-foto2 {
+      width: 100%;
     }
 }
 

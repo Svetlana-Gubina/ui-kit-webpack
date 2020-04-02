@@ -72,52 +72,18 @@ font-family: "Montserrat", "Arial", sans-serif;
   letter-spacing: 0.05em;
 }
 
-
-
-
-
-/*FONT*/
-
-@mixin font-body {
-  // color: $shade-75;
+@mixin h3 {
+  color: $shade-100;
   @include Montserrat();
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.5;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-// FONTS: 
-// .page-header__nav-link:
-// font-size: 14px;
-// line-height: 1.2;
-
-// .page-footer__list-item a:
-// font-size: 14px;
-// line-height: 1.5;
-
-// .landing__presentation-text
-// font-size: 14px;
-// line-height: 2;
-
-//.login__form-text
-// font-size: 14px;
-// line-height: 1.5;
-
-
-
-
-
-
-
-
-
-@mixin index-block {
-  margin: 20px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-}
-
-/*---------------BUTTONS---------------*/
+/*-BUTTONS-*/
 
 @mixin brightButton {
   color: $white-color;
@@ -146,6 +112,28 @@ font-family: "Montserrat", "Arial", sans-serif;
     color: rgba(31, 32, 65, 0.5);
   }
 }
+
+
+/*FONT*/
+
+@mixin font-body {
+  // color: $shade-75;
+  @include Montserrat();
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+
+@mixin index-block {
+  margin: 20px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
+
 
 //@mixin lightButton {
 //  position: relative;
@@ -187,16 +175,7 @@ font-family: "Montserrat", "Arial", sans-serif;
 
 
 
-@mixin h3 {
-  color: $shade-100;
-  @include Montserrat();
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 1.25;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+
 
 
 
