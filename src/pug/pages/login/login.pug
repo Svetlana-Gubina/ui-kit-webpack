@@ -2,8 +2,8 @@ extends ../../index.pug
 
 block content
  include ../../blocks/page-header/page-header--rus.pug
- section.registration__presentation.registration__presentation--register
-  - var registered = false
+ section.registration__presentation.registration__presentation--login
+  - var registered = true
   if registered
    include ../../blocks/login/login.pug
   else   
