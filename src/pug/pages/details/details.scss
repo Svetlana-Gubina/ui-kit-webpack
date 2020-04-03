@@ -93,9 +93,8 @@
 /*--MAIN--*/
 
 .details__main {
-    outline: 3px dashed orangered;
     min-width: $min-width;
-    
+
     @include flex();
     align-items: flex-start;
     padding-left: 10em;
@@ -104,6 +103,7 @@
     padding-bottom: 4em;
     margin: 0;
     background-color: $white-color;
+    border-bottom: 1px solid rgba($shade-100, 0.05);
 }
 
 .details__info-top {
@@ -321,5 +321,33 @@
 }
 
 
+@media screen and (max-width: 1138px) {
+    .details__main {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
 
+    .details__aside {
+        width: 100%;
+    }
+
+    .details__aside .booking {
+        max-width: 380px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .details__main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .details__info,
+    .details__info-reviews,
+    .details__info-rules {
+        min-width: $min-width;
+    }
+}
 

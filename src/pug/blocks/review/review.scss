@@ -16,19 +16,23 @@
   @include indent();
   width: 60px;
   height: 67px;
-
-  // background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/user1.png');
-  background-repeat: no-repeat;
-  background-position: 50% 20%;
-  background-size: 150% 130%;
 }
 
-.user1 {
+.review__foto .user1,
+.review__foto .user2 {
+    @include indent();
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-size: 150% 130%;
+}
+
+.review__foto .user1 {
     background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/user1.png');
 }
 
-.user2 {
-    outline: 2px dashed red;
+.review__foto .user2 {
     background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/user2.png');
 }
 

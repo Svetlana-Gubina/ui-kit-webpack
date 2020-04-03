@@ -2,7 +2,7 @@ mixin review(item)
  div.review
   div.review__row.review__row--top
    div.review__foto
-    div.item.imgSrc 
+    div(class='' + item.imgSrc)
     //-img.review__img(src='../img/' + item.imgSrc + '.png', srcset='../img/' + item.imgSrc + '@2x.png' alt=item.name width='100' height='100')
    div.review__div
     p.review__name= item.name
