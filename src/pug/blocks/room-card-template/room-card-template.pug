@@ -5,22 +5,26 @@ mixin room-card-template(room)
   div.room-card__slider
    span.room-card__slider-left
    span.room-card__slider-right
-   //-picture
-   //-  source(type='image/webp', srcset='img/@1x.webp 1x, img/@2x.webp 2x')
-   img.room-card__foto(src= 'img/' + room.imgSrc + '.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg 2x' alt='Фото номера')
    div.room-card__slider-toogler
      label(for='btn-1' + room.number) Фото номера 1
-      input.visually-hidden.room-card__slider-input(type='radio' id='btn-1' + room.number name='toggle' checked)
+      input.room-card__slider-input(type='radio' id='btn-1' + room.number name='toggle' data-number='first' checked='true')
       span.room-card__slider-toogle
      label(for='btn-2' + room.number) Фото номера 2
-      input.visually-hidden.room-card__slider-input(type='radio' id='btn-2' + room.number name='toggle')
+      input.room-card__slider-input(type='radio' id='btn-2' + room.number name='toggle' data-number='second')
       span.room-card__slider-toogle
      label(for='btn-3' + room.number) Фото номера 3
-      input.visually-hidden.room-card__slider-input(type='radio' id='btn-3' + room.number name='toggle')
+      input.room-card__slider-input(type='radio' id='btn-3' + room.number name='toggle' data-number='third')
       span.room-card__slider-toogle
      label(for='btn-4' + room.number) Фото номера 4
-      input.visually-hidden.room-card__slider-input(type='radio' id='btn-4' + room.number name='toggle')
+      input.room-card__slider-input(type='radio' id='btn-4' + room.number name='toggle' data-number='fourth')
       span.room-card__slider-toogle
+   div.room-card__slider-container     
+    //-picture
+    //-  source(type='image/webp', srcset='img/@1x.webp 1x, img/@2x.webp 2x')
+    img.room-card__foto(src= 'img/' + room.imgSrc + '.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg 2x' alt='Фото номера')
+    img.room-card__foto(src= 'img/room-2.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg 2x' alt='Фото номера')
+    img.room-card__foto(src= 'img/room-3.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg 2x' alt='Фото номера')
+    img.room-card__foto(src= 'img/room-4.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg 2x' alt='Фото номера')
   div.room-card__cost
    +booking__room-cost(room.number, room.price, room.isLux)     
   div.room-card__rating

@@ -16,8 +16,24 @@
 /*-SLIDER-*/
 
 .room-card__slider {
+    max-width: 100%;
     position: relative; 
     height: 60%;
+    max-height: 152px;
+    overflow: hidden;
+}
+
+.room-card__slider-container {
+    position: relative; 
+    width: 400%;
+    @include indent();
+}
+
+.room-card__slider-container img {
+    width: 270px;
+    height: 152px;
+    float: left;
+    @include indent();
 }
 
 
@@ -70,40 +86,56 @@
 .room-card__slider:hover .room-card__slider-right {
     display: block;
 }
+ 
+.room-card__slider-toogler {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    min-height: 1em;
+    background-color: transparent;
+    z-index: 10;
+}
 
-.room-card__slider img {
-    @include indent();
- }
+.room-card__slider-toogler label {
+    font-size: 0;
+    display: inline-block;
+}
  
- .room-card__slider-toogler {
-     position: absolute;
-     bottom: 5%;
-     right: 5%;
-     min-height: 1em;
-     background-color: transparent;
-     z-index: 10;
- }
+.room-card__slider-toogle {
+  display: inline-block;
+  margin: 0 2px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid $white-color;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+  cursor: pointer;
+}
  
- .room-card__slider-toogler label {
-     font-size: 0;
-     display: inline-block;
- }
- 
- .room-card__slider-toogle {
-   display: inline-block;
-   margin: 0 2px;
-   width: 7px;
-   height: 7px;
-   border: 1px solid $white-color;
-   border-radius: 50%;
-   background-color: transparent;
-   box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
-   cursor: pointer;
- }
-  
- .room-card__slider-input:checked + .room-card__slider-toogle {
-     background-color: $white-color;
- }
+.room-card__slider-input {
+   display: none;
+}
+
+.room-card__slider-input:checked + .room-card__slider-toogle {
+    background-color: $white-color;
+}
+
+#btn-1888:checked ~ .room-card__slider-container {
+    transform: translate(0);
+}
+
+#btn-2888:checked ~ .room-card__slider-container {
+    transform: translate(-270px);
+}
+
+#btn-3888:checked ~ .room-card__slider-container {
+    transform: translate(-540px);
+}
+
+#btn-4888:checked ~ .room-card__slider-container {
+    transform: translate(-810px);
+}
 
 
 
