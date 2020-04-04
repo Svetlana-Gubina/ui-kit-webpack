@@ -1,10 +1,12 @@
 div.filter-form
  fieldset.filter-form__fieldset.filter-form__fieldset--dates
   legend.filter-form__legend Даты пребывания в отеле
-  input(class='filter-form__input' type='text' name='dates' placeholder='')
+  div.filter-form__input-container
+   input(class='filter-form__input' type='text' name='dates' placeholder='19 авг - 23 авг')
  fieldset.filter-form__fieldset.filter-form__fieldset--guests
   legend.filter-form__legend Гости
-  input(class='filter-form__input' type='text' name='dates' placeholder='')
+  div.filter-form__input-container
+   input(class='filter-form__input' type='text' name='guests' placeholder='3 гостя, 1 младенец')
  fieldset.filter-form__fieldset.filter-form__fieldset--range
   legend.filter-form__legend.filter-form__legend--range Диапазон цены
    span.filter-form__range-span 5 000₽ - 10 000₽
@@ -43,12 +45,13 @@ div.filter-form
     p.filter-form__paragraph На 1 этаже вас встретит специалист и проводит до номера.
  fieldset.filter-form__fieldset.filter-form__fieldset--comfort
   legend.filter-form__legend Удобства номера
-  input(class='filter-form__input filter-form__input' type='text' name='dates' placeholder='2 спальни, 2 кровати... ')
-  //-include filter-form__dropdown.pug
-  include ../room-dropdown/room-dropdown.pug
+  div.filter-form__input-container
+   input(class='filter-form__input' type='text' name='comfort' placeholder='2 спальни, 2 кровати... ')
+   include ../room-dropdown/room-dropdown.pug
  fieldset.filter-form__fieldset.filter-form__bottom 
-  legend.filter-form__legend.filter-form__legend--add Дополнительные удобства
-  //-button
-  include filter-form__div.pug
+  div.filter-form__bottom-flex
+   legend.filter-form__legend.filter-form__legend--add Дополнительные удобства
+   div.filter-form__dropdown-btn
+   include filter-form__div.pug
   
     

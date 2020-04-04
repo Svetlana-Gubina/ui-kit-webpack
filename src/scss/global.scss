@@ -35,10 +35,6 @@
 }
   
 body {
-
-  // display: flex;
-  // flex-direction: column;
-
   @include indent();
   color: $shade-75;
   background-color: #E5E5E5; 
@@ -51,6 +47,7 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   margin: auto;
+  
   outline: 3px dashed maroon;
 
 }

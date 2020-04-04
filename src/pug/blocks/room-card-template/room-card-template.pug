@@ -3,6 +3,8 @@ include ../booking/booking__room-cost.pug
 mixin room-card-template(room)
  div(class='room-card' + ' room-card-'+ room.stars)
   div.room-card__slider
+   span.room-card__slider-left
+   span.room-card__slider-right
    //-picture
    //-  source(type='image/webp', srcset='img/@1x.webp 1x, img/@2x.webp 2x')
    img.room-card__foto(src= 'img/' + room.imgSrc + '.jpg', srcset= 'img/' + room.imgSrc + '@2x.jpg 2x' alt='Фото номера')

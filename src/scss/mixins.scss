@@ -52,7 +52,7 @@
   }
 }
 
-
+/*FONT*/
 
 @mixin OpenSans {
 font-family: "Open Sans", "Arial", sans-serif;
@@ -60,6 +60,16 @@ font-family: "Open Sans", "Arial", sans-serif;
 
 @mixin Montserrat {
 font-family: "Montserrat", "Arial", sans-serif;
+}
+
+@mixin h1 {
+  color: $shade-100;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  @include indent();
+  margin-bottom: 20px;
 }
 
 @mixin h2 {
@@ -114,19 +124,6 @@ font-family: "Montserrat", "Arial", sans-serif;
 }
 
 
-/*FONT*/
-
-@mixin font-body {
-  // color: $shade-75;
-  @include Montserrat();
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-
-
 
 @mixin index-block {
   margin: 20px;
@@ -134,79 +131,6 @@ font-family: "Montserrat", "Arial", sans-serif;
 }
 
 
-
-//@mixin lightButton {
-//  position: relative;
-//  color: $purple-color;
-//  background-color: #ffffff;
-//  background-clip: padding-box; 
-//  border: 3px solid transparent; 
-//  &:before {
-//    content: '';
-//    position: absolute;
-//    top: 0; right: 0; bottom: 0; left: 0;
-//    z-index: -1;
-//    margin: -3px;
-//    border-radius: inherit; 
-//    background-color: $purple-color;
-//    background: $grad-color-1;
-//  }
-//  &:hover,
-//  &:focus {
-//    opacity: 0.5;
-//  }
-//  &:active {
-//    opacity: 0.5;
-//    color: rgba(31, 32, 65, 0.5);
-//  }
-//}
-
-
-
-@mixin h1 {
-  color: $shade-100;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.25;
-  @include indent();
-  margin-bottom: 20px;
-}
-
-
-
-
-
-
-
-
-// @mixin dropdown-bottom {
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: 25%;
-//     right: 10%;
-//     width: 10%;
-//     height: 10%;
-//     border-bottom: 2px solid $shade-75;
-//     border-right: 2px solid $shade-75;
-//     transform: rotateX(-45deg);
-//   }
-// }
-// 
-// @mixin dropdown-top {
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: 25%;
-//     right: 10%;
-//     width: 10%;
-//     height: 10%;
-//     border-bottom: 2px solid $shade-75;
-//     border-right: 2px solid $shade-75;
-//     transform: rotateX(45deg);
-//   }
-// }
 // @media screen and (min-width: $tablet-width) {
 // 
 // }
