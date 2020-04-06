@@ -87,56 +87,31 @@
     display: block;
 }
  
-.room-card__slider-toogler {
+.dots-wrapper {
     position: absolute;
     bottom: 5%;
     right: 5%;
     min-height: 1em;
+    width: 15%;
     background-color: transparent;
     z-index: 10;
+    outline: 2px dashed wheat;
+    li {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        border-radius: 50%;
+        margin: 0 4px;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.3s;
+        &.active,
+        &:hover {
+          opacity: 1;
+        }
+      }
 }
-
-.room-card__slider-toogler label {
-    font-size: 0;
-    display: inline-block;
-}
- 
-.room-card__slider-toogle {
-  display: inline-block;
-  margin: 0 2px;
-  width: 7px;
-  height: 7px;
-  border: 1px solid $white-color;
-  border-radius: 50%;
-  background-color: transparent;
-  box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
-  cursor: pointer;
-}
- 
-.room-card__slider-input {
-   display: none;
-}
-
-.room-card__slider-input:checked + .room-card__slider-toogle {
-    background-color: $white-color;
-}
-
-#btn-1888:checked ~ .room-card__slider-container {
-    transform: translate(0);
-}
-
-#btn-2888:checked ~ .room-card__slider-container {
-    transform: translate(-270px);
-}
-
-#btn-3888:checked ~ .room-card__slider-container {
-    transform: translate(-540px);
-}
-
-#btn-4888:checked ~ .room-card__slider-container {
-    transform: translate(-810px);
-}
-
 
 
 
