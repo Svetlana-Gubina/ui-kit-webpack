@@ -31,7 +31,7 @@
 
 
 .room-card__slider-container img {
-    width: 270px;
+    width: calc(100% / 4);
     height: 152px;
     float: left;
     @include indent();
@@ -114,7 +114,7 @@
 }
 
 
-
+/*-COST-*/
 
 .room-card__cost {
     position: relative;
@@ -167,7 +167,7 @@
     vertical-align: middle;
     width: 20%;
     height: 100%;
-    background-image: url('/img/star.svg'); // path??
+    background-image: url('/img/star.svg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -175,7 +175,7 @@
 .room-card-4 .room-card__star:last-of-type,
 .room-card-3 .room-card__star:nth-of-type(4),
 .room-card-3 .room-card__star:nth-of-type(5) {
-    background-image: url('/img/star_border.svg'); // path??
+    background-image: url('/img/star_border.svg');
     background-repeat: no-repeat;
 }
 

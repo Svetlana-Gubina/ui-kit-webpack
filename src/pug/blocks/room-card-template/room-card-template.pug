@@ -7,10 +7,10 @@ mixin room-card-template(room)
    a.room-card__slider-right.arrow-right(href='javascript:void(0);')
    div.room-card__slider-toogler.dots-wrapper
    div.room-card__slider-container
-    img.room-card__foto.slide(src= 'img/' + room.imgSrc + '.jpg' alt='Фото номера')
-    img.room-card__foto.slide(src= 'img/room-2.jpg' alt='Фото номера')
-    img.room-card__foto.slide(src= 'img/room-3.jpg' alt='Фото номера')
-    img.room-card__foto.slide(src= 'img/room-4.jpg' alt='Фото номера')
+    img.room-card__foto.slide(data-src=('img/' + room.imgSrc + '.jpg') src= 'img/' + room.imgSrc + '.jpg' alt='Фото номера')
+    img.room-card__foto.slide(data-src=('img/room-2.jpg') src= 'img/room-2.jpg' alt='Фото номера')
+    img.room-card__foto.slide(data-src=('img/room-3.jpg') src= 'img/room-3.jpg' alt='Фото номера')
+    img.room-card__foto.slide(data-src=('img/room-4.jpg') src= 'img/room-4.jpg' alt='Фото номера')
   div.room-card__cost
    +booking__room-cost(room.number, room.price, room.isLux)     
   div.room-card__rating

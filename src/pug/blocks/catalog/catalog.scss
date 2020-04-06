@@ -1,4 +1,5 @@
 .catalog {
+    @include indent();
     @include flex();
     justify-content: space-between;
     margin: 0;

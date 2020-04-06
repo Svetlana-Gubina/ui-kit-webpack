@@ -1,5 +1,4 @@
 .search__main {
-  // outline: 5px solid crimson;
   max-width: $max-width;
   min-width: $min-width;
   width: 100%;
@@ -11,12 +10,31 @@
   padding-left: 10em;
   padding-right: 10em;
   box-shadow: inset 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+  @media screen and (max-width: 1400px) {
+    padding-left: 5em;
+    padding-right: 5em;
+    justify-content: space-around;
+  }
+  @media screen and (max-width: 1370px) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  @media screen and (max-width: 400px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
+
 
 .search__filter {
     min-width: 266px;
     width: 22%;
     @include indent();
+    @media screen and (max-width: 800px) {
+      width: 60%;
+      margin-bottom: 20px;
+    }
 }
 
 .search__filter-form {
@@ -27,12 +45,25 @@
 .search__catalog {
   min-width: $min-width;
   width: 72%;
+  @include indent();
+  @media screen and (max-width: 1240px) {
+    max-width: 72%;
+    & .catalog {
+      justify-content: space-around;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    max-width: 60%;
+  }
 }
 
 .search__catalog-title {
   @include indent();
   padding: 0.2em 0;
   margin-bottom: 2%;
+  @media screen and (max-width: 900px) {
+   text-align: center;
+  }
 }
 
 .search__main .room-card {
