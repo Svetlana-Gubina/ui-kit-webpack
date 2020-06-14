@@ -9,6 +9,8 @@ html(lang='en')
         link(rel='preload' href='../fonts/Montserrat/Montserrat-Regular.woff' as='font' crossorigin='anonymous')
         link(rel='preload' href='../fonts/Open_Sans/opensansbold.woff' as='font' crossorigin='anonymous')
         link(rel='preload' href='../fonts/Montserrat/Montserrat-Bold.woff' as='font' crossorigin='anonymous')
+        script(src='https://code.jquery.com/jquery-1.12.4.js')
+        script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
     body
      block content
       div.search
@@ -49,7 +51,7 @@ html(lang='en')
       //-    h3.details__title Сведения о номере
       //-    - var movieList = [{iconClass: 'comfort', title: 'Комфорт', text: 'Шумопоглощающие стены'}, {iconClass: 'convenience', title: 'Удобство', text: 'Окно в каждой из спален'}, {iconClass: 'cosiness', title: 'Уют', text: 'Номер оснащён камином'}];
       //-    include ./blocks/info-block/info-block.pug
-      //-     
+      //-
       //-    for movie in movieList
       //-      +info-block(movie)
       //-   div.details__info-impressions
@@ -67,29 +69,29 @@ html(lang='en')
       //-   div.details__info-reviews-list
       //-    - var reviewsList = [{imgSrc: 'user1', likes: 12, name: 'Мурад Сарафанов', time: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}, {imgSrc: 'user2', likes: 2, name: 'Патрисия Стёклышкова', time: 'Неделю назад', text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'}]
       //-    for review in reviewsList
-      //-     +review(review)    
+      //-     +review(review)
       //-  div.details__info-rules
       //-   div
       //-    h3.details__title.details__title-1 Правила
       //-    ul.details__info-rules-list
       //-     each val, index in ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
       //-      li.details__info-rules-item= val
-      //-   div    
+      //-   div
       //-    h3.details__title Отмена
       //-    p.details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       //- aside.details__aside
       //-  include ./blocks/booking/booking.pug
-      
-      
+
+
      block foot
       //-Room details
       //-div.page-footer--rus
       include ./blocks/page-footer/page-footer--rus.pug
-     //-script(src='../scripts/search/filter-slider.js')  
-     
-     
-     
-     
-     
-     
-     
+      //-script(src='../scripts/flatpickr/flatpickr.js')
+     script(src='../scripts/search/dropdown.js')
+
+
+
+
+
+

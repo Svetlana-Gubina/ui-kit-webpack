@@ -1,4 +1,13 @@
 /*-COMMON-*/
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 
 .filter-form {
     @include indent();
@@ -29,6 +38,7 @@
 .filter-form__input-container {
   position: relative;
   @include indent();
+  cursor: pointer;
 }
 
 .filter-form__input-container::after {
@@ -68,18 +78,119 @@
   margin-bottom: 10px;
 }
 
+/* jQuery Slider */
+
+/* Ширина слайдера */
+#slider {
+	width: 100%;
+}
+
+/* Контейнер слайдера */
+.ui-slider {
+	position: relative;
+}
+
+/* Ползунок */
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid $white-color;
+  border-radius: 10px;
+	cursor: pointer;
+}
+
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	overflow: hidden;
+}
+
+/* горизонтальный слайдер (сама полоса по которой бегает ползунок) */
+
+.ui-slider-horizontal {
+	 height: 6px;
+}
+
+/* позиционируем ползунки */
+.ui-slider-horizontal .ui-slider-handle {
+	top: -7px;
+	margin-left: -6px;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+/* оформление полосы по которой ходит ползунок */
+.ui-widget-content {
+	border: 1px solid #D4D4D4;
+	background: #fff;
+}
+
+/* оформление активного участка (между двумя ползунками) */
+.ui-widget-header {
+	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+/* скругление для полосы слайдера */
+.ui-corner-all {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
 /* RANGE*/
 
-.filter-form__fieldset--range {
-  outline: 2px dashed magenta;
+.filter-form__fieldset-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 .filter-form__legend--range {
-  @include flex();
   letter-spacing: 0.08em;
-  margin-bottom: 10px;
 }
-  
+
+.filter-form__range-inputs {
+  @include flex();
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
+.filter-form__range-inputs input {
+  border: 0 none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.filter-form__range-price {
+  max-width: 42px;
+}
+
 .filter-form__range-span {
   /*FONT*/
   font-style: normal;
@@ -88,9 +199,9 @@
   line-height: 1.5;
   color: rgba(31, 32, 65, 0.5);
   letter-spacing: 0.07em;
-  margin-left: auto;
+  padding-top: 5px;
 }
-  
+
 .filter-form__range-text {
   /*FONT*/
   font-size: 12px;
@@ -99,45 +210,50 @@
   letter-spacing: 0.06em;
   padding: 0.5em 0;
 }
-  
-  
+
+.filter-form__range-controls {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
 .filter-form__range-scale {
   position: relative;
   width: 100%;
   height: 6px;
-  
+
   background: $white-color;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 3px;
+  box-sizing: border-box;
 }
-  
+
 .filter-form__range-track {
-  position: absolute;
-  top: 0;
-  left: 25%;
   width: 88px;
+  width: 30%;
   height: 6px;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 
 .filter-form__range-thumb {
   position: absolute;
-  top: -6px;
+  top: -5px;
   width: 18px;
   height: 18px;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border: 2px solid $white-color;
   border-radius: 10px;
 }
-  
+
 .filter-form__range-thumb--min {
   left: 0;
 }
 
 .filter-form__range-thumb--max {
-  left: 100%;
+  left: 30%;
 }
-  
+
+
 /*-CHECKBOX-*/
 
 .filter-form__fieldset--checkbox {
@@ -158,7 +274,7 @@
   left: -2em;
   width: 20px;
   height: 20px;
-  
+
   background: $white-color;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
@@ -170,7 +286,7 @@
 }
 
 .filter-form__checkbox--hidden:checked + .filter-form__checkbox {
-  border: none;  
+  border: none;
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.615234' width='19' height='19' rx='3.5' fill='white' stroke='%23BC9CFF'/%3E%3Cpath d='M6.46439 8.40768L10.707 12.6503L9.29282 14.0645L5.05018 9.82189L6.46439 8.40768Z' fill='url(%23paint0_linear)'/%3E%3Cpath d='M13.5355 6.99347L14.9497 8.40768L9.29282 14.0645L7.8786 12.6503L13.5355 6.99347Z' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='12.8284' y1='6.28636' x2='7.1715' y2='11.9432' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='12.8284' y1='6.28636' x2='7.1715' y2='11.9432' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
 }
 
@@ -179,7 +295,7 @@
     padding: 0.5em 0;
 }
 
-/*-ALLY-*/ 
+/*-ALLY-*/
 
 .filter-form__fieldset--ally {
   padding-right: 0;
@@ -236,7 +352,7 @@
 
 .filter-form__fieldset--comfort .room-dropdown {
   display: none;
-  
+
   position: absolute;
   width: 100%;
   left: 0;
@@ -259,8 +375,11 @@
   align-items: baseline;
 }
 
-.filter-form__div {
+.modal-close {
   display: none;
+}
+
+.filter-form__div {
   width: 100%;
   background-color: #ffffff;
   z-index: 10;
@@ -296,10 +415,10 @@
   transform: rotate(45deg);
   background-color: transparent;
   box-shadow: 0 none;
+  cursor: pointer;
 }
-  
 
 
 
 
-  
+

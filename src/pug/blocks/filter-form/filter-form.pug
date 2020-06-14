@@ -8,14 +8,28 @@ div.filter-form
   div.filter-form__input-container
    input(class='filter-form__input' type='text' name='guests' placeholder='3 гостя, 1 младенец')
  fieldset.filter-form__fieldset.filter-form__fieldset--range
-  legend.filter-form__legend.filter-form__legend--range Диапазон цены
-   span.filter-form__range-span 5 000₽ - 10 000₽
+  div.filter-form__fieldset-header
+   legend.filter-form__legend.filter-form__legend--range Диапазон цены
+   div.filter-form__range-inputs
+    input(class='filter-form__range-price filter-form__range-price--min' type='number' name='minPrice' placeholder='5000' onKeyDown='return false')
+    span.filter-form__range-span ₽
+    input(class='filter-form__range-price filter-form__range-price--max' type='number' name='maxPrice' placeholder='10000' onKeyDown='return false')
+    span.filter-form__range-span ₽
   div.filter-form__range-controls
-   div.filter-form__range-input
-    div.filter-form__range-scale
-     div.filter-form__range-track  
-      div.filter-form__range-thumb.filter-form__range-thumb--min
-      div.filter-form__range-thumb.filter-form__range-thumb--max
+   div.filter-form__range-scale
+    div.filter-form__range-track
+   div.filter-form__range-thumb.filter-form__range-thumb--min
+   div.filter-form__range-thumb.filter-form__range-thumb--max
+  p.filter-form__range-text Стоимость за сутки пребывания в номере
+ fieldset.filter-form__fieldset.filter-form__fieldset--range
+  div.filter-form__fieldset-header
+   legend.filter-form__legend.filter-form__legend--range Диапазон цены
+   div.filter-form__range-inputs
+    input(class='filter-form__range-price filter-form__range-price--min' type='text' id='minCost' value='5000' readonly)
+    span.filter-form__range-span ₽
+    input(class='filter-form__range-price filter-form__range-price--max' type='text' id='maxCost' value='10000' readonly)
+    span.filter-form__range-span ₽
+  div(class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all' id='slider')
   p.filter-form__range-text Стоимость за сутки пребывания в номере
  fieldset.filter-form__fieldset.filter-form__fieldset--checkbox
   legend.filter-form__legend Checkbox Buttons
@@ -28,7 +42,7 @@ div.filter-form
     input(class='filter-form__checkbox--hidden visually-hidden' type='checkbox' name='pets')
     span.filter-form__checkbox
   div.filter-form__group
-   label.filter-form__label Можно пригласить гостей (до 10 человек) 
+   label.filter-form__label Можно пригласить гостей (до 10 человек)
     input(class='filter-form__checkbox--hidden visually-hidden' type='checkbox' name='guests' checked)
     span.filter-form__checkbox
  fieldset.filter-form__fieldset.filter-form__fieldset--checkbox.filter-form__fieldset--ally
@@ -48,10 +62,9 @@ div.filter-form
   div.filter-form__input-container
    input(class='filter-form__input' type='text' name='comfort' placeholder='2 спальни, 2 кровати... ')
    include ../room-dropdown/room-dropdown.pug
- fieldset.filter-form__fieldset.filter-form__bottom 
+ fieldset.filter-form__fieldset.filter-form__bottom
   div.filter-form__bottom-flex
    legend.filter-form__legend.filter-form__legend--add Дополнительные удобства
    div.filter-form__dropdown-btn
    include filter-form__div.pug
-  
-    
+

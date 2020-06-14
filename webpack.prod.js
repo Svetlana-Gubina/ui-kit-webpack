@@ -24,7 +24,7 @@ function generateHtmlPlugins (templateDir) {
         console.error(err);
       }
       });
-  
+
     return templateFiles.map(item => {
       // Split names and extension
       const parts = item.split('.');
@@ -37,10 +37,10 @@ function generateHtmlPlugins (templateDir) {
       })
     })
 };
-    
+
 // Call our function on our views directory.
 const htmlPlugins = generateHtmlPlugins('./src/pug/pages');
-  
+
 
 module.exports = merge (common, {
     mode: `production`,

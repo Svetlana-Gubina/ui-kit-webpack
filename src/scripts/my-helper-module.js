@@ -105,14 +105,6 @@ var slider_plugin = (function() {
   fifi_slider.prototype.init = function () {
     var _ = this;
 
-    // function on_resize(c, t) {
-    //   onresize = function() {
-    //     clearTimeout(t);
-    //     t = setTimeout(c, 100);
-    //   }
-    //   return onresize;
-    // }
-
      function loadedImg(el) {
        var loaded = false;
 
@@ -140,9 +132,6 @@ var slider_plugin = (function() {
        }
      }
 
-    // window.addEventListener("resize", on_resize(function () {
-    //   _.updateSliderDimension();
-    // }), false);
 
     _.allSlides = 0;
     _.curSlide = 0;
@@ -313,7 +302,7 @@ var slider_plugin = (function() {
    fifi_slider.prototype.updateSliderDimension = function () {
      var _ = this;
 
-     _.slideW = 270;
+     _.slideW = 270;  //_.sliderInner.offsetHeight / _.totalSlides
      _.sliderInner.style.left = -_.slideW * _.curSlide + "px";
 
      if (_.def.autoHeight) {
