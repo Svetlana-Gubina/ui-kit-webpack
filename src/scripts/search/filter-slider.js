@@ -21,6 +21,16 @@ var max = $("#slider").slider("values", 1);
 $("input#minCost").val(min);
 $("input#maxCost").val(max);
 
+$( "input#minCost" ).change(function() {
+  jQuery("#slider").slider('values', 0, $(this).val());
+});
+
+$( "input#maxCost" ).change(function() {
+  jQuery("#slider").slider('values', 1, $(this).val());
+});
+
+
+
 
 // Dropdown
 const toggle = (elem, className) => {
