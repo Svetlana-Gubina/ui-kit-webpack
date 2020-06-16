@@ -79,7 +79,7 @@
   letter-spacing: 0.08em;
   margin-bottom: 10px;
 }
-  
+
 .filter-form__range-span {
   /*FONT*/
   font-style: normal;
@@ -90,7 +90,7 @@
   letter-spacing: 0.07em;
   margin-left: auto;
 }
-  
+
 .filter-form__range-text {
   /*FONT*/
   font-size: 12px;
@@ -99,18 +99,18 @@
   letter-spacing: 0.06em;
   padding: 0.5em 0;
 }
-  
-  
+
+
 .filter-form__range-scale {
   position: relative;
   width: 100%;
   height: 6px;
-  
+
   background: $white-color;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 3px;
 }
-  
+
 .filter-form__range-track {
   position: absolute;
   top: 0;
@@ -129,7 +129,7 @@
   border: 2px solid $white-color;
   border-radius: 10px;
 }
-  
+
 .filter-form__range-thumb--min {
   left: 0;
 }
@@ -137,7 +137,7 @@
 .filter-form__range-thumb--max {
   left: 100%;
 }
-  
+
 /*-CHECKBOX-*/
 
 .filter-form__fieldset--checkbox {
@@ -158,7 +158,7 @@
   left: -2em;
   width: 20px;
   height: 20px;
-  
+
   background: $white-color;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
@@ -170,7 +170,7 @@
 }
 
 .filter-form__checkbox--hidden:checked + .filter-form__checkbox {
-  border: none;  
+  border: none;
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.615234' width='19' height='19' rx='3.5' fill='white' stroke='%23BC9CFF'/%3E%3Cpath d='M6.46439 8.40768L10.707 12.6503L9.29282 14.0645L5.05018 9.82189L6.46439 8.40768Z' fill='url(%23paint0_linear)'/%3E%3Cpath d='M13.5355 6.99347L14.9497 8.40768L9.29282 14.0645L7.8786 12.6503L13.5355 6.99347Z' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='12.8284' y1='6.28636' x2='7.1715' y2='11.9432' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='12.8284' y1='6.28636' x2='7.1715' y2='11.9432' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
 }
 
@@ -179,7 +179,7 @@
     padding: 0.5em 0;
 }
 
-/*-ALLY-*/ 
+/*-ALLY-*/
 
 .filter-form__fieldset--ally {
   padding-right: 0;
@@ -236,7 +236,7 @@
 
 .filter-form__fieldset--comfort .room-dropdown {
   display: none;
-  
+
   position: absolute;
   width: 100%;
   left: 0;
@@ -297,9 +297,8 @@
   background-color: transparent;
   box-shadow: 0 none;
 }
-  
 
 
 
 
-  
+
