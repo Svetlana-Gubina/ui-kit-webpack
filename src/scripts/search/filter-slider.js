@@ -45,10 +45,10 @@ addBtn.addEventListener('click', function(evt) {
   toggle(addDropdown, 'modal-close');
 });
 
-const comfortInput = document.querySelector('.filter-form__input');
+const comfortInput = document.querySelector('#comfortInput');
 const comfortDropdown = document.querySelector('.room-dropdown');
 
-$('.filter-form__input').focus(function() {
+$('#comfortInput').focus(function() {
   $(this).removeAttr('placeholder');
 }).blur(function() {
   $(this).attr('placeholder', '2 спальни, 2 кровати, ... ');
@@ -126,7 +126,7 @@ const validate = function (input) {
    var $button = $(this);
    var oldValue = $button.parent().find("input").val();
    var input = $button.parent().find("input");
-   var targetInput = $(".filter-form__input");
+   var targetInput = $('#comfortInput');
 
    if ($button.text() == "+") {
      var newVal = parseFloat(oldValue) + 1 < input.attr('max') ? parseFloat(oldValue) + 1 : input.attr('max');
