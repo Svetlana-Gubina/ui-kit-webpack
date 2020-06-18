@@ -1,5 +1,5 @@
 /*-COMMON-*/
-input[type="number"] {
+input[type=number] {
   -webkit-appearance: textfield;
      -moz-appearance: textfield;
           appearance: textfield;
@@ -41,16 +41,23 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
-.filter-form__input-container::after {
-  content: "";
+.filter-form__input-arrow {
   position: absolute;
-  top: 28%;
+  top: 25%;
   right: 5%;
   width: 8px;
   height: 8px;
+  box-sizing: border-box;
   border-bottom: 1px solid $shade-75;
   border-right: 1px solid $shade-75;
   transform: rotate(45deg);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.filter-form__arrow--active {
+  top: 30%;
+  transform: rotate(225deg);
 }
 
 .filter-form__input {
@@ -60,7 +67,6 @@ input[type=number]::-webkit-outer-spin-button {
   line-height: 1.7;
   padding: 0.6em;
   margin-bottom: 1em;
-  cursor: pointer;
 }
 
 .filter-form .filter-form__label {

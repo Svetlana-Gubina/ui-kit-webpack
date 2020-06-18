@@ -54,7 +54,8 @@ $('.filter-form__input').focus(function() {
   $(this).attr('placeholder', '2 спальни, 2 кровати, ... ');
 });
 
-$(".filter-form__input").on("click", function() {
+$(".filter-form__input-arrow").on("click", function() {
+  $(this).toggleClass('filter-form__arrow--active');
   comfortDropdown.classList.toggle('modal-close');
 });
 
@@ -90,10 +91,42 @@ const validate = function (input) {
 
  // Numbers
 
+ const bedroomID  ='спальни';
+ const bedsID = 'кровати';
+ const bathroomID = 'ванные комнаты';
+ const INITIAL_VALUE = 2;
+
+ const DefaultOptions = {
+   bedroom: {
+     id: bedroomID,
+     amount : INITIAL_VALUE,
+   },
+   beds: {
+     id: bedsID,
+     amount: INITIAL_VALUE,
+   },
+   bathroom: {
+     id: bathroomID,
+     amount: 0,
+   }
+ };
+
+ const updateOptions = (inputID, newVal) => {
+   if (inputID === 'спальни') {
+    DefaultOptions.bedroom.amount = newVal;
+   } else if (inputID === 'кровати') {
+    DefaultOptions.beds.amount = newVal;
+   } else if (inputID === 'ванные комнаты') {
+    DefaultOptions.bathroom.amount = newVal;
+   }
+   return;
+ };
+
  $(".room-dropdown__btn").on("click", function() {
    var $button = $(this);
    var oldValue = $button.parent().find("input").val();
    var input = $button.parent().find("input");
+   var targetInput = $(".filter-form__input");
 
    if ($button.text() == "+") {
      var newVal = parseFloat(oldValue) + 1 < input.attr('max') ? parseFloat(oldValue) + 1 : input.attr('max');
@@ -107,4 +140,7 @@ const validate = function (input) {
    }
 
    input.val(newVal);
+   var inputID = input.attr("id");
+   updateOptions(inputID, newVal);
+   targetInput.val(DefaultOptions.bedroom.amount + ' ' + DefaultOptions.bedroom.id + ', ' + DefaultOptions.beds.amount + ' ' + DefaultOptions.beds.id + ', ' + DefaultOptions.bathroom.amount + ' ' + DefaultOptions.bathroom.id);
  });
