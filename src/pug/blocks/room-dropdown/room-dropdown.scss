@@ -36,6 +36,7 @@
   padding: 0.5em 1em;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-shadow: none;
+  cursor: pointer;
 }
 
 
@@ -46,6 +47,7 @@
 }
 
 .room-dropdown__input {
+  max-width: 40px;
   border: none;
   text-align: center;
   padding: 0.5em 1em;

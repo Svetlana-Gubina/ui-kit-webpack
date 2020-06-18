@@ -1,20 +1,21 @@
-div.room-dropdown
- table.room-dropdown__table
-  tr.room-dropdown__row
-   th Спальни
-   td
-    button(type='button' aria-label="Уменьшить количество").room-dropdown__btn -
-    input(type='number' size='2' id='adults' name='adults-count' value='2').room-dropdown__input
-    button(type='button' aria-label='Увеличить количество').room-dropdown__btn +
-  tr.room-dropdown__row
-   th Кровати
-   td
-    button(type='button' aria-label="Уменьшить количество").room-dropdown__btn -
-    input(type='number' size='2' id='kids' name='kids-count' value='2').room-dropdown__input
-    button(type='button' aria-label='Увеличить количество').room-dropdown__btn +
-  tr.room-dropdown__row
-   th Ванные комнаты
-   td
-    button(type='button' aria-label="Уменьшить количество").room-dropdown__btn -
-    input(type='number' size='2' id='babies' name='babies-count' value='0').room-dropdown__input
-    button(type='button' aria-label='Увеличить количество').room-dropdown__btn +
+div.room-dropdown.modal-close
+ form
+  table.room-dropdown__table
+   tr.room-dropdown__row
+    th Спальни
+    td
+     button(type='button' aria-label="Уменьшить количество").room-dropdown__btn -
+     input(type='number' size='2' id='bedroom' name='bedroom-count' value='2' max='2').room-dropdown__input
+     button(type='button' aria-label='Увеличить количество').room-dropdown__btn +
+   tr.room-dropdown__row
+    th Кровати
+    td
+     button(type='button' aria-label="Уменьшить количество").room-dropdown__btn -
+     input(type='number' size='2' id='beds' name='beds-count' value='2' max='4').room-dropdown__input
+     button(type='button' aria-label='Увеличить количество').room-dropdown__btn +
+   tr.room-dropdown__row
+    th Ванные комнаты
+    td
+     button(type='button' aria-label="Уменьшить количество").room-dropdown__btn -
+     input(type='number' size='2' id='bathroom' name='bathroom-count' value='0' max='2').room-dropdown__input
+     button(type='button' aria-label='Увеличить количество').room-dropdown__btn +

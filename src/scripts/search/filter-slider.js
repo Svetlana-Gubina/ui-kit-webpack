@@ -47,3 +47,64 @@ addBtn.addEventListener('click', function(evt) {
 
 const comfortInput = document.querySelector('.filter-form__input');
 const comfortDropdown = document.querySelector('.room-dropdown');
+
+$('.filter-form__input').focus(function() {
+  $(this).removeAttr('placeholder');
+}).blur(function() {
+  $(this).attr('placeholder', '2 спальни, 2 кровати, ... ');
+});
+
+$(".filter-form__input").on("click", function() {
+  comfortDropdown.classList.toggle('modal-close');
+});
+
+// Validation
+
+const validate = function (input) {
+  var validityState_object = input.validity;
+
+  if (validityState_object.typeMismatch) {
+   input.setCustomValidity('Please, enter an integer');
+   input.reportValidity();
+  } else if (input.rangeUnderflow) {
+   input.setCustomValidity('We need a higher number!');
+   input.reportValidity();
+  } else if (input.rangeOverflow) {
+   input.setCustomValidity('Thats too high!');
+   input.reportValidity();
+  } else {
+   input.setCustomValidity('');
+   input.reportValidity();
+  }
+
+ };
+
+ var customInputs = document.querySelectorAll('.room-dropdown__input');
+
+ customInputs.forEach((input) => {
+   input.addEventListener("input", function(evt){
+     validate(input);
+   });
+ });
+
+
+ // Numbers
+
+ $(".room-dropdown__btn").on("click", function() {
+   var $button = $(this);
+   var oldValue = $button.parent().find("input").val();
+   var input = $button.parent().find("input");
+
+   if ($button.text() == "+") {
+     var newVal = parseFloat(oldValue) + 1 < input.attr('max') ? parseFloat(oldValue) + 1 : input.attr('max');
+   } else {
+    // Don't allow decrementing below zero
+     if (oldValue > 0) {
+       var newVal = parseFloat(oldValue) - 1;
+     } else {
+       newVal = 0;
+     }
+   }
+
+   input.val(newVal);
+ });
