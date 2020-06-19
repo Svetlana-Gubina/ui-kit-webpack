@@ -1,5 +1,5 @@
 mixin dropdown(buttonClass, title1, number1, title2, number2, title3, number3, boolean)
- div.select__dropdown.modal-close
+ div(id= buttonClass class='select__dropdown modal-close')
   form
    div.select__dropdown-top
     table.select__dropdown-table
@@ -23,7 +23,7 @@ mixin dropdown(buttonClass, title1, number1, title2, number2, title3, number3, b
        button(type='button' aria-label='Увеличить количество').select__dropdown-btn(class= buttonClass) +
    if boolean
       div.select__dropdown-bottom
-       button.calendar__btn(type='button') Очистить
+       button.calendar__btn.calendar__btn--reset(type='button') Очистить
        button.calendar__btn.calendar__btn--submit(type='submit') Применить
    else
 
