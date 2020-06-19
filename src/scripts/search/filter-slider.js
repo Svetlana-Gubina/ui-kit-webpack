@@ -32,7 +32,8 @@ $( "input#maxCost" ).change(function() {
 
 
 
-// Dropdown
+// Dropdown Дополнительные удобства
+
 const toggle = (elem, className) => {
   elem.classList.toggle(className);
 };
@@ -45,8 +46,18 @@ addBtn.addEventListener('click', function(evt) {
   toggle(addDropdown, 'modal-close');
 });
 
+// Comfort, guests dropdown
+
 const comfortInput = document.querySelector('#comfortInput');
 const comfortDropdown = document.querySelector('.room-dropdown');
+
+const guestsInput = document.querySelector('#guestsInput');
+
+$('#guestsInput').focus(function() {
+  $(this).removeAttr('placeholder');
+}).blur(function() {
+  $(this).attr('placeholder', '3 гостя, 1 младенец');
+});
 
 $('#comfortInput').focus(function() {
   $(this).removeAttr('placeholder');
@@ -54,9 +65,11 @@ $('#comfortInput').focus(function() {
   $(this).attr('placeholder', '2 спальни, 2 кровати, ... ');
 });
 
+// Arrow on click
+
 $(".filter-form__input-arrow").on("click", function() {
   $(this).toggleClass('filter-form__arrow--active');
-  comfortDropdown.classList.toggle('modal-close');
+  $(this).parent().find($('.select__dropdown')).toggleClass('modal-close');
 });
 
 // Validation
@@ -80,7 +93,7 @@ const validate = function (input) {
 
  };
 
- var customInputs = document.querySelectorAll('.room-dropdown__input');
+ var customInputs = document.querySelectorAll('.select__dropdown-input');
 
  customInputs.forEach((input) => {
    input.addEventListener("input", function(evt){
@@ -90,57 +103,136 @@ const validate = function (input) {
 
 
  // Numbers
-
- const bedroomID  ='спальни';
- const bedsID = 'кровати';
- const bathroomID = 'ванные комнаты';
  const INITIAL_VALUE = 2;
 
- const DefaultOptions = {
-   bedroom: {
-     id: bedroomID,
-     amount : INITIAL_VALUE,
-   },
-   beds: {
-     id: bedsID,
-     amount: INITIAL_VALUE,
-   },
-   bathroom: {
-     id: bathroomID,
-     amount: 0,
-   }
+ const getDefaultOptions = (IDs) => {
+   return {
+    first: {
+      id: IDs[0],
+      amount : INITIAL_VALUE,
+    },
+    second: {
+      id: IDs[1],
+      amount: INITIAL_VALUE,
+    },
+    third: {
+      id: IDs[2],
+      amount: 0,
+    }
+  };
  };
 
- const updateOptions = (inputID, newVal) => {
-   if (inputID === 'спальни') {
-    DefaultOptions.bedroom.amount = newVal;
-   } else if (inputID === 'кровати') {
-    DefaultOptions.beds.amount = newVal;
-   } else if (inputID === 'ванные комнаты') {
-    DefaultOptions.bathroom.amount = newVal;
-   }
-   return;
- };
+ const updateOptions = (DefaultOptions, inputID, newVal) => {
+  if (inputID === DefaultOptions.first.id) {
+    DefaultOptions.first.amount = newVal;
+  } else if (inputID === DefaultOptions.second.id) {
+    DefaultOptions.second.amount = newVal;
+  } else if (inputID === DefaultOptions.third.id) {
+    DefaultOptions.third.amount = newVal;
+  }
+  return;
+};
 
- $(".room-dropdown__btn").on("click", function() {
-   var $button = $(this);
-   var oldValue = $button.parent().find("input").val();
-   var input = $button.parent().find("input");
-   var targetInput = $('#comfortInput');
+ // const adultsID = 'Взрослые';
+ // const childrenID = 'Дети';
+ // const babiesID = 'Младенцы';
 
-   if ($button.text() == "+") {
-     var newVal = parseFloat(oldValue) + 1 < input.attr('max') ? parseFloat(oldValue) + 1 : input.attr('max');
-   } else {
-    // Don't allow decrementing below zero
-     if (oldValue > 0) {
-       var newVal = parseFloat(oldValue) - 1;
-     } else {
-       newVal = 0;
-     }
-   }
+ // const bedroomID  = 'Спальни';
+ // const bedsID = 'Кровати';
+ // const bathroomID = 'Ванные комнаты';
 
-   input.val(newVal);
-   var inputID = input.attr("id");
-   updateOptions(inputID, newVal);
-   targetInput.val(DefaultOptions.bedroom.amount + ' ' + DefaultOptions.bedroom.id + ', ' + DefaultOptions.beds.amount + ' ' + DefaultOptions.beds.id + ', ' + DefaultOptions.bathroom.amount + ' ' + DefaultOptions.bathroom.id);
- });
+ // const DefaultOptions = {
+ //   bedroom: {
+ //     id: bedroomID,
+ //     amount : INITIAL_VALUE,
+ //   },
+ //   beds: {
+ //     id: bedsID,
+ //     amount: INITIAL_VALUE,
+ //   },
+ //   bathroom: {
+ //     id: bathroomID,
+ //     amount: 0,
+ //   }
+ // };
+ // const updateOptions = (inputID, newVal) => {
+ //   if (inputID === 'спальни') {
+ //    DefaultOptions.bedroom.amount = newVal;
+ //   } else if (inputID === 'кровати') {
+ //    DefaultOptions.beds.amount = newVal;
+ //   } else if (inputID === 'ванные комнаты') {
+ //    DefaultOptions.bathroom.amount = newVal;
+ //   }
+ //   return;
+ // };
+
+ // $(".room-dropdown__btn").on("click", function() {
+ //   var $button = $(this);
+ //   var oldValue = $button.parent().find("input").val();
+ //   var input = $button.parent().find("input");
+ //   var targetInput = $('#comfortInput');
+ //   if ($button.text() == "+") {
+ //     var newVal = parseFloat(oldValue) + 1 < input.attr('max') ? parseFloat(oldValue) + 1 : input.attr('max');
+ //   } else {
+ //    // Don't allow decrementing below zero
+ //     if (oldValue > 0) {
+ //       var newVal = parseFloat(oldValue) - 1;
+ //     } else {
+ //       newVal = 0;
+ //     }
+ //   }
+ //   input.val(newVal);
+ //   var inputID = input.attr("id");
+ //   updateOptions(inputID, newVal);
+ //   targetInput.val(DefaultOptions.bedroom.amount + ' ' + DefaultOptions.bedroom.id + ', ' + DefaultOptions.beds.amount + ' ' + DefaultOptions.beds.id + ', ' + DefaultOptions.bathroom.amount + ' ' + DefaultOptions.bathroom.id);
+ // });
+
+
+ const switchAmount = (button, input) => {
+  var oldValue = button.parent().find("input").val();
+
+  if (button.text() == "+") {
+    var newVal = parseFloat(oldValue) + 1 < input.attr('max') ? parseFloat(oldValue) + 1 : input.attr('max');
+  } else {
+   // Don't allow decrementing below zero
+    if (oldValue > 0) {
+      var newVal = parseFloat(oldValue) - 1;
+    } else {
+      newVal = 0;
+    }
+  }
+
+  input.val(newVal);
+  return newVal;
+};
+
+const guestsIDs = ['Взрослые', 'Дети', 'Младенцы'];
+const guestsDefaultOptions = getDefaultOptions(guestsIDs);
+
+ $(".Guests").on("click", function() {
+  var $button = $(this);
+  var input = $button.parent().find("input");
+
+  var newVal = switchAmount($button, input);
+
+  var targetInput = $('#guestsInput');
+  var inputID = input.attr("id");
+  updateOptions(guestsDefaultOptions, inputID, newVal);
+  targetInput.val(guestsDefaultOptions.first.amount + ' ' + guestsDefaultOptions.first.id + ', ' + guestsDefaultOptions.second.amount + ' ' + guestsDefaultOptions.second.id + ', ' + guestsDefaultOptions.third.amount + ' ' + guestsDefaultOptions.third.id);
+});
+
+const comfortIDs = ['Спальни', 'Кровати', 'Ванные комнаты'];
+const comfortDefaultOptions = getDefaultOptions(comfortIDs);
+
+$(".Comfort").on("click", function() {
+  var $button = $(this);
+  var input = $button.parent().find("input");
+
+  var newVal = switchAmount($button, input);
+
+  var targetInput = $('#comfortInput');
+  var inputID = input.attr("id");
+  updateOptions(comfortDefaultOptions, inputID, newVal);
+  targetInput.val(comfortDefaultOptions.first.amount + ' ' + comfortDefaultOptions.first.id + ', ' + comfortDefaultOptions.second.amount + ' ' + comfortDefaultOptions.second.id + ', ' + comfortDefaultOptions.third.amount + ' ' + comfortDefaultOptions.third.id);
+});
+

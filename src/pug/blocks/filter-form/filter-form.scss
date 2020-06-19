@@ -316,14 +316,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*-COMFORT-*/
 
-.filter-form__fieldset--comfort {
+.filter-form__fieldset--comfort,
+.filter-form__fieldset--guests {
   position: relative;
   margin-bottom: 10px;
 }
 
-.filter-form__fieldset--comfort .room-dropdown {
-  // display: none;
-
+.filter-form__fieldset--guests .select__dropdown,
+.filter-form__fieldset--comfort .select__dropdown {
   position: absolute;
   width: 100%;
   left: 0;

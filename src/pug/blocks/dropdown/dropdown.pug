@@ -1,29 +1,29 @@
-mixin dropdown(title1, number1, title2, number2, title3, number3, boolean)
- div.search-form__dropdown
- div.search-form__dropdown-top
-  table.search-form__dropdown-table
-   tr.search-form__dropdown-row
-    th= title1
-    td
-     button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
-     input(type='text' size='2' id='adults' name='adults-count' value= number1).search-form__dropdown-input
-     button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
-   tr.search-form__dropdown-row
-    th= title2
-    td
-     button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
-     input(type='text' size='2' id='kids' name='kids-count' value= number2).search-form__dropdown-input
-     button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
-   tr.search-form__dropdown-row
-    th= title3
-    td
-     button(type='button' aria-label="Уменьшить количество").search-form__dropdown-btn -
-     input(type='text' size='2' id='babies' name='babies-count' value= number3).search-form__dropdown-input
-     button(type='button' aria-label='Увеличить количество').search-form__dropdown-btn +
- if boolean
-    div.search-form__dropdown-bottom
-     button.calendar__btn(type='button') Очистить
-     button.calendar__btn.calendar__btn--submit(type='submit') Применить
-  else
-    
- 
+mixin dropdown(buttonClass, title1, number1, title2, number2, title3, number3, boolean)
+ div.select__dropdown.modal-close
+  form
+   div.select__dropdown-top
+    table.select__dropdown-table
+     tr.select__dropdown-row
+      th= title1
+      td
+       button(type='button' aria-label="Уменьшить количество").select__dropdown-btn(class= buttonClass) -
+       input(type='number' size='2' id= title1 name= title1 + '-count' value= number1 max= number1).select__dropdown-input
+       button(type='button' aria-label='Увеличить количество').select__dropdown-btn(class= buttonClass) +
+     tr.select__dropdown-row
+      th= title2
+      td
+       button(type='button' aria-label="Уменьшить количество").select__dropdown-btn(class= buttonClass) -
+       input(type='number' size='2' id= title2 name= title2 + '-count' value= number2 max= number1).select__dropdown-input
+       button(type='button' aria-label='Увеличить количество').select__dropdown-btn(class= buttonClass) +
+     tr.select__dropdown-row
+      th= title3
+      td
+       button(type='button' aria-label="Уменьшить количество").select__dropdown-btn(class= buttonClass) -
+       input(type='number' size='2' id= title3 name= title3 + '-count' value= number3 max= number1).select__dropdown-input
+       button(type='button' aria-label='Увеличить количество').select__dropdown-btn(class= buttonClass) +
+   if boolean
+      div.select__dropdown-bottom
+       button.calendar__btn(type='button') Очистить
+       button.calendar__btn.calendar__btn--submit(type='submit') Применить
+   else
+
