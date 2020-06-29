@@ -1,29 +1,29 @@
 mixin dropdown(buttonClass, title1, number1, title2, number2, title3, number3, boolean)
  div(id= buttonClass class='select__dropdown modal-close')
-  form
+  form.select__dropdown-form
    div.select__dropdown-top
     table.select__dropdown-table
      tr.select__dropdown-row
       th= title1
       td
-       button(type='button' aria-label="Уменьшить количество").select__dropdown-btn(class= buttonClass) -
+       button(type='button' aria-label="Уменьшить количество" class= buttonClass + " select__dropdown-btn") -
        input(type='number' size='2' id= title1 name= title1 + '-count' value= number1 max= number1).select__dropdown-input
-       button(type='button' aria-label='Увеличить количество').select__dropdown-btn(class= buttonClass) +
+       button(type='button' aria-label='Увеличить количество' class= buttonClass + " select__dropdown-btn") +
      tr.select__dropdown-row
       th= title2
       td
-       button(type='button' aria-label="Уменьшить количество").select__dropdown-btn(class= buttonClass) -
+       button(type='button' aria-label="Уменьшить количество" class= buttonClass + " select__dropdown-btn") -
        input(type='number' size='2' id= title2 name= title2 + '-count' value= number2 max= number1).select__dropdown-input
-       button(type='button' aria-label='Увеличить количество').select__dropdown-btn(class= buttonClass) +
+       button(type='button' aria-label='Увеличить количество' class= buttonClass + " select__dropdown-btn") +
      tr.select__dropdown-row
       th= title3
       td
-       button(type='button' aria-label="Уменьшить количество").select__dropdown-btn(class= buttonClass) -
+       button(type='button' aria-label="Уменьшить количество" class= buttonClass + " select__dropdown-btn") -
        input(type='number' size='2' id= title3 name= title3 + '-count' value= number3 max= number1).select__dropdown-input
-       button(type='button' aria-label='Увеличить количество').select__dropdown-btn(class= buttonClass) +
+       button(type='button' aria-label='Увеличить количество' class= buttonClass + " select__dropdown-btn") +
    if boolean
       div.select__dropdown-bottom
-       button.calendar__btn.calendar__btn--reset(type='button') Очистить
+       button.calendar__btn.calendar__btn--reset(type='reset') Очистить
        button.calendar__btn.calendar__btn--submit(type='submit') Применить
    else
 

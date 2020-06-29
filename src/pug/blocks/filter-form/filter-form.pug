@@ -5,7 +5,8 @@ div.filter-form
   fieldset.filter-form__fieldset.filter-form__fieldset--dates
    legend.filter-form__legend Даты пребывания в отеле
    div.filter-form__input-container
-    input(class='filter-form__input' type='text' name='dates' placeholder='19 авг - 23 авг')
+    div.filter-form__input-arrow
+    input(id="filterDates" class='filter-form__input datepicker-here' type='text' name='dates' placeholder='19 авг - 23 авг')
   fieldset.filter-form__fieldset.filter-form__fieldset--guests
    legend.filter-form__legend Гости
    div.filter-form__input-container
@@ -53,7 +54,6 @@ div.filter-form
    div.filter-form__input-container
     div.filter-form__input-arrow
     input(class='filter-form__input' id='comfortInput' type='text' name='comfort' placeholder='2 спальни, 2 кровати... ')
-    //-include ../room-dropdown/room-dropdown.pug
     +dropdown('Comfort', 'Спальни', 2, 'Кровати', 2, 'Ванные комнаты', 0, false)
   fieldset.filter-form__fieldset.filter-form__bottom
    div.filter-form__bottom-flex

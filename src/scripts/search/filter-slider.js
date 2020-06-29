@@ -1,8 +1,17 @@
+import '../../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+import '../../../node_modules/air-datepicker';
+
+// Datepicker
+
+$('#filterDates').datepicker([]);
+
+
 // Slider jQuery
 jQuery("#slider").slider({
   animate: "slow",
 	min: 5000,
-	max: 10000,
+  max: 10000,
+  step: 100,
 	values: [6500,8100],
 	range: true,
 	stop: function(event, ui) {
@@ -12,7 +21,7 @@ jQuery("#slider").slider({
     slide: function(event, ui){
 		jQuery("input#minCost").val(jQuery("#slider").slider("values",0));
 		jQuery("input#maxCost").val(jQuery("#slider").slider("values",1));
-    }
+    },
 });
 
 /* show initial values */
@@ -28,7 +37,6 @@ $( "input#minCost" ).change(function() {
 $( "input#maxCost" ).change(function() {
   jQuery("#slider").slider('values', 1, $(this).val());
 });
-
 
 
 
@@ -53,16 +61,27 @@ const comfortDropdown = document.querySelector('.room-dropdown');
 
 const guestsInput = document.querySelector('#guestsInput');
 
+const onEnterClickHandler = function (evt) {
+  evt.preventDefault();
+  if(evt.key === 'Enter') {
+    $(this).find($('.select__dropdown')).toggleClass('modal-close');
+  }
+};
+
 $('#guestsInput').focus(function() {
   $(this).removeAttr('placeholder');
+  // document.addEventListener('keydown', onEnterClickHandler);
 }).blur(function() {
   $(this).attr('placeholder', '3 гостя, 1 младенец');
+  // document.removeEventListener('keydown', onEnterClickHandler);
 });
 
 $('#comfortInput').focus(function() {
   $(this).removeAttr('placeholder');
+  // document.addEventListener('keydown', onEnterClickHandler);
 }).blur(function() {
   $(this).attr('placeholder', '2 спальни, 2 кровати, ... ');
+  // document.removeEventListener('keydown', onEnterClickHandler);
 });
 
 // Arrow on click
@@ -152,17 +171,14 @@ const validate = function (input) {
   return newVal;
 };
 
+// Guests
+
 const guestsIDs = ['Взрослые', 'Дети', 'Младенцы'];
 const guestsDefaultOptions = getDefaultOptions(guestsIDs);
 
-$('#Guests .calendar__btn--submit').click(function(evt) {
+$("#Guests").find(".calendar__btn--submit").on("click", function(evt) {
   evt.preventDefault();
-  console.log('submit!');
-});
-
-$('#Guests .calendar__btn--reset').click(function(evt) {
-  evt.preventDefault();
-  console.log('reset!');
+  const input = $("#Guests").parent().find($("#guestsInput"));
 });
 
  $(".Guests").on("click", function() {
@@ -179,8 +195,12 @@ $('#Guests .calendar__btn--reset').click(function(evt) {
   // targetInput.val(guestsDefaultOptions.first.amount + ' ' + guestsDefaultOptions.first.id + ', ' + guestsDefaultOptions.second.amount + ' ' + guestsDefaultOptions.second.id + ', ' + guestsDefaultOptions.third.amount + ' ' + guestsDefaultOptions.third.id);
 });
 
+
+// Comfort
+
 const comfortIDs = ['Спальни', 'Кровати', 'Ванные комнаты'];
 const comfortDefaultOptions = getDefaultOptions(comfortIDs);
+
 
 $(".Comfort").on("click", function() {
   var $button = $(this);
