@@ -42,23 +42,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-.filter-form__input-arrow {
+.filter-form__input-arrow,
+.filter-form__datepicker-arrow {
+  @include inputArrow();
   position: absolute;
   top: 25%;
   right: 5%;
-  width: 8px;
-  height: 8px;
-  box-sizing: border-box;
-  border-bottom: 1px solid $shade-75;
-  border-right: 1px solid $shade-75;
-  transform: rotate(45deg);
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .filter-form__arrow--active {
   top: 30%;
-  transform: rotate(225deg);
+  @include inputActiveArrow();
 }
 
 .filter-form__input {

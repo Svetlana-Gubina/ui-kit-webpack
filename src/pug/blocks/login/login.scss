@@ -7,58 +7,57 @@
 }
 
 .login__title {
-    @include h2();
-    margin: 1em 0;
+  @include h2();
+  font-size: 24px;
+  margin: 1em 0;
 }
 
 
 .login__fields {
-    @include flex();
-    flex-direction: column;
-    margin-bottom: 0.5em;
+  @include flex();
+  flex-direction: column;
+  margin-bottom: 0.5em;
 }
 
 //-fields
 .login__form-control {
-    width: 100%;
-    
-    margin: 0;
-    margin-bottom: 1em;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1em;
+  @extend .form-field;
+  padding: 0.8em;
 
-    @extend .form-field;
-    padding: 0.8em;
+  &-hover,
+  &:hover {
+      color: $shade-75;
+      border-color: $shade-50;
+  }
 
-    &-hover,
-    &:hover {
-        color: $shade-75;
-        border-color: $shade-50;
-    }
-
-    &-focus,
-    &:focus {
-        color: $shade-75;
-        border-color: $shade-50;
-    }
+  &-focus,
+  &:focus {
+      color: $shade-75;
+      border-color: $shade-50;
+  }
 }
 
 .login__form-footer {
-    @include flex();
-    justify-content: space-between;
-    align-items: center;
+  @include flex();
+  justify-content: space-between;
+  align-items: center;
 }
 
 .login__form-text {
-     /*FONT*/
-    font-size: 14px;
-    line-height: 1.5;
-    font-weight: normal;
-    letter-spacing: 0.07em;
+   /*FONT*/
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: normal;
+  letter-spacing: 0.07em;
 }
 
 .login .btn--bright {
-    margin-bottom: 2.5em;
+  margin-bottom: 2.5em;
 }
 
 .login .btn__inner {
-    padding: 0.8em 1.2em;
+  padding: 0.8em 1.2em;
 }

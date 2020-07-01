@@ -3,8 +3,8 @@ include ../page-header/page-header__user-nav.pug
 
 
 block navlist
-  div.page-header--rus 
+  div.page-header_container
    +nav-list(['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'])
 block user-nav
-  div.page-header--rus 
+  div.page-header_container.page-header_container--nav
    +page-header__user-nav(false, 'Войти', 'Зарегистрироваться')

@@ -9,11 +9,11 @@
 }
 
 .registration__presentation--login {
-    min-height: 600px;
+  min-height: 680px;
 }
 
 .registration__presentation--register {
-    min-height: 800px;
+  min-height: 700px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5),
@@ -36,9 +36,8 @@
 
 .registration__presentation .login {
     position: absolute;
-    top: 163px;
     top: 24%;
     left: 50%;
-    margin-left: -180px;
+    margin-left: -185px;
     width: 26%;
 }

@@ -1,12 +1,7 @@
 .footer-sm {
     width: 100%;
-    padding-top: 7%;
-    padding-bottom: 7%;
-
-    /*ui-kit*/
-    // margin: 20px;
-    // margin-left: 0;
-    // margin-right: 0;
+    padding-top: 8.5%;
+    padding-bottom: 7.5%;
 
     @include flex();
     flex-direction: column;
@@ -17,23 +12,24 @@
 
 
 .footer-sm__text {
-    max-width: 40%;
     padding: 1em;
+    letter-spacing: 0.6px;
     margin: 0;
     margin-bottom: 10px;
     text-align: center;
+    max-width: 100%;
 }
 
 .footer-sm__logo {
-    @include indent();
-    margin-left: 5px;
-    margin-bottom: 0.4%;
+  @include indent();
+  padding-left: 0.5em;
+  margin-bottom: 0.4%;
 }
 
 .footer-sm__social-icons-list {
-    @include list();
-    @include flex();
-    min-width: 8%;
+  @include list();
+  @include flex();
+  min-width: 15%;
 }
 
 .footer-sm__social-icons-item a {

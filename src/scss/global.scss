@@ -4,7 +4,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} 
+}
 
 @font-face {
   font-family: "Montserrat Bold";
@@ -21,7 +21,7 @@
   font-style: normal;
   font-display: swap;
 }
- 
+
 @font-face {
   font-family: "Open Sans Bold";
   src: local("Open Sans Bold"), url("../fonts/Open_Sans/opensansbold.woff") format("woff"), url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("ttf"),url("../fonts/Open_Sans/OpenSans-Bold.svg") format("svg");
@@ -29,30 +29,25 @@
   font-style: normal;
   font-display: swap;
 }
- 
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
-  
+
 body {
   @include indent();
   color: $shade-75;
-  background-color: #E5E5E5; 
+  background-color: #E5E5E5;
   @include Montserrat();
   font-size: 14px;
   line-height: 1.7;
   max-width: $max-width;
+  max-width: 1440px;
   min-width: $min-width;
   width: 100%;
-  
-  padding-top: 50px;
-  padding-bottom: 50px;
   margin: auto;
-  
-  outline: 3px dashed maroon;
-
 }
-  
+
 img {
   max-width: 100%;
   height: auto;

@@ -1,13 +1,13 @@
-extends ../../index.pug
+extends ../../template.pug
 
 block content
- include ../../blocks/page-header/page-header--rus.pug
+ include ../../blocks/page-header/page-header.pug
  section.registration__presentation.registration__presentation--login
   - var registered = true
   if registered
    include ../../blocks/login/login.pug
-  else   
+  else
    include ../../blocks/register/register.pug
 block foot
- div.page-footer--rus
-  include ../../blocks/page-footer/page-footer--rus.pug
+ div.page-footer
+  include ../../blocks/page-footer/page-footer.pug

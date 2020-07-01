@@ -29,14 +29,14 @@
     }
 }
 
-// @media (-webkit-min-device-pixel-ratio: 1.5),
-// (min-resolution: 144dpi){
-//     /* CSS для ретины */
-//     .landing__presentation {
-//         background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img@2x.jpg');
-//     }
-// 
-// }
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi){
+    /* CSS для ретины */
+    .landing__presentation {
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img@2x.jpg');
+    }
+
+}
 
 .landing .room-search {
     margin: 0;
@@ -56,7 +56,7 @@
     line-height: 2;
     color: $shade-75;
     letter-spacing: 0.1em;
-    
+
     text-align: right;
 }
 
