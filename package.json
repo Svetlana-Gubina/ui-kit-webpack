@@ -43,6 +43,7 @@
   ],
   "dependencies": {
     "air-datepicker": "^2.2.3",
+    "chart.js": "^2.9.3",
     "jquery": "^3.4.1"
   }
 }
