@@ -14,47 +14,14 @@ html(lang='en')
     body
      block content
       include ./blocks/page-header/page-header.pug
-      section.details__presentation
-       div.details__big-foto
-       div.details__small-foto
-        div.details__small-foto1
-        div.details__small-foto2
-      main.details__main
-       div.details__info
-        div.details__info-top
-         div.details__info-about
-          h3.details__title Сведения о номере
-          - var movieList = [{iconClass: 'comfort', title: 'Комфорт', text: 'Шумопоглощающие стены'}, {iconClass: 'convenience', title: 'Удобство', text: 'Окно в каждой из спален'}, {iconClass: 'cosiness', title: 'Уют', text: 'Номер оснащён камином'}];
-          include ./blocks/info-block/info-block.pug
-          for movie in movieList
-            +info-block(movie)
-         div.details__info-impressions
-          h3.details__title Впечатления от номера
-          div.details__info-impressions-div
-           div.details__info-chart
-           div.details__info-options
-            ul.details__info-options-list
-             each val, index in ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
-               li.details__info-options-item= val
-        div.details__info-reviews
-         h3.details__title Отзывы посетителей номера
-          span.details__info-reviews-count 2 отзыва
-         include ./blocks/review/review.pug
-         div.details__info-reviews-list
-          - var reviewsList = [{imgSrc: 'user1', likes: 12, name: 'Мурад Сарафанов', time: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}, {imgSrc: 'user2', likes: 2, name: 'Патрисия Стёклышкова', time: 'Неделю назад', text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'}]
-          for review in reviewsList
-           +review(review)
-        div.details__info-rules
-         div.details__info-spec
-          h3.details__title Правила
-          ul.details__info-rules-list
-           each val, index in ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
-            li.details__info-rules-item= val
-         div.details__info-cancel
-          h3.details__title Отмена
-           p.details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-       aside.details__aside
-        include ./blocks/booking/booking.pug
+      main.search__main
+       section.search__filter
+        form.search__filter-form
+         include ./blocks/filter-form/filter-form.pug
+       section.search__catalog
+        h2.search__catalog-title Номера, которые мы для вас подобрали
+        include ./blocks/catalog/catalog.pug
+        include ./blocks/pagination/pagination.pug
      block foot
       div.landing__footer.page-footer
        include ./blocks/page-footer/page-footer.pug

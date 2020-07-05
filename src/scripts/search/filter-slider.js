@@ -1,7 +1,8 @@
 import '../../../node_modules/air-datepicker';
 import Chart from 'chart.js';
 
-// Chart
+
+// Chart-js
 
 // const chartDiv = document.querySelector('.details__info-chart');
 // const canvas = document.createElement(`canvas`);

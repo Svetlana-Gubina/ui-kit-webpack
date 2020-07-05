@@ -22,6 +22,13 @@ block content
      h3.details__title Впечатления от номера
      div.details__info-impressions-div
       div.details__info-chart
+       p.chart_text 260
+        br
+        span.chart_text-span голосов
+       svg(class='chart' width='120' height='120' viewBox='0 0 50 50')
+        circle(class='unit' r='23' cx='50%' cy='50%')
+        circle(class='unit' r='23' cx='50%' cy='50%')
+        circle(class='unit' r='23' cx='50%' cy='50%')
       div.details__info-options
        ul.details__info-options-list
         each val, index in ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']

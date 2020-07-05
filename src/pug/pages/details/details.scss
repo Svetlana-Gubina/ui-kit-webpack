@@ -193,7 +193,7 @@
 }
 
 .details__info-options-item:nth-of-type(2)::before {
-    background-color: inear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    background-color: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     background-color: #6FCF97;
 }
 
@@ -210,15 +210,72 @@
 .details__info-chart {
   position: relative;
   width: 120px;
+  max-width: 120px;
   height: 120px;
+
+  // canvas-svg
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.details__info-chart canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 120px;
+// canvas-svg
+
+.unit {
+  fill: none;
+  stroke-width: 2;
 }
+
+.unit:nth-child(1) {
+  stroke:  #BC9CFF;
+  stroke-dasharray: 150;
+}
+
+
+.unit:nth-child(2) {
+  stroke: #6FCF97;
+  stroke-dasharray: 105 37.5;
+  stroke-dashoffset: -2;
+}
+
+.unit:nth-child(3) {
+  stroke: #FFBA9C;
+  stroke-dasharray: 70 70;
+  stroke-dashoffset: -37;
+}
+
+.chart_text {
+  position: absolute;
+  @include flex();
+  justify-content: center;
+  align-items: center;
+  top: 32%;
+  left: 27%;
+  width: 40%;
+  max-width: 40%;
+  color: #BC9CFF;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+  @include indent();
+}
+
+.chart_text-span {
+  font-size: 16px;
+  line-height: 1;
+  @include indent();
+}
+
+
+// canvas-js
+
+// .details__info-chart canvas {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 120px;
+// }
 
 /*-REVIEWS-*/
 
