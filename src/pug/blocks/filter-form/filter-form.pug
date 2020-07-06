@@ -6,19 +6,23 @@ div.filter-form
    legend.filter-form__legend Даты пребывания в отеле
    div.filter-form__input-container
     div.filter-form__datepicker-arrow
+    label(for='filterDates' class='visually-hidden') Даты пребывания в отеле
     input(id="filterDates" class='filter-form__input datepicker-here' type='text' name='dates' placeholder='19 авг - 23 авг')
   fieldset.filter-form__fieldset.filter-form__fieldset--guests
    legend.filter-form__legend Гости
    div.filter-form__input-container
     div.filter-form__input-arrow
+    label(for='guestsInput' class='visually-hidden') Количество гостей
     input(class='filter-form__input' id='guestsInput' type='text' name='guests' placeholder='3 гостя, 1 младенец')
     +dropdown('Guests', 'Взрослые', 2, 'Дети', 2, 'Младенцы', 0, true)
   fieldset.filter-form__fieldset.filter-form__fieldset--range
    div.filter-form__fieldset-header
     legend.filter-form__legend.filter-form__legend--range Диапазон цены
     div.filter-form__range-inputs
+     label(for='minCost' class='visually-hidden') Цена от
      input(class='filter-form__range-price filter-form__range-price--min' type='text' id='minCost' value='5000')
      span.filter-form__range-span ₽
+     label(for='maxCost' class='visually-hidden') Цена до
      input(class='filter-form__range-price filter-form__range-price--max' type='text' id='maxCost' value='10000')
      span.filter-form__range-span ₽
    div(class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all' id='slider')
@@ -53,7 +57,7 @@ div.filter-form
    legend.filter-form__legend Удобства номера
    div.filter-form__input-container
     div.filter-form__input-arrow
-    //-label
+    label(for='comfortInput' class='visually-hidden') Удобства номера
     input(class='filter-form__input' id='comfortInput' type='text' name='comfort' placeholder='2 спальни, 2 кровати... ')
     +dropdown('Comfort', 'Спальни', 2, 'Кровати', 2, 'Ванные комнаты', 0, false)
   fieldset.filter-form__fieldset.filter-form__bottom

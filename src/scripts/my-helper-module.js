@@ -1,4 +1,4 @@
-console.log(`Greetings from module!`);
+// Room photos slider
 
 function $(elem) {
     return document.querySelector(elem);
@@ -146,7 +146,7 @@ var slider_plugin = (function() {
     _.sliderInner.appendChild(cloneFirst);
     var cloneLast = _.def.target.querySelectorAll('.slide')[_.totalSlides - 1].cloneNode(true);
     _.sliderInner.insertBefore(cloneLast, _.sliderInner.firstChild);
-   
+
     _.curSlide++;
     _.allSlides = _.def.target.querySelectorAll('.slide');
 
@@ -200,10 +200,10 @@ var slider_plugin = (function() {
       }
       _.moveX = touch.pageX;
       _.moveY = touch.pageY;
- 
+
     // for scrolling up and down
     if (Math.abs(_.moveX - _.startX) < 40) return;
- 
+
     _.isAnimating = true;
     addClass(_.def.target, 'isAnimating');
     e.preventDefault();
@@ -219,7 +219,7 @@ var slider_plugin = (function() {
     function swipeEnd(e) {
       var touch = e;
       _.getCurLeft();
- 
+
     if (Math.abs(_.moveX - _.startX) === 0) return;
 
     _.stayAtCur = Math.abs(_.moveX - _.startX) < 40 || typeof _.moveX === "undefined" ? true : false;
@@ -235,7 +235,7 @@ var slider_plugin = (function() {
     }
 
     _.gotoSlide();
- 
+
     delete _.startX;
     delete _.startY;
     delete _.moveX;
