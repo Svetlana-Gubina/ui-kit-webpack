@@ -16,19 +16,18 @@ div.register
        div.register__form-group-checkbox
          input#male.register__form-checkbox(type='radio' name='sex' value='male' checked)
          label(for='male') Мужчина
-       div.register__form-group-checkbox 
+       div.register__form-group-checkbox
          input#female.register__form-checkbox(type='radio' name='sex' value='female')
          label(for='female') Женщина
    div.register__form-group.register__form-group-middle
       label.register__form-label(for='birthday') Дата рождения
-      input#birthday.register__form-control(type='date' name='birthday')
+      input(id='birthday' class='register__form-control datepicker-here' type='text' name='birthday')
       p.register__form-label  Данные для входа в сервис
       +login__fields('email2', 'pass2')
-   div.register__form-group.register__form-group-special 
+   div.register__form-group.register__form-group-special
        input#switch.register__form-checkbox.register__form-checkbox--switch(type='checkbox' name='switch' checked)
        label(for='switch') Получать спецпредложения
            span.switch-slider.switch-slider-on
            span.switch-slider.switch-slider-off
-   +btn-bright('Перейти к оплате') 
-  +login__form-footer(true)   
-          
+   +btn-bright('Перейти к оплате')
+  +login__form-footer(true)

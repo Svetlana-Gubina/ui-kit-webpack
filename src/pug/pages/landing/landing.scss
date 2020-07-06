@@ -19,13 +19,13 @@
 
 @media screen and (max-width: 720px) {
     .landing__presentation {
-        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img720@.jpg');
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/landing-img720@.jpg');
     }
 }
 
 @media screen and (max-width: 320px) {
     .landing__presentation {
-        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img320@.jpg');
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/landing-img320@.jpg');
     }
 }
 
@@ -33,7 +33,7 @@
 (min-resolution: 144dpi){
     /* CSS для ретины */
     .landing__presentation {
-        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img//landing-img@2x.jpg');
+        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/landing-img@2x.jpg');
     }
 
 }

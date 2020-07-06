@@ -7,12 +7,12 @@ mixin room-card-template(room)
    a.room-card__slider-right.arrow-right(href='javascript:void(0);')
    div.room-card__slider-toogler.dots-wrapper
    div.room-card__slider-container
-    img.room-card__foto.slide(data-src=('img/' + room.imgSrc + '.jpg') src= 'img/' + room.imgSrc + '.jpg' alt='Фото номера' srcset= 'img/' + room.imgSrc + '@2x.jpg 2x')
-    img.room-card__foto.slide(data-src=('img/room-2.jpg') src= 'img/room-2.jpg' alt='Фото номера' srcset= 'img/room-2@2x.jpg 2x')
-    img.room-card__foto.slide(data-src=('img/room-3.jpg') src= 'img/room-3.jpg' alt='Фото номера' srcset= 'img/room-3@2x.jpg 2x')
-    img.room-card__foto.slide(data-src=('img/room-4.jpg') src= 'img/room-4.jpg' alt='Фото номера' srcset= 'img/room-4@2x.jpg 2x')
+    img.room-card__foto.slide(data-src=('/home/sveta/Documents/FSD/webpack-test-3/dist/img/' + room.imgSrc + '.jpg') src= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/' + room.imgSrc + '.jpg' alt='Фото номера' srcset= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/' + room.imgSrc + '@2x.jpg 2x')
+    img.room-card__foto.slide(data-src=('/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-2.jpg') src= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-2.jpg' alt='Фото номера' srcset= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-2@2x.jpg 2x')
+    img.room-card__foto.slide(data-src=('/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-3.jpg') src= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-3.jpg' alt='Фото номера' srcset= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-3@2x.jpg 2x')
+    img.room-card__foto.slide(data-src=('/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-4.jpg') src= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-4.jpg' alt='Фото номера' srcset= '/home/sveta/Documents/FSD/webpack-test-3/dist/img/room-4@2x.jpg 2x')
   div.room-card__cost
-   +booking__room-cost(room.number, room.price, room.isLux)     
+   +booking__room-cost(room.number, room.price, room.isLux)
   div.room-card__rating
    div.room-card__stars
     span.room-card__star
@@ -20,5 +20,4 @@ mixin room-card-template(room)
     span.room-card__star
     span.room-card__star
     span.room-card__star
-   div.room-card__reviews= room.rewievsCount +  ' Отзывов' 
-   
+   div.room-card__reviews= room.rewievsCount +  ' Отзывов'
