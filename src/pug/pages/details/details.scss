@@ -32,13 +32,6 @@
     }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5),
-    (min-resolution: 144dpi) {
-        .details__big-foto {
-            background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/big-room@2x.jpg');
-        }
-}
-
 
 .details__small-foto {
     width: 32%;

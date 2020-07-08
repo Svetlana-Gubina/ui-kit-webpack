@@ -1,4 +1,7 @@
 import 'air-datepicker';
-import addOnTodayClickHandler from '../../../scripts/datepicker.js';
 
-addOnTodayClickHandler($('.search-form__control'));
+const myDatepicker = $('.search-form__control').datepicker().data('datepicker');
+$(".datepicker--button[data-action='today']").on("click", function(evt) {
+ myDatepicker.hide();
+ return false;
+});

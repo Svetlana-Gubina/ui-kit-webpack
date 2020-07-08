@@ -30,6 +30,7 @@ export const addOnTodayClickHandler = (input) => {
 };
 
 addOnTodayClickHandler($('#filterDates'));
+addOnTodayClickHandler($('.search-form__control'));
 
 
 $('.search-form__input-arrow').on("click", function() {

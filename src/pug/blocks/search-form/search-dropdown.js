@@ -1,4 +1,4 @@
-import {validate, getDefaultOptions, updateOptions, switchAmount} from '../../pages/search/dropdown.js';
+import {validate, getDefaultOptions, updateOptions, switchAmount} from '../../../scripts/dropdown.js';
 
 const customInput = document.querySelector('.search-form__pseudo-select');
 

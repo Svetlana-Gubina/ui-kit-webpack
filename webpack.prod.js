@@ -7,6 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack');
 
 // function that generates our html plugins
 function generateHtmlPlugins (templateDir) {
@@ -23,7 +25,7 @@ function generateHtmlPlugins (templateDir) {
       } catch (err) {
         console.error(err);
       }
-      });
+    });
 
     return templateFiles.map(item => {
       // Split names and extension
@@ -33,7 +35,9 @@ function generateHtmlPlugins (templateDir) {
       return new HtmlWebpackPlugin({
         hash: true,
         filename: `pages/${name}.html`,
-        template: path.resolve(__dirname, `${templateDir}/${name}/${name}.${extension}`)
+        template: path.resolve(__dirname, `${templateDir}/${name}/${name}.${extension}`),
+        inject: 'body',
+        chunks: [`${name}`, 'main'],
       })
     })
 };
@@ -44,6 +48,14 @@ const htmlPlugins = generateHtmlPlugins('./src/pug/pages');
 
 module.exports = merge (common, {
     mode: `production`,
+    entry: {
+      main: './src/index.js',
+      details: './src/pug/pages/details/details.js',
+      cards: './src/pug/pages/cards/cards.js',
+      landing: './src/pug/pages/landing/landing.js',
+      registration: './src/pug/pages/registration/registration.js',
+      search: './src/pug/pages/search/search.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js',
@@ -62,6 +74,7 @@ module.exports = merge (common, {
       ],
     },
     plugins: [
+        new BundleAnalyzerPlugin(),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
@@ -81,11 +94,6 @@ module.exports = merge (common, {
               flatten: true
             }
         ]),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/index.pug',
-            filename: './index.html'
-        }),
         new ImageminWebpWebpackPlugin(
           {
             config: [{
@@ -101,4 +109,24 @@ module.exports = merge (common, {
           }
         ),
     ].concat(htmlPlugins),
+    // optimization: {
+    //   runtimeChunk: 'single',
+    //   splitChunks: {
+    //     chunks: 'all',
+    //     maxInitialRequests: Infinity,
+    //     minSize: 0,
+    //     cacheGroups: {
+    //       vendor: {
+    //         test: /[\\/]node_modules[\\/]/,
+    //         name(module) {
+    //           // get the name. E.g. node_modules/packageName/not/this/part.js
+    //           // or node_modules/packageName
+    //           const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+    //           // npm package names are URL-safe, but some servers don't like @ symbols
+    //           return `npm.${packageName.replace('@', '')}`;
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
 });
