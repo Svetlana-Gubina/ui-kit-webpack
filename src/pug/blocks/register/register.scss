@@ -187,3 +187,20 @@
 .register .btn__inner {
   padding: 0.8em 1.8em;
 }
+
+// Arrow
+
+.register__form-group-middle {
+  position: relative;
+}
+
+.register_input-arrow {
+  position: absolute;
+  top: 18%;
+  right: 5%;
+  @include inputArrow();
+}
+
+.register_input-arrow--active {
+  @include inputActiveArrow();
+}

@@ -1,4 +1,30 @@
+import '../../blocks/room-card-template/room-photo-slider.js';
+import {datePickerConfig} from '../../../scripts/datepicker.js';
 import {toggle, getDefaultOptions, updateOptions, switchAmount} from '../../../scripts/dropdown.js';
+
+
+// datepicker
+
+const rangeConfig = datePickerConfig;
+rangeConfig.range = true;
+
+$('#filterDates').datepicker(rangeConfig);
+
+const myDatepicker = $('#filterDates').datepicker().data('datepicker');
+$(".datepicker--button[data-action='today']").on("click", function(evt) {
+ myDatepicker.hide();
+ return false;
+});
+
+$('.filter-form__datepicker-arrow').on("click", function() {
+  if (!$(this).hasClass('filter-form__arrow--active')) {
+    $(this).addClass('filter-form__arrow--active');
+    $(this).parent().find($('.filter-form__input')).focus();
+  } else {
+    $(this).removeClass('filter-form__arrow--active');
+  }
+});
+
 
 // Дополнительные удобства
 
@@ -49,7 +75,7 @@ const guestsDefaultOptions = getDefaultOptions(guestsIDs);
 $("#Guests").find(".calendar__btn--submit").on("click", function(evt) {
    evt.preventDefault();
    $("#Guests").closest('.select__dropdown').addClass('modal-close');
-   // arrow
+   // TODO: arrow should lose active class
 });
 
 $(".Guests").on("click", function() {

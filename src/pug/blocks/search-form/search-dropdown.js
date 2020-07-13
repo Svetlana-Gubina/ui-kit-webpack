@@ -1,27 +1,32 @@
 import {validate, getDefaultOptions, updateOptions, switchAmount} from '../../../scripts/dropdown.js';
 
-const customInput = document.querySelector('.search-form__pseudo-select');
 
-customInput.addEventListener("input", function(evt){
-  validate(input);
-});
+// TODO: нажатие enter не должно отправлять форму
+
+// TODO: не работает при вводе с клавиатуры
+// $( ".search-form__pseudo-select" ).change(function() {
+//   validate($(this));
+// });
 
 const guestsIDs = ['Взрослые', 'Дети', 'Младенцы'];
 const guestsDefaultOptions = getDefaultOptions(guestsIDs);
 
-$(".search-form__pseudo-select").find(".calendar__btn--submit").on("click", function(evt) {
+$("#Guests").find(".calendar__btn--submit").on("click", function(evt) {
    evt.preventDefault();
    $("#Guests").closest('.select__dropdown').addClass('modal-close');
-   // arrow
+   // TODO: arrow should lose active class
 });
 
-$(".search-form__select-arrow").on("click", function() {
+$(".Guests").on("click", function() {
   var $button = $(this);
   var input = $button.parent().find("input");
+
   var newVal = switchAmount($button, input);
-  var targetInput = $('#guestsInput');
+
+  var targetInput = $('.search-form__pseudo-select');
   var inputID = input.attr("id");
   updateOptions(guestsDefaultOptions, inputID, newVal);
+
   let guestsCount = Number(guestsDefaultOptions.first.amount)  + Number(guestsDefaultOptions.second.amount);
   targetInput.val(guestsCount + ' ' + 'гостей'  + ', ' + guestsDefaultOptions.third.amount + ' ' + guestsDefaultOptions.third.id);
 });

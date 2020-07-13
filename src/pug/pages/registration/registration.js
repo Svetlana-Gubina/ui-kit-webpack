@@ -1,1 +1,1 @@
-console.log('Hello from module!');
+import '../../blocks/register/register-datepicker.js';

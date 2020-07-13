@@ -21,6 +21,7 @@ div.register
          label(for='female') Женщина
    div.register__form-group.register__form-group-middle
       label.register__form-label(for='birthday') Дата рождения
+      div.register_input-arrow
       input(id='birthday' class='register__form-control datepicker-here' type='text' name='birthday')
       p.register__form-label  Данные для входа в сервис
       +login__fields('email2', 'pass2')

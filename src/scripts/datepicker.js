@@ -1,11 +1,10 @@
 import 'air-datepicker';
 
-const datePickerConfig = {
+export const datePickerConfig = {
   language: {
     today: 'Применить',
   },
   minDate: new Date(),
-  range: true,
   dateFormat: "dd M",
   multipleDatesSeparator: " - ",
   todayButton: true,
@@ -16,37 +15,3 @@ const datePickerConfig = {
     days: 'MM  <i>yyyy</i>',
   },
 };
-
-
-$('.datepicker-here').datepicker(datePickerConfig);
-
-
-export const addOnTodayClickHandler = (input) => {
-  const myDatepicker = input.datepicker().data('datepicker');
-  $(".datepicker--button[data-action='today']").on("click", function(evt) {
-   myDatepicker.hide();
-   return false;
-  });
-};
-
-addOnTodayClickHandler($('#filterDates'));
-addOnTodayClickHandler($('.search-form__control'));
-
-
-$('.search-form__input-arrow').on("click", function() {
-  if (!$(this).hasClass('search-form__arrow--active')) {
-    $(this).addClass('search-form__arrow--active');
-    $(this).parent().find($('.search-form__control')).focus();
-  } else {
-    $(this).removeClass('search-form__arrow--active');
-  }
-});
-
-$('.filter-form__datepicker-arrow').on("click", function() {
-  if (!$(this).hasClass('filter-form__arrow--active')) {
-    $(this).addClass('filter-form__arrow--active');
-    $(this).parent().find($('.filter-form__input')).focus();
-  } else {
-    $(this).removeClass('filter-form__arrow--active');
-  }
-});
