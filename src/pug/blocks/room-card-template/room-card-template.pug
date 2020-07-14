@@ -17,10 +17,15 @@ mixin room-card-template(room)
    fieldset.room-card__stars
     legend.visually-hidden Рейтинг
     div.room-card__rating-group
-     input(class='room-card__star room-card__star-1' type='radio' name='rate' value='1' aria-label='Ужасно' checked)
-     input(class='room-card__star room-card__star-2' type='radio' name='rate' value='2' aria-label='Сносно')
-     input(class='room-card__star room-card__star-3' type='radio' name='rate' value='3' aria-label='Нормально')
-     input(class='room-card__star room-card__star-4' type='radio' name='rate' value='4' aria-label='Хорошо')
-     input(class='room-card__star room-card__star-5' type='radio' name='rate' value='5' aria-label='Отлично')
-     div.room-card__rating
+     input(id='awful' class='room-card__input' type='radio' name='rate' value='1' checked)
+     label(for='awful' class='room-card__label room-card__label-1' aria-label='Ужасно')
+     input(id='passable' class='room-card__input' type='radio' name='rate' value='2')
+     label(for='passable' class='room-card__label room-card__label-2' aria-label='Сносно')
+     input(id='normal' class='room-card__input' type='radio' name='rate' value='3')
+     label(for='normal' class='room-card__label room-card__label-3' aria-label='Нормально')
+     input(id='fine' class='room-card__input' type='radio' name='rate' value='4')
+     label(for='fine' class='room-card__label room-card__label-4' aria-label='Хорошо')
+     input(id='perfect' class='room-card__input' type='radio' name='rate' value='5')
+     label(for='perfect' class='room-card__label room-card__label-5' aria-label='Отлично')
+     div.room-card__rating-focus
    div.room-card__reviews= room.rewievsCount +  ' Отзывов'
