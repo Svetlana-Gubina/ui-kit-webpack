@@ -12,16 +12,9 @@ html(lang='en')
         script(src='https://code.jquery.com/jquery-1.12.4.js')
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
     body
-     block content
-      include ./blocks/page-header/page-header.pug
-      main.search__main
-       section.search__filter
-        form.search__filter-form
-         include ./blocks/filter-form/filter-form.pug
-       section.search__catalog
-        h2.search__catalog-title Номера, которые мы для вас подобрали
-        include ./blocks/catalog/catalog.pug
-        include ./blocks/pagination/pagination.pug
-     block foot
-      div.page-footer
-       include ./blocks/page-footer/page-footer.pug
+    div.cards-container--room
+     //- Room-1
+     include ./blocks/room-card-template/room-card-template.pug
+     - var roomList = [{imgSrc: 'room-1', number: '888', price: '9 990', isLux: true, rewievsCount: '145', stars: 5}];
+     for room in roomList
+       +room-card-template(room)

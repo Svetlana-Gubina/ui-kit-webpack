@@ -156,27 +156,98 @@
 /* STARS */
 
 .room-card__stars {
-    width: 48%;
-    max-height: 1.5em;
-    margin-left: 5px;
-    margin-bottom: 10px;
+  width: 48%;
+  max-height: 1.5em;
+  margin-left: 5px;
+  margin-bottom: 10px;
+
+  // test
+  border: 0 none;
+  @include indent();
 }
 
+// test
 .room-card__star {
-    display: inline-block;
-    vertical-align: middle;
-    width: 20%;
-    height: 100%;
-    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/star.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  @include indent();
+  font-size: inherit;
+}
 
-.room-card-4 .room-card__star:last-of-type,
-.room-card-3 .room-card__star:nth-of-type(4),
-.room-card-3 .room-card__star:nth-of-type(5) {
-    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/star_border.svg');
-    background-repeat: no-repeat;
+.room-card__star:focus {
+  outline: none;
+}
+
+.room-card__star:checked,
+.room-card__star:hover {
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2637 15.749L4.07617 19.499L5.7168 12.4678L0.279297 7.7334L7.45117 7.12402L10.2637 0.514648L13.0762 7.12402L20.248 7.7334L14.8105 12.4678L16.4512 19.499L10.2637 15.749Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='10.2637' y1='-1.50098' x2='10.2637' y2='22.499' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.room-card__star:hover ~ .room-card__star {
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2637 13.9209L14.0137 16.1709L13.0293 11.9053L16.3574 8.99902L11.9512 8.62402L10.2637 4.59277L8.57617 8.62402L4.16992 8.99902L7.49805 11.9053L6.51367 16.1709L10.2637 13.9209ZM20.248 7.7334L14.8105 12.4678L16.4512 19.499L10.2637 15.749L4.07617 19.499L5.7168 12.4678L0.279297 7.7334L7.45117 7.12402L10.2637 0.514648L13.0762 7.12402L20.248 7.7334Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='10.2637' y1='-1.50098' x2='10.2637' y2='22.499' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.room-card__rating-group {
+  @include indent();
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-repeat: repeat-x;
+  background-size: 20% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2637 13.9209L14.0137 16.1709L13.0293 11.9053L16.3574 8.99902L11.9512 8.62402L10.2637 4.59277L8.57617 8.62402L4.16992 8.99902L7.49805 11.9053L6.51367 16.1709L10.2637 13.9209ZM20.248 7.7334L14.8105 12.4678L16.4512 19.499L10.2637 15.749L4.07617 19.499L5.7168 12.4678L0.279297 7.7334L7.45117 7.12402L10.2637 0.514648L13.0762 7.12402L20.248 7.7334Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='10.2637' y1='-1.50098' x2='10.2637' y2='22.499' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.room-card__rating-group:focus-within {
+  outline: 0.2em solid blue;
+  outline-offset: 0.2em;
+}
+
+// for Edge
+
+.room-card__star:focus ~ .room-card__rating-focus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  outline: 0.2em solid blue;
+  outline-offset: 0.2em;
+}
+
+.room-card__star-1 {
+  width: 20%;
+  z-index: 5;
+  background-size: 100% 100%;
+}
+
+.room-card__star-2 {
+  width: 40%;
+  z-index: 4;
+  background-size: 50% 100%;
+}
+
+.room-card__star-3 {
+  width: 60%;
+  z-index: 3;
+  background-size: 33% 100%;
+}
+
+.room-card__star-4 {
+  width: 80%;
+  z-index: 2;
+  background-size: 25% 100%;
+}
+
+.room-card__star-5 {
+  width: 100%;
+  z-index: 1;
+  background-size: 20% 100%;
 }
 
 .room-card__reviews {
