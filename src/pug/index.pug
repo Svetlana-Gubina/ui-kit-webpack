@@ -12,9 +12,12 @@ html(lang='en')
         script(src='https://code.jquery.com/jquery-1.12.4.js')
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
     body
-    div.cards-container--room
-     //- Room-1
-     include ./blocks/room-card-template/room-card-template.pug
-     - var roomList = [{imgSrc: 'room-1', number: '888', price: '9 990', isLux: true, rewievsCount: '145', stars: 5}];
-     for room in roomList
-       +room-card-template(room)
+     block content
+      div.landing
+       include ./blocks/page-header/page-header.pug
+       div.landing__presentation
+        include ./blocks/room-search/room-search.pug
+        div.landing__presentation-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+     block foot
+      div.landing__footer.page-footer
+       include ./blocks/page-footer/page-footer.pug

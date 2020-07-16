@@ -5,11 +5,11 @@ mixin search-form__fields(startID, endID, guestsID)
   div.search-form__group.search-form__group-top
          label(for= startID) Прибытие
          div.search-form__input-arrow
-         input(id= startID class='search-form__control datepicker-here' type='text' name='arrive' placeholder='ДД.ММ.ГГГГ')
+         input(id= startID class='search-form__control search-form__control--arrive datepicker-here' type='text' name='arrive' placeholder='ГГГГ-MM-ДД')
   div.search-form__group.search-form__group-top
          label(for= endID) Выезд
          div.search-form__input-arrow
-         input(id= endID class='search-form__control datepicker-here' type='text' name='depart' placeholder='ДД.ММ.ГГГГ')
+         input(id= endID class='search-form__control search-form__control--depart datepicker-here' type='text' name='depart' placeholder='ГГГГ-MM-ДД')
   div.search-form__group.search-form__group-bottom
          label(for= guestsID) Гости
          div.search-form__select-arrow

@@ -4,6 +4,7 @@ export const datePickerConfig = {
   language: {
     today: 'Применить',
   },
+  autoClose: true,
   minDate: new Date(),
   dateFormat: "dd M",
   multipleDatesSeparator: " - ",

@@ -10,12 +10,6 @@ rangeConfig.range = true;
 
 $('#filterDates').datepicker(rangeConfig);
 
-const myDatepicker = $('#filterDates').datepicker().data('datepicker');
-$(".datepicker--button[data-action='today']").on("click", function(evt) {
- myDatepicker.hide();
- return false;
-});
-
 $('.filter-form__datepicker-arrow').on("click", function() {
   if (!$(this).hasClass('filter-form__arrow--active')) {
     $(this).addClass('filter-form__arrow--active');
@@ -23,6 +17,10 @@ $('.filter-form__datepicker-arrow').on("click", function() {
   } else {
     $(this).removeClass('filter-form__arrow--active');
   }
+});
+
+$('#filterDates').on("blur", function() {
+  $('.filter-form__datepicker-arrow').removeClass('filter-form__arrow--active');
 });
 
 
@@ -103,20 +101,19 @@ $('#guestsInput').focus(function(evt) {
 
 $('#comfortInput').focus(function(evt) {
   $(this).removeAttr('placeholder');
-  // document.removeEventListener('keydown', onEnterClickHandler);
+  // document.addEventListener('keydown', onEnterClickHandler);
 }).blur(function() {
   $(this).attr('placeholder', '2 спальни, 2 кровати, ... ');
   // document.removeEventListener('keydown', onEnterClickHandler);
 });
 
-// const onEnterClickHandler = function (evt) {
-//   evt.preventDefault();
-//   if(evt.key === 'Enter') {
-//     var $focused = $(':focus');
-//     var dropdown = $(':focus').parent().find($('.select__dropdown')).toggleClass('modal-close');
-//   }
-// };
-
+const onEnterClickHandler = function (evt) {
+  evt.preventDefault();
+  if(evt.key === 'Enter') {
+    $(':focus').parent().find($('.select__dropdown')).toggleClass('modal-close');
+    $(".search-form__select-arrow").toggleClass('search-form__arrow--active');
+  }
+};
 
 
 // Slider jQuery

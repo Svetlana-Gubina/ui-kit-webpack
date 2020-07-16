@@ -1,14 +1,10 @@
 import {datePickerConfig} from '../../../scripts/datepicker.js';
 
-$('.search-form__control').datepicker(datePickerConfig);
+const config = datePickerConfig;
+config.dateFormat = 'yyyy-mm-dd';
 
-// TODO: datepicker on hide - убирать с arrow класс active
 
-$(".datepicker--button[data-action='today']").on("click", function(evt) {
-  $(this).parents('.datepicker').hide();
-  return false;
-});
-
+$('.search-form__control').datepicker(config);
 
 // Arrow
 
@@ -21,7 +17,5 @@ $('.search-form__input-arrow').on("click", function() {
   }
 });
 
-// TODO: BUG! - после выбора даты второй раз ее выбрать нельзя - datepicker не появляется
-
 // TODO: on form submit validation - check if arrival date less than dep.
-// $('.search-form').on( "submit", handler );
+// $('.search-form').on( "submit", handler);

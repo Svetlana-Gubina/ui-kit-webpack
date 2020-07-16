@@ -1,12 +1,4 @@
-import {validate, getDefaultOptions, updateOptions, switchAmount} from '../../../scripts/dropdown.js';
-
-
-// TODO: нажатие enter не должно отправлять форму
-
-// TODO: не работает при вводе с клавиатуры
-// $( ".search-form__pseudo-select" ).change(function() {
-//   validate($(this));
-// });
+import {getDefaultOptions, updateOptions, switchAmount} from '../../../scripts/dropdown.js';
 
 const guestsIDs = ['Взрослые', 'Дети', 'Младенцы'];
 const guestsDefaultOptions = getDefaultOptions(guestsIDs);
@@ -14,7 +6,7 @@ const guestsDefaultOptions = getDefaultOptions(guestsIDs);
 $("#Guests").find(".calendar__btn--submit").on("click", function(evt) {
    evt.preventDefault();
    $("#Guests").closest('.select__dropdown').addClass('modal-close');
-   // TODO: arrow should lose active class
+   $(".search-form__select-arrow").toggleClass('search-form__arrow--active');
 });
 
 $(".Guests").on("click", function() {
@@ -31,6 +23,14 @@ $(".Guests").on("click", function() {
   targetInput.val(guestsCount + ' ' + 'гостей'  + ', ' + guestsDefaultOptions.third.amount + ' ' + guestsDefaultOptions.third.id);
 });
 
+const onEnterClickHandler = function (evt) {
+  evt.preventDefault();
+  if(evt.key === 'Enter') {
+    $(':focus').parent().find($('.select__dropdown')).toggleClass('modal-close');
+    $(".search-form__select-arrow").toggleClass('search-form__arrow--active');
+  }
+};
+
 // Arrow on click
 
 $(".search-form__select-arrow").on("click", function() {
@@ -39,7 +39,13 @@ $(".search-form__select-arrow").on("click", function() {
 });
 
 $('.search-form__pseudo-select').focus(function(evt) {
+  evt.preventDefault();
   $(this).removeAttr('placeholder');
-}).blur(function() {
+  // document.addEventListener('keydown', onEnterClickHandler);
+}).blur(function(evt) {
+  evt.preventDefault();
   $(this).attr('placeholder', 'Сколько гостей');
+  // document.removeEventListener('keydown', onEnterClickHandler);
 });
+
+// BUG! - фокус залипает на инпуте при добавлении onEnterClickHandler
