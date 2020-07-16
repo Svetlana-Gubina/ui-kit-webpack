@@ -1,9 +1,0 @@
-mixin page-header__user-nav(isAuthorised, btnTxtx1, btnTxtx2)
- div.page-header__user-nav
-          if isAuthorised
-            p.page-header__user-name
-             a(href='/' + url) Юлий Цезарь
-          else
-           a.page-header__user-link.page-header__user-link--login.btn(href='/' + url)
-            span.btn__inner= btnTxtx1
-           a.page-header__user-link.page-header__user-link--reg.btn(href='/' + url)= btnTxtx2

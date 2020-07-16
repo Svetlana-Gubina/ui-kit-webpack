@@ -1,6 +1,0 @@
-include ../room-card-template/room-card-template.pug
-
-div.catalog
-      - var roomList = [{imgSrc: 'room-1', number: '888', price: '9 990', isLux: true, rewievsCount: '145', stars: 5}, {imgSrc: 'room-2', number: '840', price: '9 900', isLux: false, rewievsCount: '65', stars: 4}, {imgSrc: 'room-3', number: '980', price: '8 500', isLux: true, rewievsCount: '35', stars: 3}, {imgSrc: 'room-4', number: '856', price: '7 300', isLux: false, rewievsCount: '19', stars: 5}, {imgSrc: 'room-5', number: '740', price: '6 000', isLux: false, rewievsCount: '44', stars: 4}, {imgSrc: 'room-6', number: '982', price: '5 800', isLux: false, rewievsCount: '56', stars: 3}, {imgSrc: 'room-7', number: '678', price: '5 500', isLux: false, rewievsCount: '45', stars: 5}, {imgSrc: 'room-8', number: '450', price: '5 300', isLux: false, rewievsCount: '39', stars: 4}, {imgSrc: 'room-9', number: '350', price: '5 000', isLux: false, rewievsCount: '77', stars: 3}, {imgSrc: 'room-10', number: '666', price: '5 000', isLux: false, rewievsCount: '25', stars: 5}, {imgSrc: 'room-11', number: '444', price: '5 000', isLux: false, rewievsCount: '15', stars: 3}, {imgSrc: 'room-12', number: '352', price: '5 000', isLux: false, rewievsCount: '55', stars: 3}];
-      for room in roomList
-              +room-card-template(room)
