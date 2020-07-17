@@ -14,18 +14,10 @@ mixin room-card-template(room)
   div.room-card__cost
    +booking__room-cost(room.number, room.price, room.isLux)
   div.room-card__rating
-   fieldset.room-card__stars
-    legend.visually-hidden Рейтинг
-    div.room-card__rating-group
-     input(id='awful' class='room-card__input' type='radio' name='rate' value='1' checked)
-     label(for='awful' class='room-card__label room-card__label-1' aria-label='Ужасно')
-     input(id='passable' class='room-card__input' type='radio' name='rate' value='2')
-     label(for='passable' class='room-card__label room-card__label-2' aria-label='Сносно')
-     input(id='normal' class='room-card__input' type='radio' name='rate' value='3')
-     label(for='normal' class='room-card__label room-card__label-3' aria-label='Нормально')
-     input(id='fine' class='room-card__input' type='radio' name='rate' value='4')
-     label(for='fine' class='room-card__label room-card__label-4' aria-label='Хорошо')
-     input(id='perfect' class='room-card__input' type='radio' name='rate' value='5')
-     label(for='perfect' class='room-card__label room-card__label-5' aria-label='Отлично')
-     div.room-card__rating-focus
+   div.room-card__stars
+    span.room-card__star
+    span.room-card__star
+    span.room-card__star
+    span.room-card__star
+    span.room-card__star
    div.room-card__reviews= room.rewievsCount +  ' Отзывов'
