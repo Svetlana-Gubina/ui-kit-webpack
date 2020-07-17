@@ -56,4 +56,26 @@ img {
   @include indent();
 }
 
+.index_body {
+  background-color: #ffffff;
+}
+
+.index-heading {
+  @include indent();
+  padding: 0.5em;
+}
+
+.index-link {
+  font-size: 20px;
+  display: block;
+  @include indent();
+  padding: 0.5em;
+  padding-right: 1em;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.5;
+  }
+}
 

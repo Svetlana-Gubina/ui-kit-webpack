@@ -3,7 +3,7 @@
     width: 100%;
 
     @include indent();
-    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/reg-bg.jpg');
+    background-image: url('../pug/pages/registration/reg-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -20,7 +20,7 @@
 (min-resolution: 144dpi){
     /* CSS для ретины */
     .registration__presentation {
-        background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/reg-bg@2x.jpg');
+        background-image: url('../pug/pages/registration/reg-bg@2x.jpg');
         // background-size: 100% 50%;
     }
 }
