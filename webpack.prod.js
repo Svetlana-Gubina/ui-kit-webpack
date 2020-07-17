@@ -76,6 +76,9 @@ module.exports = merge (common, {
     plugins: [
         new BundleAnalyzerPlugin(),
         new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+          template: './src/pug/index.pug',
+        }),
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
             chunkFilename: '[id].css',

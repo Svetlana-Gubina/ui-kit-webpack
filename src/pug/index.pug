@@ -4,20 +4,20 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         meta(http-equiv='X-UA-Compatible', content='ie=edge')
-        title Document
-        //-link(rel='preload' href='./fonts/Open_Sans/opensans.woff' as='font' crossorigin='anonymous')
-        //-link(rel='preload' href='./fonts/Montserrat/Montserrat-Regular.woff' as='font' crossorigin='anonymous')
-        //-link(rel='preload' href='./fonts/Open_Sans/opensansbold.woff' as='font' crossorigin='anonymous')
-        //-link(rel='preload' href='./fonts/Montserrat/Montserrat-Bold.woff' as='font' crossorigin='anonymous')
+        title UI-kit
+        link(rel='preload' href='./fonts/Open_Sans/opensans.woff' as='font' crossorigin='anonymous')
+        link(rel='preload' href='./fonts/Montserrat/Montserrat-Regular.woff' as='font' crossorigin='anonymous')
+        link(rel='preload' href='./fonts/Open_Sans/opensansbold.woff' as='font' crossorigin='anonymous')
+        link(rel='preload' href='./fonts/Montserrat/Montserrat-Bold.woff' as='font' crossorigin='anonymous')
         script(src='https://code.jquery.com/jquery-1.12.4.js')
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
     body
-     block content
-      div.landing
-       include ./blocks/page-header/page-header.pug
-       div.landing__presentation
-        include ./blocks/room-search/room-search.pug
-        div.landing__presentation-text Лучшие номера для вашей работы, отдыха и просто вдохновения
-     block foot
-      div.landing__footer.page-footer
-       include ./blocks/page-footer/page-footer.pug
+     h2 UI-kit
+     a(href='pages/headers&footers.html' style='color: blue;')
+     a(href='pages/cards.html')
+     h2 Website pages
+     a(href='pages/details.html')
+     a(href='pages/landing.html')
+     a(href='pages/login.html')
+     a(href='pages/registration.html')
+     a(href='pages/search.html')
