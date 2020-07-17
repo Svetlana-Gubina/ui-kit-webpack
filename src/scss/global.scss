@@ -60,17 +60,19 @@ img {
   background-color: #ffffff;
 }
 
-.index-heading {
+.index_heading {
   @include indent();
   padding: 0.5em;
 }
 
-.index-link {
+.index_link {
+  text-decoration: none;
+  max-width: 200px;
   font-size: 20px;
   display: block;
   @include indent();
   padding: 0.5em;
-  padding-right: 1em;
+  padding-left: 2em;
 
   &:hover,
   &:focus,

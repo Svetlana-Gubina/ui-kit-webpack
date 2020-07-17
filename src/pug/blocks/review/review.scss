@@ -29,11 +29,11 @@
 }
 
 .review__foto .user1 {
-    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/user1.png');
+    background-image: url('../pug/blocks/review/user1.png');
 }
 
 .review__foto .user2 {
-    background-image: url('/home/sveta/Documents/FSD/webpack-test-3/dist/img/user2.png');
+    background-image: url('../pug/blocks/review/user2.png');
 }
 
 .review__foto,
@@ -42,7 +42,7 @@
 }
 
 .review__name {
-  /*FONT*/  
+  /*FONT*/
   font-size: 14px;
   line-height: 1.5;
   font-style: normal;
@@ -75,7 +75,7 @@
   height: 20px;
   padding: 2px;
   padding-left: 10px;
-  
+
   /*FONT*/
   font-size: 10px;
   line-height: 1.2;
