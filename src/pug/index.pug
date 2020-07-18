@@ -12,12 +12,15 @@ html(lang='en')
         script(src='https://code.jquery.com/jquery-1.12.4.js')
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
     body.index_body
-     h1.index_heading UI-kit
-     a(class='index_link' href='pages/headers&footers.html') Headers&footers
-     a(class='index_link' href='pages/cards.html') Cards
-     h1.index_heading Website pages
-     a(class='index_link' href='pages/details.html') Details
-     a(class='index_link' href='pages/landing.html') Landing
-     a(class='index_link' href='pages/login.html') Login
-     a(class='index_link' href='pages/registration.html') Registration
-     a(class='index_link' href='pages/search.html') Search
+     div.index_wrapper
+      div.index_wrapper-inner
+       h1.index_heading UI-kit
+       a(class='index_link' href='pages/headers&footers.html') Headers&footers
+       a(class='index_link' href='pages/cards.html') Cards
+      div.index_wrapper-inner
+       h1.index_heading Website pages
+       a(class='index_link' href='pages/details.html') Details
+       a(class='index_link' href='pages/landing.html') Landing
+       a(class='index_link' href='pages/login.html') Login
+       a(class='index_link' href='pages/registration.html') Registration
+       a(class='index_link' href='pages/search.html') Search

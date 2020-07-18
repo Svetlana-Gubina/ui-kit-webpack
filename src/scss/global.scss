@@ -63,16 +63,27 @@ img {
 .index_heading {
   @include indent();
   padding: 0.5em;
+  padding-left: 2em;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  background-color: lightblue;
 }
 
 .index_link {
+  background-color: lightgreen;
+  color: $shade-75;
   text-decoration: none;
-  max-width: 200px;
+  width: 95%;
+  max-width: 95%;
   font-size: 20px;
   display: block;
   @include indent();
   padding: 0.5em;
   padding-left: 2em;
+  margin-left: auto;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
 
   &:hover,
   &:focus,
@@ -81,3 +92,15 @@ img {
   }
 }
 
+.index_wrapper {
+  @include indent();
+  padding: 5%;
+}
+
+.index_wrapper-inner {
+  @include indent();
+  padding: 2%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+  background-color: linen;
+}
